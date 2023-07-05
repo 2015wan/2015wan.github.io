@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
+    <meta name="description" content="hw" />
+    <meta name="hexo-theme-A4" content="v1.6.9" />
+    <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
+    <title>hwan | </title>
+
+    
+        
+            
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/reset.css">
+
+            
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/markdown.css">
+
+            
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/fonts.css">
+ 
+            <!--注意：首页既不是post也不是page-->
+            
+        
+    
+    
+<link rel="stylesheet" href="/css/ui.css">
+ 
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+    
+    <body>
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">hwan</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/about/">关于</a></li>
+            
+        
+            
+                <li><a href="/tags/">标签</a></li>
+            
+        
+            
+                <li><a href="/categories/">分类</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+
+    
+        <div class="post-main-title">
+            hw
+        </div>
+      
+    
+
+    <div class="post-md">
+        
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E6%9D%82"><span class="post-toc-text">杂</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#sortrows%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%9A"><span class="post-toc-text">sortrows函数的使用：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#cell-array"><span class="post-toc-text">cell array</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%A4%8D%E6%9D%82%E8%AF%AD%E5%8F%A5"><span class="post-toc-text">复杂语句</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="post-toc-text">循环语句</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E9%80%BB%E8%BE%91%E5%88%A4%E6%96%AD%E7%AC%A6"><span class="post-toc-text">逻辑判断符</span></a></li></ol>
+        
+        <h6 id="杂"><a href="#杂" class="headerlink" title="杂"></a>杂</h6><pre><code>
+tree = struct(&#39;value&#39;, &#39;null&#39;, &#39;left&#39;, &#39;null&#39;, &#39;right&#39;, &#39;null&#39;);
+相当于字典
+值的索引是tree.value,用点的方式
+#
+length(attrib) attrib shape为150，5 返回150
+索引是 attrib(:,1) 圆括号，从1开始
+# 
+bool数组对应的logical数组，可以用sum函数
+#
+</code></pre>
+<h6 id="sortrows函数的使用："><a href="#sortrows函数的使用：" class="headerlink" title="sortrows函数的使用："></a>sortrows函数的使用：</h6><p>函数返回一个按照指定列排序后的矩阵或表格。如果两行在排序列中具有相同的值，则按照后续列进行排序。如果两行在所有列中都具有相同的值，则它们的顺序在结果中未定义。</p>
+<p>例如，以下代码将一个3x3的矩阵按第二列进行排序：</p>
+<p>A &#x3D; [4 3 9; 2 1 8; 7 6 5];<br>B &#x3D; sortrows(A, 2);</p>
+<p>B &#x3D;<br>2 1 8<br>7 6 5<br>4 3 9</p>
+<h6 id="cell-array"><a href="#cell-array" class="headerlink" title="cell array"></a>cell array</h6><pre><code>attri&#123;1,1&#125;=sortrows(attrib,1);
+attri&#123;1,2&#125;=sortrows(attrib,2);
+attri&#123;1,3&#125;=sortrows(attrib,3);
+attri&#123;1,4&#125;=sortrows(attrib,4);
+</code></pre>
+<p>在Matlab中，<code>attri</code>的数据类型取决于 <code>sortrows</code> 函数的输出。根据代码中的赋值语句，我们可以猜测 <code>attri</code> 是一个单元格数组（cell array）。</p>
+<p>单元格数组是Matlab中的一种数据类型，可以存储不同类型的数据，包括矩阵、向量、字符数组等等。它们可以通过花括号 <code>&#123;&#125;</code> 引用其中的元素，例如 <code>attri&#123;1,1&#125;</code> 就是单元格数组 <code>attri</code> 中第1行第1列元素的值。</p>
+<p>在这个赋值语句中，<code>sortrows</code> 函数的输出是一个按第1列排序后的矩阵，然后将其赋值给 <code>attri&#123;1,1&#125;</code> 这个单元格数组的第1行第1列元素。因此，<code>attri</code> 的类型是单元格数组，而 <code>attri&#123;1,1&#125;</code> 的类型是矩阵。</p>
+<h5 id="复杂语句"><a href="#复杂语句" class="headerlink" title="复杂语句"></a>复杂语句</h5><p>1:3 &#x3D; 1 2 3 开始与结束都包括</p>
+<h6 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h6><pre><code class="matlab">for i = start:end
+    ~
+end
+</code></pre>
+<h6 id="逻辑判断符"><a href="#逻辑判断符" class="headerlink" title="逻辑判断符"></a>逻辑判断符</h6><p>不等于~&#x3D; </p>
+
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2023-06-27</span>
+            
+                <span>该篇文章被 hong</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/%E6%9D%82/'>
+                            杂
+                        </a>
+                    
+                </span>
+             
+             
+        
+        </i>
+    </div>
+    
+        
+
+     
+</div>
+
+
+
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+             
+
+            
+                
+
+            
+        </span>
+    
+</div>
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>花有重开日，人无再少年！</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+        
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/a11y-dark.min.css">
+
+        
+<script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/highlight.min.js"></script>
+
+        
+<script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/highlightjs-line-numbers.js"></script>
+
+    
+
+
+<script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+</script>
+                </div>
+            
+    </body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
+    <meta name="description" content="" />
+    <meta name="hexo-theme-A4" content="v1.6.9" />
+    <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
+    <title>hwan | </title>
+
+    
+        
+            
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/reset.css">
+
+            
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/markdown.css">
+
+            
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/fonts.css">
+ 
+            <!--注意：首页既不是post也不是page-->
+            
+        
+    
+    
+<link rel="stylesheet" href="/css/ui.css">
+ 
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+    
+    <body>
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">hwan</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/about/">关于</a></li>
+            
+        
+            
+                <li><a href="/tags/">标签</a></li>
+            
+        
+            
+                <li><a href="/categories/">分类</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+
+    
+        <div class="post-main-title">
+            
+        </div>
+      
+    
+
+    <div class="post-md">
+        
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95%E5%8E%9F%E7%90%86"><span class="post-toc-text">梯度投影法原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98"><span class="post-toc-text">一、解决问题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BA%8C%E3%80%81%E4%BB%A3%E7%A0%81%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0"><span class="post-toc-text">二、代码简单实现</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%89%E3%80%81%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%9C"><span class="post-toc-text">三、代码结果</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-%E5%88%9D%E5%A7%8B%E7%82%B9%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="post-toc-text">1.初始点的影响</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-%E9%99%B7%E5%85%A5%E5%B1%80%E9%83%A8%E4%BC%98%E5%8C%96"><span class="post-toc-text">2.陷入局部优化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-%E5%88%9D%E5%A7%8B%E7%82%B9%E7%9A%84%E4%BD%8D%E7%BD%AE%E5%BD%B1%E5%93%8D%E4%BC%98%E5%8C%96%E7%BB%93%E6%9E%9C"><span class="post-toc-text">3.初始点的位置影响优化结果</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%9B%9B%E3%80%81%E6%80%BB%E7%BB%93"><span class="post-toc-text">四、总结</span></a></li></ol></li></ol>
+        
+        <h1 id="梯度投影法原理"><a href="#梯度投影法原理" class="headerlink" title="梯度投影法原理"></a><strong>梯度投影法原理</strong></h1><h2 id="一、解决问题"><a href="#一、解决问题" class="headerlink" title="一、解决问题"></a>一、解决问题</h2><p>​		在无约束优化问题中，我们一般使用梯度下降法便可以找到凸优化问题的最优解，但是如果有约束呢，这时候梯度投影法给出自己的做法，便是通过约束条件来重新计算可行方向，以及在这个可行方向下降多少步可以。</p>
+<p>​		考虑问题：<br>$$<br>\begin{array}{ll}<br>\min &amp; f(\boldsymbol{x}) \<br>\text { s.t. } &amp; \boldsymbol{A} \boldsymbol{x} \geqslant \boldsymbol{b}, \<br>&amp; \boldsymbol{E} \boldsymbol{x}&#x3D;\boldsymbol{e},<br>\end{array}<br>$$<br>其中$$f(\boldsymbol{x})$$是可微函数 ,A 为 m × n 矩阵 ，E 为 l × n 矩阵。梯度投影法的基本思想仍然是从可行点出发 ，沿可行方向进行搜索 ．当迭代出发点在可行域内部时 ，沿负梯度方向搜索 ．当迭代出发点在某些约束的边界上时 ，将该点处的负梯度投影到 M 的零空间 ，M 是以起作用约束或部分起作用约束的梯度为行构造成的矩阵 。</p>
+<p>​		现在抛开梯度投影法是如何投影这件事，了解一下什么叫做有约束条件下的可行方向，给出定理即， <strong>d</strong> 为$$\hat{\boldsymbol{x}}$$</p>
+<p>处的可行方向是如下定义的，首先假设$$\hat{\boldsymbol{x}}$$是上述优化问题的可行解，那么对于不等式约束有$$<br>\boldsymbol{A}_1 \hat{\boldsymbol{x}}&#x3D;\boldsymbol{b}_1, \boldsymbol{A}_2 \hat{\boldsymbol{x}}&gt;\boldsymbol{b}_2<br>$$，其中A &#x3D; [$$A_1$$;$$A_2$$],b&#x3D;[$$b_1$$;$$b_2$$],非零向量d为$$\hat{\boldsymbol{x}}$$处的可行方向的充要条件是$$<br>A_1 d \geqslant \mathbf{0}, \boldsymbol{E d}&#x3D;\mathbf{0}<br>$$。</p>
+<p>​		现在假设我们有一个可行方向，那应该按这个方向移动多少步呢？假设$$\boldsymbol{x}^{(k)}$$位置，$$\boldsymbol{x}^{(k+1)}$$是接下来通过可行方向移动$$\lambda$$长距离得到的点，其中$$\lambda$$是解下面优化便可以得到：<br>$$<br>\begin{array}{ll}<br>\min &amp; f\left(\boldsymbol{x}^{(k)}+\lambda \boldsymbol{d}^{(k)}\right) \<br>\text { s.t. } &amp; 0 \leqslant \lambda \leqslant \lambda_{\max },<br>\end{array}<br>$$<br>​		其中，$$\lambda _ {max}$$是由下式得到的:<br>$$<br>\lambda _{\max}&#x3D;\begin{cases}<br>    \min \left{ \frac{\hat{b}_i}{\hat{d}_i}\mid \hat{d}_i&lt;0 \right} ,&amp;		\boldsymbol{\hat{d}}\ngeq 0,\<br>    \infty ,&amp;		\boldsymbol{\hat{d}}\ge 0\<br>\end{cases}<br>$$<br>​		重新回到梯度投影法，首先是梯度投影法是如何修改负梯度方向为带约束对应下的可行方向，设x是上面优化问题的可行解，在点x处，有$$\boldsymbol{A}_1 \hat{\boldsymbol{x}}&#x3D;\boldsymbol{b}_1, \boldsymbol{A}_2 \hat{\boldsymbol{x}}&gt;\boldsymbol{b}_2$$,其中$$A &#x3D; [$$A_1$$;$$A_2$$],b&#x3D;[$$b_1$$;$$b_2],这时候把令不等式约束为等号的条件即$$A_1$$拿出来，构造新的矩阵M&#x3D;[$$A_1$$;E],构造投影矩阵$$\boldsymbol{P}&#x3D;\boldsymbol{I}-\boldsymbol{M}^{\text{T}}\left( \boldsymbol{MM}^{\text{T}} \right) ^{-1}\boldsymbol{M,P}\Delta f\left( \boldsymbol{x} \right) \ne 0$$</p>
+<p>令$$\boldsymbol{d}&#x3D;-\boldsymbol{P} \Delta f(\boldsymbol{x})$$,则d是下降可行方向！那么知道梯度投影法是如何得到下降可行方向，那么是如何用的呢？梯度下降法计算步骤如下:</p>
+<p>1.给定初始可行点$$x^{(1)}$$,置k&#x3D;1。</p>
+<p>2.在点$$x^{(k)}$$处，将A和b分解成：<br>$$<br>\begin{equation}<br>\left[\begin{array}{l}<br>\boldsymbol{A}_1 \<br>\boldsymbol{A}_2<br>\end{array}\right],\left[\begin{array}{l}<br>\boldsymbol{b}_1 \<br>\boldsymbol{b}_2<br>\end{array}\right],<br>\end{equation}<br>$$<br>使得$$\boldsymbol{A}_1 \boldsymbol{x}^{(k)}&#x3D;\boldsymbol{b}_1, \boldsymbol{A}_2 \boldsymbol{x}^{(k)}&gt;\boldsymbol{b}_2$$</p>
+<p>3.令:<br>$$<br>\begin{equation}<br>\boldsymbol{M}&#x3D;\left[\begin{array}{c}<br>\boldsymbol{A}_1 \<br>\boldsymbol{E}<br>\end{array}\right]<br>\end{equation}<br>$$<br>如果M是空的，则令 P&#x3D;I（单位矩阵），当P是单位矩阵的时候就是相当于梯度下降，否则令$$\boldsymbol{P}&#x3D;\boldsymbol{I}-\boldsymbol{M}^{\text{T}}\left( \boldsymbol{MM}^{\text{T}} \right) ^{-1}\boldsymbol{M,}$$</p>
+<p>4.令$$\boldsymbol{d}^{(k)}&#x3D;-\boldsymbol{P} \Delta f\left(\boldsymbol{x}^{(k)}\right)$$, 若$$\boldsymbol{d}^{(k)} \neq \mathbf{0}$$,则转步骤6；若$$\boldsymbol{d}^{(k)}&#x3D;\mathbf{0}$$，则进行步骤5</p>
+<p>5.若M是空的，则停止计算，得到$$\boldsymbol{x}^{(k)}$$;否则，令<br>$$<br>\begin{equation}<br>\boldsymbol{W}&#x3D;\left(\boldsymbol{M} \boldsymbol{M}^{\mathrm{T}}\right)^{-1} \boldsymbol{M} \Delta f\left(\boldsymbol{x}^{(k)}\right)&#x3D;\left[\begin{array}{l}<br>\boldsymbol{u} \<br>\boldsymbol{v}<br>\end{array}\right]<br>\end{equation}<br>$$<br>如果$$u \geqslant 0$$,则停止计算，$$x^{(k)}$$为K-T点，如果 u 包含负分量 ，则选择一个负分量 ，比如$$u_j$$,修正$$A_1$$,去掉$$A_1$$中对应$$u_j$$的行,返回步骤3</p>
+<p>6.解下列问题，求步长$$\lambda_k$$:<br>$$<br>\begin{array}{ll}<br>\min &amp; f\left(\boldsymbol{x}^{(k)}+\lambda \boldsymbol{d}^{(k)}\right) \<br>\text { s.t. } &amp; 0 \leqslant \lambda \leqslant \lambda_{\max },<br>\end{array}<br>$$<br>$$\lambda_{\max }$$算完，得到解$$\lambda_k$$,令<br>$$<br>\begin{equation}<br>\boldsymbol{x}^{(k+1)}&#x3D;\boldsymbol{x}^{(k)}+\lambda_z \boldsymbol{d}^{(k)}<br>\end{equation}<br>$$<br>接着k&#x3D;k+1,返回步骤2。</p>
+<h2 id="二、代码简单实现"><a href="#二、代码简单实现" class="headerlink" title="二、代码简单实现"></a>二、代码简单实现</h2><p>使用matlab实现精度参数ε对优化结果的影响初始点位置对优化结果的影响陷入局部最优解；</p>
+<p>约束条件为：<br>$$<br>\begin{equation}<br>A&#x3D;\left(\begin{array}{cc}<br>-1 &amp; -1 \<br>-1 &amp; -5 \<br>1 &amp; 0 \<br>0 &amp; 1<br>\end{array}\right), B&#x3D;\left(\begin{array}{c}<br>-2 \<br>-5 \<br>0 \<br>0<br>\end{array}\right)<br>\end{equation}<br>$$<br><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629165937006.png" alt="image-20230629165937006"></p>
+<p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629165949456.png" alt="image-20230629165949456"></p>
+<h2 id="三、代码结果"><a href="#三、代码结果" class="headerlink" title="三、代码结果"></a>三、代码结果</h2><h3 id="1-初始点的影响"><a href="#1-初始点的影响" class="headerlink" title="1.初始点的影响"></a>1.初始点的影响</h3><p>目标函数 $$f(x)&#x3D;\left(x_1^2+x_2-11\right)^2+\left(x_1+x_2^2-7\right)^2$$,初始点(0.5, 0.8),讨论参数$$\mathcal{E}$$越大，搜索的速度越快，迭代次数越少；越小，搜索的粒度越细，越可能找到最优解。参数$$\mathcal{E}$$&#x3D;1e−6。</p>
+<p>初始点的位置选取是获得最优解的关键影响最优解的值和收敛速度。</p>
+<p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629170654684.png" alt="image-20230629170654684"></p>
+<p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629170820125.png" alt="image-20230629170820125"></p>
+<h3 id="2-陷入局部优化"><a href="#2-陷入局部优化" class="headerlink" title="2.陷入局部优化"></a>2.陷入局部优化</h3><p>目标函数$$f(x)&#x3D;2 x_1^2-1.05 x_1^4+\frac{1}{6} x_1^6+x_1 x_2+x_2^4$$,$$\varepsilon&#x3D;1 e-6$$,初始点的位置选取是获得最优解的关键,陷入局部最优解;</p>
+<p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629171152819.png" alt="image-20230629171152819"></p>
+<p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629171228001.png" alt="image-20230629171228001"></p>
+<h3 id="3-初始点的位置影响优化结果"><a href="#3-初始点的位置影响优化结果" class="headerlink" title="3.初始点的位置影响优化结果"></a>3.初始点的位置影响优化结果</h3><p>目标函数$$f(x)&#x3D;-20 e^{-0.2 \sqrt{0.5\left(x_1^2+x_2^2\right)}}-e^{0.5\left(\cos \left(2 \pi x_2\right)\right)}+20+e$$,,$$\varepsilon&#x3D;1 e-6$$,</p>
+<p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629171417845.png" alt="image-20230629171417845"></p>
+<p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629171453237.png" alt="image-20230629171453237"></p>
+<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><p>优点：直接沿负梯度下降的方式可能导致非可行点，保持迭代点的可行性获得最优解，可用于凸优化、非凸优化问题，对约束条件没有太多限制</p>
+<p>缺点：基于梯度，无法解决非光滑问题，算法结果与运行速度受初始点位置影响较大，仍然可能陷入局部最优解，无法避免发生振荡，无法解决高度非凸优化问题</p>
+
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2023-06-29</span>
+            
+            
+             
+        
+        </i>
+    </div>
+    
+        
+
+     
+</div>
+
+
+
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+             
+
+            
+                
+
+            
+        </span>
+    
+</div>
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>花有重开日，人无再少年！</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+        
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/a11y-dark.min.css">
+
+        
+<script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/highlight.min.js"></script>
+
+        
+<script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/highlightjs-line-numbers.js"></script>
+
+    
+
+
+<script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+</script>
+                </div>
+            
+    </body>
+</html>
