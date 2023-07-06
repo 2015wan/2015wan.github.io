@@ -1,115 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>三维重建</title>
-      <link href="/2023/07/05/%E4%B8%89%E7%BB%B4%E9%87%8D%E5%BB%BA/"/>
-      <url>/2023/07/05/%E4%B8%89%E7%BB%B4%E9%87%8D%E5%BB%BA/</url>
-      
-        <content type="html"><![CDATA[<h5 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h5><h6 id="多视图三维重建的传统流程"><a href="#多视图三维重建的传统流程" class="headerlink" title="多视图三维重建的传统流程"></a>多视图三维重建的传统流程</h6><ul><li>多视图三维重建的传统流程：</li><li>图像特征匹配，SfM求解相机位姿，MVS稠密重建相机位姿（Camera Pose）是指相机在三维空间中的位置和朝向,旋转矩阵和一个平移向量来描述相机位姿为了实现MVS稠密重建，需要进行以下步骤：</li></ul><ol><li>相机位姿估计：利用SfM技术估计每个视角的相机位姿。</li><li>立体匹配：对于每个像素点，利用多个视角的图像进行立体匹配，估计该像素点在三维空间中的位置。</li><li>三维重建：将所有像素点的三维位置整合起来，重建出整个物体的三维几何形状。</li></ol><ul><li>缺点：重建流程<a href="https://www.zhihu.com/search?q=%E9%B2%81%E6%A3%92%E6%80%A7&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:2648027035%7D">鲁棒性</a>差，不可导：无反馈机制</li></ul><h6 id="基于表示学习的图像特征匹配："><a href="#基于表示学习的图像特征匹配：" class="headerlink" title="基于表示学习的图像特征匹配："></a>基于表示学习的图像特征匹配：</h6><ul><li>​SuperPoint，SuperGlue、ORB</li></ul><p>SuperPoint具有更快的速度和更好的鲁棒性。SuperPoint使用卷积神经网络来学习特征表示，其中包括特征点的位置、尺度和方向，以及对应的描述子。</p><p>SuperGlue是一种基于深度学习的图像特征匹配算法，它可以通过对两个图像中提取的特征进行匹配，找到它们之间的对应关系和相对位姿。</p><p>LoFTR：Detector-free Local Feature Matching with Transformers是一种detector-free的特征匹配算法，它不需要使用传统的特征检测器来提取局部特征点</p><h6 id="基于神经表示学习的三维场景重建"><a href="#基于神经表示学习的三维场景重建" class="headerlink" title="基于神经表示学习的三维场景重建"></a>基于神经表示学习的三维场景重建</h6><ul><li>重建流程：1. 比较渲染图像雨输入图像，计算误差。 2.通过梯度回传修改网络参数，优化隐式神经表示待解决问题：</li><li>隐式神经表示重建<strong>（采样）</strong>效率低下，难以扩展到大规模场景室内弱纹理区域缺乏足够约束，隐式神经表示重建成为病态话问题</li></ul><h6 id="杂"><a href="#杂" class="headerlink" title="杂"></a>杂</h6><p>Neural Reconsturction in the Wild</p><ul><li>核心思想：表面引导的层次化采样，基于互联网图像进行场景重建核心思想：平面先验</li></ul><p>基于神经表示学习的动态人体重建<br>    动态人体重建传统方案通过稠密相机阵列逐帧重建Neural Body<br>挑战：如何减少输入视点的数量<br>从稀疏的输入视图重建神经表示是病态问题</p><h6 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h6><p>核心思想：整合时序观测，假设不同时刻的观测来自于同一组隐编码</p><p>挑战：如何建模多人场景核心</p><p>思想：同步重建与分割</p><p>二维图像特征表示学习   -〉更鲁邦的图像匹配和位姿估计</p><p>三维几何&#x2F;外观表示学习 -〉更鲁棒更高质量的三维重建</p><p>NGP</p><h5 id="Nerf"><a href="#Nerf" class="headerlink" title="Nerf"></a>Nerf</h5><p><a href="https://yconquesty.github.io/blog/ml/nerf/">https://yconquesty.github.io/blog/ml/nerf/</a></p><p><a href="https://zhuanlan.zhihu.com/p/631284285">https://zhuanlan.zhihu.com/p/631284285</a></p><p>NeRF,neural radiance field，翻译为神经辐射场</p><p><img src="https://pic2.zhimg.com/v2-6bf894d1fd88981551751cf4337b931d_b.jpg"></p><p>Instant-NGP的pipeline</p><p><img src="https://pic1.zhimg.com/v2-4e7016eb074496cf0235a7ff685d8c24_r.jpg"></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> cv </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/2023/06/29/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/"/>
-      <url>/2023/06/29/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/</url>
-      
-        <content type="html"><![CDATA[<h1 id="梯度投影法原理"><a href="#梯度投影法原理" class="headerlink" title="梯度投影法原理"></a><strong>梯度投影法原理</strong></h1><h2 id="一、解决问题"><a href="#一、解决问题" class="headerlink" title="一、解决问题"></a>一、解决问题</h2><p>​在无约束优化问题中，我们一般使用梯度下降法便可以找到凸优化问题的最优解，但是如果有约束呢，这时候梯度投影法给出自己的做法，便是通过约束条件来重新计算可行方向，以及在这个可行方向下降多少步可以。</p><p>​考虑问题：<br>$$<br>\begin{array}{ll}<br>\min &amp; f(\boldsymbol{x}) \<br>\text { s.t. } &amp; \boldsymbol{A} \boldsymbol{x} \geqslant \boldsymbol{b}, \<br>&amp; \boldsymbol{E} \boldsymbol{x}&#x3D;\boldsymbol{e},<br>\end{array}<br>$$<br>其中$$f(\boldsymbol{x})$$是可微函数 ,A 为 m × n 矩阵 ，E 为 l × n 矩阵。梯度投影法的基本思想仍然是从可行点出发 ，沿可行方向进行搜索 ．当迭代出发点在可行域内部时 ，沿负梯度方向搜索 ．当迭代出发点在某些约束的边界上时 ，将该点处的负梯度投影到 M 的零空间 ，M 是以起作用约束或部分起作用约束的梯度为行构造成的矩阵 。</p><p>​现在抛开梯度投影法是如何投影这件事，了解一下什么叫做有约束条件下的可行方向，给出定理即， <strong>d</strong> 为$$\hat{\boldsymbol{x}}$$</p><p>处的可行方向是如下定义的，首先假设$$\hat{\boldsymbol{x}}$$是上述优化问题的可行解，那么对于不等式约束有$$<br>\boldsymbol{A}_1 \hat{\boldsymbol{x}}&#x3D;\boldsymbol{b}_1, \boldsymbol{A}_2 \hat{\boldsymbol{x}}&gt;\boldsymbol{b}_2<br>$$，其中A &#x3D; [$$A_1$$;$$A_2$$],b&#x3D;[$$b_1$$;$$b_2$$],非零向量d为$$\hat{\boldsymbol{x}}$$处的可行方向的充要条件是$$<br>A_1 d \geqslant \mathbf{0}, \boldsymbol{E d}&#x3D;\mathbf{0}<br>$$。</p><p>​现在假设我们有一个可行方向，那应该按这个方向移动多少步呢？假设$$\boldsymbol{x}^{(k)}$$位置，$$\boldsymbol{x}^{(k+1)}$$是接下来通过可行方向移动$$\lambda$$长距离得到的点，其中$$\lambda$$是解下面优化便可以得到：<br>$$<br>\begin{array}{ll}<br>\min &amp; f\left(\boldsymbol{x}^{(k)}+\lambda \boldsymbol{d}^{(k)}\right) \<br>\text { s.t. } &amp; 0 \leqslant \lambda \leqslant \lambda_{\max },<br>\end{array}<br>$$<br>​其中，$$\lambda _ {max}$$是由下式得到的:<br>$$<br>\lambda _{\max}&#x3D;\begin{cases}<br>    \min \left{ \frac{\hat{b}_i}{\hat{d}_i}\mid \hat{d}_i&lt;0 \right} ,&amp;\boldsymbol{\hat{d}}\ngeq 0,\<br>    \infty ,&amp;\boldsymbol{\hat{d}}\ge 0\<br>\end{cases}<br>$$<br>​重新回到梯度投影法，首先是梯度投影法是如何修改负梯度方向为带约束对应下的可行方向，设x是上面优化问题的可行解，在点x处，有$$\boldsymbol{A}_1 \hat{\boldsymbol{x}}&#x3D;\boldsymbol{b}_1, \boldsymbol{A}_2 \hat{\boldsymbol{x}}&gt;\boldsymbol{b}_2$$,其中$$A &#x3D; [$$A_1$$;$$A_2$$],b&#x3D;[$$b_1$$;$$b_2],这时候把令不等式约束为等号的条件即$$A_1$$拿出来，构造新的矩阵M&#x3D;[$$A_1$$;E],构造投影矩阵$$\boldsymbol{P}&#x3D;\boldsymbol{I}-\boldsymbol{M}^{\text{T}}\left( \boldsymbol{MM}^{\text{T}} \right) ^{-1}\boldsymbol{M,P}\Delta f\left( \boldsymbol{x} \right) \ne 0$$</p><p>令$$\boldsymbol{d}&#x3D;-\boldsymbol{P} \Delta f(\boldsymbol{x})$$,则d是下降可行方向！那么知道梯度投影法是如何得到下降可行方向，那么是如何用的呢？梯度下降法计算步骤如下:</p><p>1.给定初始可行点$$x^{(1)}$$,置k&#x3D;1。</p><p>2.在点$$x^{(k)}$$处，将A和b分解成：<br>$$<br>\begin{equation}<br>\left[\begin{array}{l}<br>\boldsymbol{A}_1 \<br>\boldsymbol{A}_2<br>\end{array}\right],\left[\begin{array}{l}<br>\boldsymbol{b}_1 \<br>\boldsymbol{b}_2<br>\end{array}\right],<br>\end{equation}<br>$$<br>使得$$\boldsymbol{A}_1 \boldsymbol{x}^{(k)}&#x3D;\boldsymbol{b}_1, \boldsymbol{A}_2 \boldsymbol{x}^{(k)}&gt;\boldsymbol{b}_2$$</p><p>3.令:<br>$$<br>\begin{equation}<br>\boldsymbol{M}&#x3D;\left[\begin{array}{c}<br>\boldsymbol{A}_1 \<br>\boldsymbol{E}<br>\end{array}\right]<br>\end{equation}<br>$$<br>如果M是空的，则令 P&#x3D;I（单位矩阵），当P是单位矩阵的时候就是相当于梯度下降，否则令$$\boldsymbol{P}&#x3D;\boldsymbol{I}-\boldsymbol{M}^{\text{T}}\left( \boldsymbol{MM}^{\text{T}} \right) ^{-1}\boldsymbol{M,}$$</p><p>4.令$$\boldsymbol{d}^{(k)}&#x3D;-\boldsymbol{P} \Delta f\left(\boldsymbol{x}^{(k)}\right)$$, 若$$\boldsymbol{d}^{(k)} \neq \mathbf{0}$$,则转步骤6；若$$\boldsymbol{d}^{(k)}&#x3D;\mathbf{0}$$，则进行步骤5</p><p>5.若M是空的，则停止计算，得到$$\boldsymbol{x}^{(k)}$$;否则，令<br>$$<br>\begin{equation}<br>\boldsymbol{W}&#x3D;\left(\boldsymbol{M} \boldsymbol{M}^{\mathrm{T}}\right)^{-1} \boldsymbol{M} \Delta f\left(\boldsymbol{x}^{(k)}\right)&#x3D;\left[\begin{array}{l}<br>\boldsymbol{u} \<br>\boldsymbol{v}<br>\end{array}\right]<br>\end{equation}<br>$$<br>如果$$u \geqslant 0$$,则停止计算，$$x^{(k)}$$为K-T点，如果 u 包含负分量 ，则选择一个负分量 ，比如$$u_j$$,修正$$A_1$$,去掉$$A_1$$中对应$$u_j$$的行,返回步骤3</p><p>6.解下列问题，求步长$$\lambda_k$$:<br>$$<br>\begin{array}{ll}<br>\min &amp; f\left(\boldsymbol{x}^{(k)}+\lambda \boldsymbol{d}^{(k)}\right) \<br>\text { s.t. } &amp; 0 \leqslant \lambda \leqslant \lambda_{\max },<br>\end{array}<br>$$<br>$$\lambda_{\max }$$算完，得到解$$\lambda_k$$,令<br>$$<br>\begin{equation}<br>\boldsymbol{x}^{(k+1)}&#x3D;\boldsymbol{x}^{(k)}+\lambda_z \boldsymbol{d}^{(k)}<br>\end{equation}<br>$$<br>接着k&#x3D;k+1,返回步骤2。</p><h2 id="二、代码简单实现"><a href="#二、代码简单实现" class="headerlink" title="二、代码简单实现"></a>二、代码简单实现</h2><p>使用matlab实现精度参数ε对优化结果的影响初始点位置对优化结果的影响陷入局部最优解；</p><p>约束条件为：<br>$$<br>\begin{equation}<br>A&#x3D;\left(\begin{array}{cc}<br>-1 &amp; -1 \<br>-1 &amp; -5 \<br>1 &amp; 0 \<br>0 &amp; 1<br>\end{array}\right), B&#x3D;\left(\begin{array}{c}<br>-2 \<br>-5 \<br>0 \<br>0<br>\end{array}\right)<br>\end{equation}<br>$$<br><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629165937006.png" alt="image-20230629165937006"></p><p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629165949456.png" alt="image-20230629165949456"></p><h2 id="三、代码结果"><a href="#三、代码结果" class="headerlink" title="三、代码结果"></a>三、代码结果</h2><h3 id="1-初始点的影响"><a href="#1-初始点的影响" class="headerlink" title="1.初始点的影响"></a>1.初始点的影响</h3><p>目标函数 $$f(x)&#x3D;\left(x_1^2+x_2-11\right)^2+\left(x_1+x_2^2-7\right)^2$$,初始点(0.5, 0.8),讨论参数$$\mathcal{E}$$越大，搜索的速度越快，迭代次数越少；越小，搜索的粒度越细，越可能找到最优解。参数$$\mathcal{E}$$&#x3D;1e−6。</p><p>初始点的位置选取是获得最优解的关键影响最优解的值和收敛速度。</p><p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629170654684.png" alt="image-20230629170654684"></p><p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629170820125.png" alt="image-20230629170820125"></p><h3 id="2-陷入局部优化"><a href="#2-陷入局部优化" class="headerlink" title="2.陷入局部优化"></a>2.陷入局部优化</h3><p>目标函数$$f(x)&#x3D;2 x_1^2-1.05 x_1^4+\frac{1}{6} x_1^6+x_1 x_2+x_2^4$$,$$\varepsilon&#x3D;1 e-6$$,初始点的位置选取是获得最优解的关键,陷入局部最优解;</p><p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629171152819.png" alt="image-20230629171152819"></p><p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629171228001.png" alt="image-20230629171228001"></p><h3 id="3-初始点的位置影响优化结果"><a href="#3-初始点的位置影响优化结果" class="headerlink" title="3.初始点的位置影响优化结果"></a>3.初始点的位置影响优化结果</h3><p>目标函数$$f(x)&#x3D;-20 e^{-0.2 \sqrt{0.5\left(x_1^2+x_2^2\right)}}-e^{0.5\left(\cos \left(2 \pi x_2\right)\right)}+20+e$$,,$$\varepsilon&#x3D;1 e-6$$,</p><p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629171417845.png" alt="image-20230629171417845"></p><p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629171453237.png" alt="image-20230629171453237"></p><h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><p>优点：直接沿负梯度下降的方式可能导致非可行点，保持迭代点的可行性获得最优解，可用于凸优化、非凸优化问题，对约束条件没有太多限制</p><p>缺点：基于梯度，无法解决非光滑问题，算法结果与运行速度受初始点位置影响较大，仍然可能陷入局部最优解，无法避免发生振荡，无法解决高度非凸优化问题</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>生成模型</title>
-      <link href="/2023/06/29/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/"/>
-      <url>/2023/06/29/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/</url>
-      
-        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="Oh, these decrypted content cannot be verified, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="3e7e5b6e5804182ddc358b214d605f943b9dd80e6cb234885544f01b245396e4">7feab2e74e7ac8c26f5b44aac0c3756726ff17e5f378d5a54c6adfbf5c70da15b58222ea465b9890607a6c959423b0818f265f6d30eaddc92f49fdfbd01806eaabdefe1ba5ddaf53fa278beee8539cd0293d8ceb205c25c87dbd235933282f6c3f60e83cb5fe12b369eb82e2120434b623961fcebc543ed62a044dcc6b0c8210f99ae6df792d1dadae4d8c5389bb7c204a128326c89b175a862741406815d766ca060ea076e55e37f4e2e926939cf90e0bb86c59874af34ea7f433cae0a8bac83b5fc5571e7af7b70c5ede7364d6ccefc5b864503f0a6743a7c29d3b3e2c64f1f8221a703ba9c2095978a85d0cc5833faf380dfb9b3e553d64436353248ed7292d006862148e6663565aff60c5fc1a962461a2efad9a5d1bc8910a61fb925314324f38714f393189c05f33243fd34b22a3a469c28b825f51411c58a16bf7cf8ff24275bcab64e1aa23e61a3c34ef2d5a3c8f3b327d65ba2b49aa30ff4b285851a60d40fc78c62720d2d908139d0c87760d145d904b31146cddfdde1824e3b8a8541a376326fa571b0f535f2ae3a13990ed71b7e0373d67fa87d4ca661af0278c646b1453ac2c680ad4d4a710bb395fe908170383a2690a5d9cb39cac014675a1cef3a963f9b4933eabd992c7764079bb17a1e26d322299543693994795886792a6b50853f03e5f2e43a2d9f3690453dc9511402f917427caa1e4dde9bb6921fe6f7db3866b608d16a5b5e1fe4a0cb8504d0e1c617d2c6ac88e46ff4ee2bb0fa596b90c994a4d7f1e95a6135354d3114e8d96f15ef3ab40ce7b437e8f7d33f176d271f35fac1d2ff6e618fa4224b27118429e243afb915f24611d953e07eeefe58889310c2a49872ba0918da2cbfd6517dbe3815cdb4b7c2f018c263a705e8458c894dd25401d695762d68754da793ba5aa096fda9f98776d748e4c6da79a1b409266b99fb3f1c8225744d5bed926d1140625828587c042cb47252a2957a6d880130f871f477ad77d38abdfa730b5215649bda14f63ecdf735bfb6f83bddef4e683075940c0f277562a246c957e1e5b2c3a664e955418aaac3e4874b19dca2ddb0f714e3d2219ccdefb4ce468bbb5a8c4190ae2b370ace69d727970a56288558f</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 生成模型 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>hw</title>
-      <link href="/2023/06/27/hw/"/>
-      <url>/2023/06/27/hw/</url>
-      
-        <content type="html"><![CDATA[<h6 id="杂"><a href="#杂" class="headerlink" title="杂"></a>杂</h6><pre><code>tree = struct(&#39;value&#39;, &#39;null&#39;, &#39;left&#39;, &#39;null&#39;, &#39;right&#39;, &#39;null&#39;);相当于字典值的索引是tree.value,用点的方式#length(attrib) attrib shape为150，5 返回150索引是 attrib(:,1) 圆括号，从1开始# bool数组对应的logical数组，可以用sum函数#</code></pre><h6 id="sortrows函数的使用："><a href="#sortrows函数的使用：" class="headerlink" title="sortrows函数的使用："></a>sortrows函数的使用：</h6><p>函数返回一个按照指定列排序后的矩阵或表格。如果两行在排序列中具有相同的值，则按照后续列进行排序。如果两行在所有列中都具有相同的值，则它们的顺序在结果中未定义。</p><p>例如，以下代码将一个3x3的矩阵按第二列进行排序：</p><p>A &#x3D; [4 3 9; 2 1 8; 7 6 5];<br>B &#x3D; sortrows(A, 2);</p><p>B &#x3D;<br>2 1 8<br>7 6 5<br>4 3 9</p><h6 id="cell-array"><a href="#cell-array" class="headerlink" title="cell array"></a>cell array</h6><pre><code>attri&#123;1,1&#125;=sortrows(attrib,1);attri&#123;1,2&#125;=sortrows(attrib,2);attri&#123;1,3&#125;=sortrows(attrib,3);attri&#123;1,4&#125;=sortrows(attrib,4);</code></pre><p>在Matlab中，<code>attri</code>的数据类型取决于 <code>sortrows</code> 函数的输出。根据代码中的赋值语句，我们可以猜测 <code>attri</code> 是一个单元格数组（cell array）。</p><p>单元格数组是Matlab中的一种数据类型，可以存储不同类型的数据，包括矩阵、向量、字符数组等等。它们可以通过花括号 <code>&#123;&#125;</code> 引用其中的元素，例如 <code>attri&#123;1,1&#125;</code> 就是单元格数组 <code>attri</code> 中第1行第1列元素的值。</p><p>在这个赋值语句中，<code>sortrows</code> 函数的输出是一个按第1列排序后的矩阵，然后将其赋值给 <code>attri&#123;1,1&#125;</code> 这个单元格数组的第1行第1列元素。因此，<code>attri</code> 的类型是单元格数组，而 <code>attri&#123;1,1&#125;</code> 的类型是矩阵。</p><h5 id="复杂语句"><a href="#复杂语句" class="headerlink" title="复杂语句"></a>复杂语句</h5><p>1:3 &#x3D; 1 2 3 开始与结束都包括</p><h6 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h6><pre><code class="matlab">for i = start:end    ~end</code></pre><h6 id="逻辑判断符"><a href="#逻辑判断符" class="headerlink" title="逻辑判断符"></a>逻辑判断符</h6><p>不等于~&#x3D; </p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 杂 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>ovd</title>
-      <link href="/2023/06/27/ovd/"/>
-      <url>/2023/06/27/ovd/</url>
-      
-        <content type="html"><![CDATA[<h6 id="COCO数据集"><a href="#COCO数据集" class="headerlink" title="COCO数据集"></a>COCO数据集</h6><p>Base类48个，Novel17个，一共65个。</p><h6 id="多模态相关工作"><a href="#多模态相关工作" class="headerlink" title="多模态相关工作"></a>多模态相关工作</h6><p>CLIP、ALIGN、R2D2</p><h6 id="OVR-CNN"><a href="#OVR-CNN" class="headerlink" title="OVR-CNN"></a>OVR-CNN</h6><p>无类别区域检测器与无标注数据的跨模态模型</p><p><img src="/../images/ovd/image-20230627105546152.png" alt="image-20230627105546152"></p><p><img src="/../images/ovd/image-20230627110708030.png" alt="image-20230627110708030"></p><p>待看后两篇 <a href="https://mp.weixin.qq.com/s/f7hlh32TGPwktRhc64yejw">https://mp.weixin.qq.com/s/f7hlh32TGPwktRhc64yejw</a> </p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> detect </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>搭建博客记录</title>
-      <link href="/2023/06/26/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/"/>
-      <url>/2023/06/26/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/</url>
-      
-        <content type="html"><![CDATA[<ol><li><a href="https://blog.csdn.net/yaorongke/article/details/119089190">https://blog.csdn.net/yaorongke/article/details/119089190</a> 龙哥的链接</li><li>hexo主题相关的<a href="https://hexo.io/themes/">https://hexo.io/themes/</a></li><li>我博客使用的主题<a href="https://github.com/HiNinoJay/hexo-theme-A4">https://github.com/HiNinoJay/hexo-theme-A4</a></li><li>typora添加图片<a href="https://blog.51cto.com/u_15854687/5811585">https://blog.51cto.com/u_15854687/5811585</a><br><a href="https://blog.csdn.net/Qxiaofei_/article/details/124629908">https://blog.csdn.net/Qxiaofei_/article/details/124629908</a></li><li>typora安装url</li></ol>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 杂 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-  
-  
+<search>
+  <entry>
+    <title>搭建博客记录</title>
+    <url>/2023/06/26/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<ol>
+<li><a href="https://blog.csdn.net/yaorongke/article/details/119089190">https://blog.csdn.net/yaorongke/article/details/119089190</a> 龙哥的链接</li>
+<li>hexo主题相关的<a href="https://hexo.io/themes/">https://hexo.io/themes/</a></li>
+<li>我博客使用的主题<a href="https://github.com/HiNinoJay/hexo-theme-A4">https://github.com/HiNinoJay/hexo-theme-A4</a></li>
+<li>typora添加图片<a href="https://blog.51cto.com/u_15854687/5811585">https://blog.51cto.com/u_15854687/5811585</a><br><a href="https://blog.csdn.net/Qxiaofei_/article/details/124629908">https://blog.csdn.net/Qxiaofei_/article/details/124629908</a></li>
+<li>typora安装url</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>杂</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ovd</title>
+    <url>/2023/06/27/ovd/</url>
+    <content><![CDATA[<h6 id="COCO数据集"><a href="#COCO数据集" class="headerlink" title="COCO数据集"></a>COCO数据集</h6><p>Base类48个，Novel17个，一共65个。</p>
+<h6 id="多模态相关工作"><a href="#多模态相关工作" class="headerlink" title="多模态相关工作"></a>多模态相关工作</h6><p>CLIP、ALIGN、R2D2</p>
+<h6 id="OVR-CNN"><a href="#OVR-CNN" class="headerlink" title="OVR-CNN"></a>OVR-CNN</h6><p>无类别区域检测器与无标注数据的跨模态模型</p>
+<p><img src="/../images/ovd/image-20230627105546152.png" alt="image-20230627105546152"></p>
+<p><img src="/../images/ovd/image-20230627110708030.png" alt="image-20230627110708030"></p>
+<p>待看后两篇 <a href="https://mp.weixin.qq.com/s/f7hlh32TGPwktRhc64yejw">https://mp.weixin.qq.com/s/f7hlh32TGPwktRhc64yejw</a> </p>
+]]></content>
+      <tags>
+        <tag>detect</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hw</title>
+    <url>/2023/06/27/hw/</url>
+    <content><![CDATA[<h6 id="杂"><a href="#杂" class="headerlink" title="杂"></a>杂</h6><pre><code>
+tree = struct(&#39;value&#39;, &#39;null&#39;, &#39;left&#39;, &#39;null&#39;, &#39;right&#39;, &#39;null&#39;);
+相当于字典
+值的索引是tree.value,用点的方式
+#
+length(attrib) attrib shape为150，5 返回150
+索引是 attrib(:,1) 圆括号，从1开始
+# 
+bool数组对应的logical数组，可以用sum函数
+#
+</code></pre>
+<h6 id="sortrows函数的使用："><a href="#sortrows函数的使用：" class="headerlink" title="sortrows函数的使用："></a>sortrows函数的使用：</h6><p>函数返回一个按照指定列排序后的矩阵或表格。如果两行在排序列中具有相同的值，则按照后续列进行排序。如果两行在所有列中都具有相同的值，则它们的顺序在结果中未定义。</p>
+<p>例如，以下代码将一个3x3的矩阵按第二列进行排序：</p>
+<p>A &#x3D; [4 3 9; 2 1 8; 7 6 5];<br>B &#x3D; sortrows(A, 2);</p>
+<p>B &#x3D;<br>2 1 8<br>7 6 5<br>4 3 9</p>
+<h6 id="cell-array"><a href="#cell-array" class="headerlink" title="cell array"></a>cell array</h6><pre><code>attri&#123;1,1&#125;=sortrows(attrib,1);
+attri&#123;1,2&#125;=sortrows(attrib,2);
+attri&#123;1,3&#125;=sortrows(attrib,3);
+attri&#123;1,4&#125;=sortrows(attrib,4);
+</code></pre>
+<p>在Matlab中，<code>attri</code>的数据类型取决于 <code>sortrows</code> 函数的输出。根据代码中的赋值语句，我们可以猜测 <code>attri</code> 是一个单元格数组（cell array）。</p>
+<p>单元格数组是Matlab中的一种数据类型，可以存储不同类型的数据，包括矩阵、向量、字符数组等等。它们可以通过花括号 <code>&#123;&#125;</code> 引用其中的元素，例如 <code>attri&#123;1,1&#125;</code> 就是单元格数组 <code>attri</code> 中第1行第1列元素的值。</p>
+<p>在这个赋值语句中，<code>sortrows</code> 函数的输出是一个按第1列排序后的矩阵，然后将其赋值给 <code>attri&#123;1,1&#125;</code> 这个单元格数组的第1行第1列元素。因此，<code>attri</code> 的类型是单元格数组，而 <code>attri&#123;1,1&#125;</code> 的类型是矩阵。</p>
+<h5 id="复杂语句"><a href="#复杂语句" class="headerlink" title="复杂语句"></a>复杂语句</h5><p>1:3 &#x3D; 1 2 3 开始与结束都包括</p>
+<h6 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h6><pre><code class="matlab">for i = start:end
+    ~
+end
+</code></pre>
+<h6 id="逻辑判断符"><a href="#逻辑判断符" class="headerlink" title="逻辑判断符"></a>逻辑判断符</h6><p>不等于~&#x3D; </p>
+]]></content>
+      <tags>
+        <tag>杂</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>生成模型</title>
+    <url>/2023/06/29/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="Oh, these decrypted content cannot be verified, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="3e7e5b6e5804182ddc358b214d605f943b9dd80e6cb234885544f01b245396e4">7feab2e74e7ac8c26f5b44aac0c3756726ff17e5f378d5a54c6adfbf5c70da15b58222ea465b9890607a6c959423b0818f265f6d30eaddc92f49fdfbd01806eaabdefe1ba5ddaf53fa278beee8539cd0293d8ceb205c25c87dbd235933282f6c3f60e83cb5fe12b369eb82e2120434b623961fcebc543ed62a044dcc6b0c8210f99ae6df792d1dadae4d8c5389bb7c204a128326c89b175a862741406815d766ca060ea076e55e37f4e2e926939cf90e0bb86c59874af34ea7f433cae0a8bac83b5fc5571e7af7b70c5ede7364d6ccefc5b864503f0a6743a7c29d3b3e2c64f1f8221a703ba9c2095978a85d0cc5833faf380dfb9b3e553d64436353248ed7292d006862148e6663565aff60c5fc1a962461a2efad9a5d1bc8910a61fb925314324f38714f393189c05f33243fd34b22a3a469c28b825f51411c58a16bf7cf8ff24275bcab64e1aa23e61a3c34ef2d5a3c8f3b327d65ba2b49aa30ff4b285851a60d40fc78c62720d2d908139d0c87760d145d904b31146cddfdde1824e3b8a8541a376326fa571b0f535f2ae3a13990ed71b7e0373d67fa87d4ca661af0278c646b1453ac2c680ad4d4a710bb395fe908170383a2690a5d9cb39cac014675a1cef3a963f9b4933eabd992c7764079bb17a1e26d322299543693994795886792a6b50853f03e5f2e43a2d9f3690453dc9511402f917427caa1e4dde9bb6921fe6f7db3866b608d16a5b5e1fe4a0cb8504d0e1c617d2c6ac88e46ff4ee2bb0fa596b90c994a4d7f1e95a6135354d3114e8d96f15ef3ab40ce7b437e8f7d33f176d271f35fac1d2ff6e618fa4224b27118429e243afb915f24611d953e07eeefe58889310c2a49872ba0918da2cbfd6517dbe3815cdb4b7c2f018c263a705e8458c894dd25401d695762d68754da793ba5aa096fda9f98776d748e4c6da79a1b409266b99fb3f1c8225744d5bed926d1140625828587c042cb47252a2957a6d880130f871f477ad77d38abdfa730b5215649bda14f63ecdf735bfb6f83bddef4e683075940c0f277562a246c957e1e5b2c3a664e955418aaac3e4874b19dca2ddb0f714e3d2219ccdefb4ce468bbb5a8c4190ae2b370ace69d727970a56288558f</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <tags>
+        <tag>生成模型</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2023/06/29/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="梯度投影法原理"><a href="#梯度投影法原理" class="headerlink" title="梯度投影法原理"></a><strong>梯度投影法原理</strong></h1><h2 id="一、解决问题"><a href="#一、解决问题" class="headerlink" title="一、解决问题"></a>一、解决问题</h2><p>​		在无约束优化问题中，我们一般使用梯度下降法便可以找到凸优化问题的最优解，但是如果有约束呢，这时候梯度投影法给出自己的做法，便是通过约束条件来重新计算可行方向，以及在这个可行方向下降多少步可以。</p>
+<p>​		考虑问题：<br>$$<br>\begin{array}{ll}<br>\min &amp; f(\boldsymbol{x}) \<br>\text { s.t. } &amp; \boldsymbol{A} \boldsymbol{x} \geqslant \boldsymbol{b}, \<br>&amp; \boldsymbol{E} \boldsymbol{x}&#x3D;\boldsymbol{e},<br>\end{array}<br>$$<br>其中$$f(\boldsymbol{x})$$是可微函数 ,A 为 m × n 矩阵 ，E 为 l × n 矩阵。梯度投影法的基本思想仍然是从可行点出发 ，沿可行方向进行搜索 ．当迭代出发点在可行域内部时 ，沿负梯度方向搜索 ．当迭代出发点在某些约束的边界上时 ，将该点处的负梯度投影到 M 的零空间 ，M 是以起作用约束或部分起作用约束的梯度为行构造成的矩阵 。</p>
+<p>​		现在抛开梯度投影法是如何投影这件事，了解一下什么叫做有约束条件下的可行方向，给出定理即， <strong>d</strong> 为$$\hat{\boldsymbol{x}}$$</p>
+<p>处的可行方向是如下定义的，首先假设$$\hat{\boldsymbol{x}}$$是上述优化问题的可行解，那么对于不等式约束有$$<br>\boldsymbol{A}_1 \hat{\boldsymbol{x}}&#x3D;\boldsymbol{b}_1, \boldsymbol{A}_2 \hat{\boldsymbol{x}}&gt;\boldsymbol{b}_2<br>$$，其中A &#x3D; [$$A_1$$;$$A_2$$],b&#x3D;[$$b_1$$;$$b_2$$],非零向量d为$$\hat{\boldsymbol{x}}$$处的可行方向的充要条件是$$<br>A_1 d \geqslant \mathbf{0}, \boldsymbol{E d}&#x3D;\mathbf{0}<br>$$。</p>
+<p>​		现在假设我们有一个可行方向，那应该按这个方向移动多少步呢？假设$$\boldsymbol{x}^{(k)}$$位置，$$\boldsymbol{x}^{(k+1)}$$是接下来通过可行方向移动$$\lambda$$长距离得到的点，其中$$\lambda$$是解下面优化便可以得到：<br>$$<br>\begin{array}{ll}<br>\min &amp; f\left(\boldsymbol{x}^{(k)}+\lambda \boldsymbol{d}^{(k)}\right) \<br>\text { s.t. } &amp; 0 \leqslant \lambda \leqslant \lambda_{\max },<br>\end{array}<br>$$<br>​		其中，$$\lambda _ {max}$$是由下式得到的:<br>$$<br>\lambda _{\max}&#x3D;\begin{cases}<br>    \min \left{ \frac{\hat{b}_i}{\hat{d}_i}\mid \hat{d}_i&lt;0 \right} ,&amp;		\boldsymbol{\hat{d}}\ngeq 0,\<br>    \infty ,&amp;		\boldsymbol{\hat{d}}\ge 0\<br>\end{cases}<br>$$<br>​		重新回到梯度投影法，首先是梯度投影法是如何修改负梯度方向为带约束对应下的可行方向，设x是上面优化问题的可行解，在点x处，有$$\boldsymbol{A}_1 \hat{\boldsymbol{x}}&#x3D;\boldsymbol{b}_1, \boldsymbol{A}_2 \hat{\boldsymbol{x}}&gt;\boldsymbol{b}_2$$,其中$$A &#x3D; [$$A_1$$;$$A_2$$],b&#x3D;[$$b_1$$;$$b_2],这时候把令不等式约束为等号的条件即$$A_1$$拿出来，构造新的矩阵M&#x3D;[$$A_1$$;E],构造投影矩阵$$\boldsymbol{P}&#x3D;\boldsymbol{I}-\boldsymbol{M}^{\text{T}}\left( \boldsymbol{MM}^{\text{T}} \right) ^{-1}\boldsymbol{M,P}\Delta f\left( \boldsymbol{x} \right) \ne 0$$</p>
+<p>令$$\boldsymbol{d}&#x3D;-\boldsymbol{P} \Delta f(\boldsymbol{x})$$,则d是下降可行方向！那么知道梯度投影法是如何得到下降可行方向，那么是如何用的呢？梯度下降法计算步骤如下:</p>
+<p>1.给定初始可行点$$x^{(1)}$$,置k&#x3D;1。</p>
+<p>2.在点$$x^{(k)}$$处，将A和b分解成：<br>$$<br>\begin{equation}<br>\left[\begin{array}{l}<br>\boldsymbol{A}_1 \<br>\boldsymbol{A}_2<br>\end{array}\right],\left[\begin{array}{l}<br>\boldsymbol{b}_1 \<br>\boldsymbol{b}_2<br>\end{array}\right],<br>\end{equation}<br>$$<br>使得$$\boldsymbol{A}_1 \boldsymbol{x}^{(k)}&#x3D;\boldsymbol{b}_1, \boldsymbol{A}_2 \boldsymbol{x}^{(k)}&gt;\boldsymbol{b}_2$$</p>
+<p>3.令:<br>$$<br>\begin{equation}<br>\boldsymbol{M}&#x3D;\left[\begin{array}{c}<br>\boldsymbol{A}_1 \<br>\boldsymbol{E}<br>\end{array}\right]<br>\end{equation}<br>$$<br>如果M是空的，则令 P&#x3D;I（单位矩阵），当P是单位矩阵的时候就是相当于梯度下降，否则令$$\boldsymbol{P}&#x3D;\boldsymbol{I}-\boldsymbol{M}^{\text{T}}\left( \boldsymbol{MM}^{\text{T}} \right) ^{-1}\boldsymbol{M,}$$</p>
+<p>4.令$$\boldsymbol{d}^{(k)}&#x3D;-\boldsymbol{P} \Delta f\left(\boldsymbol{x}^{(k)}\right)$$, 若$$\boldsymbol{d}^{(k)} \neq \mathbf{0}$$,则转步骤6；若$$\boldsymbol{d}^{(k)}&#x3D;\mathbf{0}$$，则进行步骤5</p>
+<p>5.若M是空的，则停止计算，得到$$\boldsymbol{x}^{(k)}$$;否则，令<br>$$<br>\begin{equation}<br>\boldsymbol{W}&#x3D;\left(\boldsymbol{M} \boldsymbol{M}^{\mathrm{T}}\right)^{-1} \boldsymbol{M} \Delta f\left(\boldsymbol{x}^{(k)}\right)&#x3D;\left[\begin{array}{l}<br>\boldsymbol{u} \<br>\boldsymbol{v}<br>\end{array}\right]<br>\end{equation}<br>$$<br>如果$$u \geqslant 0$$,则停止计算，$$x^{(k)}$$为K-T点，如果 u 包含负分量 ，则选择一个负分量 ，比如$$u_j$$,修正$$A_1$$,去掉$$A_1$$中对应$$u_j$$的行,返回步骤3</p>
+<p>6.解下列问题，求步长$$\lambda_k$$:<br>$$<br>\begin{array}{ll}<br>\min &amp; f\left(\boldsymbol{x}^{(k)}+\lambda \boldsymbol{d}^{(k)}\right) \<br>\text { s.t. } &amp; 0 \leqslant \lambda \leqslant \lambda_{\max },<br>\end{array}<br>$$<br>$$\lambda_{\max }$$算完，得到解$$\lambda_k$$,令<br>$$<br>\begin{equation}<br>\boldsymbol{x}^{(k+1)}&#x3D;\boldsymbol{x}^{(k)}+\lambda_z \boldsymbol{d}^{(k)}<br>\end{equation}<br>$$<br>接着k&#x3D;k+1,返回步骤2。</p>
+<h2 id="二、代码简单实现"><a href="#二、代码简单实现" class="headerlink" title="二、代码简单实现"></a>二、代码简单实现</h2><p>使用matlab实现精度参数ε对优化结果的影响初始点位置对优化结果的影响陷入局部最优解；</p>
+<p>约束条件为：<br>$$<br>\begin{equation}<br>A&#x3D;\left(\begin{array}{cc}<br>-1 &amp; -1 \<br>-1 &amp; -5 \<br>1 &amp; 0 \<br>0 &amp; 1<br>\end{array}\right), B&#x3D;\left(\begin{array}{c}<br>-2 \<br>-5 \<br>0 \<br>0<br>\end{array}\right)<br>\end{equation}<br>$$<br><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629165937006.png" alt="image-20230629165937006"></p>
+<p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629165949456.png" alt="image-20230629165949456"></p>
+<h2 id="三、代码结果"><a href="#三、代码结果" class="headerlink" title="三、代码结果"></a>三、代码结果</h2><h3 id="1-初始点的影响"><a href="#1-初始点的影响" class="headerlink" title="1.初始点的影响"></a>1.初始点的影响</h3><p>目标函数 $$f(x)&#x3D;\left(x_1^2+x_2-11\right)^2+\left(x_1+x_2^2-7\right)^2$$,初始点(0.5, 0.8),讨论参数$$\mathcal{E}$$越大，搜索的速度越快，迭代次数越少；越小，搜索的粒度越细，越可能找到最优解。参数$$\mathcal{E}$$&#x3D;1e−6。</p>
+<p>初始点的位置选取是获得最优解的关键影响最优解的值和收敛速度。</p>
+<p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629170654684.png" alt="image-20230629170654684"></p>
+<p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629170820125.png" alt="image-20230629170820125"></p>
+<h3 id="2-陷入局部优化"><a href="#2-陷入局部优化" class="headerlink" title="2.陷入局部优化"></a>2.陷入局部优化</h3><p>目标函数$$f(x)&#x3D;2 x_1^2-1.05 x_1^4+\frac{1}{6} x_1^6+x_1 x_2+x_2^4$$,$$\varepsilon&#x3D;1 e-6$$,初始点的位置选取是获得最优解的关键,陷入局部最优解;</p>
+<p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629171152819.png" alt="image-20230629171152819"></p>
+<p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629171228001.png" alt="image-20230629171228001"></p>
+<h3 id="3-初始点的位置影响优化结果"><a href="#3-初始点的位置影响优化结果" class="headerlink" title="3.初始点的位置影响优化结果"></a>3.初始点的位置影响优化结果</h3><p>目标函数$$f(x)&#x3D;-20 e^{-0.2 \sqrt{0.5\left(x_1^2+x_2^2\right)}}-e^{0.5\left(\cos \left(2 \pi x_2\right)\right)}+20+e$$,,$$\varepsilon&#x3D;1 e-6$$,</p>
+<p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629171417845.png" alt="image-20230629171417845"></p>
+<p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629171453237.png" alt="image-20230629171453237"></p>
+<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><p>优点：直接沿负梯度下降的方式可能导致非可行点，保持迭代点的可行性获得最优解，可用于凸优化、非凸优化问题，对约束条件没有太多限制</p>
+<p>缺点：基于梯度，无法解决非光滑问题，算法结果与运行速度受初始点位置影响较大，仍然可能陷入局部最优解，无法避免发生振荡，无法解决高度非凸优化问题</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>三维重建</title>
+    <url>/2023/07/05/%E4%B8%89%E7%BB%B4%E9%87%8D%E5%BB%BA/</url>
+    <content><![CDATA[<h5 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h5><h6 id="多视图三维重建的传统流程"><a href="#多视图三维重建的传统流程" class="headerlink" title="多视图三维重建的传统流程"></a>多视图三维重建的传统流程</h6><ul>
+<li>多视图三维重建的传统流程：</li>
+<li>图像特征匹配，SfM求解相机位姿，MVS稠密重建相机位姿（Camera Pose）是指相机在三维空间中的位置和朝向,旋转矩阵和一个平移向量来描述相机位姿为了实现MVS稠密重建，需要进行以下步骤：</li>
+</ul>
+<ol>
+<li>相机位姿估计：利用SfM技术估计每个视角的相机位姿。</li>
+<li>立体匹配：对于每个像素点，利用多个视角的图像进行立体匹配，估计该像素点在三维空间中的位置。</li>
+<li>三维重建：将所有像素点的三维位置整合起来，重建出整个物体的三维几何形状。</li>
+</ol>
+<ul>
+<li>缺点：重建流程<a href="https://www.zhihu.com/search?q=%E9%B2%81%E6%A3%92%E6%80%A7&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:2648027035%7D">鲁棒性</a>差，不可导：无反馈机制</li>
+</ul>
+<h6 id="基于表示学习的图像特征匹配："><a href="#基于表示学习的图像特征匹配：" class="headerlink" title="基于表示学习的图像特征匹配："></a>基于表示学习的图像特征匹配：</h6><ul>
+<li>​	SuperPoint，SuperGlue、ORB</li>
+</ul>
+<p>SuperPoint具有更快的速度和更好的鲁棒性。SuperPoint使用卷积神经网络来学习特征表示，其中包括特征点的位置、尺度和方向，以及对应的描述子。</p>
+<p>SuperGlue是一种基于深度学习的图像特征匹配算法，它可以通过对两个图像中提取的特征进行匹配，找到它们之间的对应关系和相对位姿。</p>
+<p>LoFTR：Detector-free Local Feature Matching with Transformers是一种detector-free的特征匹配算法，它不需要使用传统的特征检测器来提取局部特征点</p>
+<h6 id="基于神经表示学习的三维场景重建"><a href="#基于神经表示学习的三维场景重建" class="headerlink" title="基于神经表示学习的三维场景重建"></a>基于神经表示学习的三维场景重建</h6><ul>
+<li>重建流程：1. 比较渲染图像雨输入图像，计算误差。 2.通过梯度回传修改网络参数，优化隐式神经表示待解决问题：</li>
+<li>隐式神经表示重建<strong>（采样）</strong>效率低下，难以扩展到大规模场景室内弱纹理区域缺乏足够约束，隐式神经表示重建成为病态话问题</li>
+</ul>
+<h6 id="杂"><a href="#杂" class="headerlink" title="杂"></a>杂</h6><p>Neural Reconsturction in the Wild</p>
+<ul>
+<li>核心思想：表面引导的层次化采样，基于互联网图像进行场景重建核心思想：平面先验</li>
+</ul>
+<p>基于神经表示学习的动态人体重建<br>    动态人体重建传统方案通过稠密相机阵列逐帧重建Neural Body<br>挑战：如何减少输入视点的数量<br>从稀疏的输入视图重建神经表示是病态问题</p>
+<h6 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h6><p>核心思想：整合时序观测，假设不同时刻的观测来自于同一组隐编码</p>
+<p>挑战：如何建模多人场景核心</p>
+<p>思想：同步重建与分割</p>
+<p>二维图像特征表示学习   -〉更鲁邦的图像匹配和位姿估计</p>
+<p>三维几何&#x2F;外观表示学习 -〉更鲁棒更高质量的三维重建</p>
+<p>NGP</p>
+<h5 id="Nerf"><a href="#Nerf" class="headerlink" title="Nerf"></a>Nerf</h5><p><a href="https://yconquesty.github.io/blog/ml/nerf/">https://yconquesty.github.io/blog/ml/nerf/</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/631284285">https://zhuanlan.zhihu.com/p/631284285</a></p>
+<p>NeRF,neural radiance field，翻译为神经辐射场</p>
+<p><img src="https://pic2.zhimg.com/v2-6bf894d1fd88981551751cf4337b931d_b.jpg"></p>
+<p>Instant-NGP的pipeline</p>
+<p><img src="https://pic1.zhimg.com/v2-4e7016eb074496cf0235a7ff685d8c24_r.jpg"></p>
+]]></content>
+      <tags>
+        <tag>cv</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>杂</title>
+    <url>/2023/07/06/%E6%9D%82/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/weixin_43863869/article/details/125002909">https://blog.csdn.net/weixin_43863869/article/details/125002909</a></p>
+<ul>
+<li><code>/etc/environment</code>：系统级环境变量文件，适用于所有用户和进程。</li>
+<li><code>~/.bashrc</code>：登录shell级别的环境变量文件，适用于当前用户和其子进程。</li>
+<li><code>~/.bash_profile</code>：登录shell级别的环境变量文件，仅适用于当前用户。</li>
+<li><code>~/.profile</code>：登录shell级别的环境变量文件，仅适用于当前用户。</li>
+</ul>
+<p><a href="https://blog.csdn.net/weixin_45837114/article/details/128255248">https://blog.csdn.net/weixin_45837114/article/details/128255248</a></p>
+]]></content>
+      <tags>
+        <tag>杂</tag>
+      </tags>
+  </entry>
 </search>
