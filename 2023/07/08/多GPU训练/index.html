@@ -3,7 +3,7 @@
     <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
-    <meta name="description" content="杂" />
+    <meta name="description" content="多GPU训练" />
     <meta name="hexo-theme-A4" content="v1.6.9" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>hwan | </title>
@@ -89,45 +89,49 @@
 
     
         <div class="post-main-title">
-            杂
+            多GPU训练
         </div>
       
     
 
     <div class="post-md">
         
-            
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E4%B8%80%E6%9C%BA%E5%A4%9A%E5%8D%A1%E8%AE%AD%E7%BB%83"><span class="post-toc-text">一机多卡训练</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%90%8E%E7%AB%AF"><span class="post-toc-text">初始化后端</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E6%A8%A1%E5%9E%8B%E5%B9%B6%E8%A1%8C%E5%8C%96"><span class="post-toc-text">模型并行化</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E6%95%B0%E6%8D%AE%E5%B9%B6%E8%A1%8C"><span class="post-toc-text">数据并行</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC"><span class="post-toc-text">启动脚本</span></a></li></ol></li></ol>
         
-        <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43863869/article/details/125002909">https://blog.csdn.net/weixin_43863869/article/details/125002909</a></p>
-<ul>
-<li><code>/etc/environment</code>：系统级环境变量文件，适用于所有用户和进程。</li>
-<li><code>~/.bashrc</code>：登录shell级别的环境变量文件，适用于当前用户和其子进程。</li>
-<li><code>~/.bash_profile</code>：登录shell级别的环境变量文件，仅适用于当前用户。</li>
-<li><code>~/.profile</code>：登录shell级别的环境变量文件，仅适用于当前用户。</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45837114/article/details/128255248">https://blog.csdn.net/weixin_45837114/article/details/128255248</a></p>
-<p>1e-4 and decrease the<br>learning rate by a factor of 0.1 at 20 epochs during training</p>
-<p>λ &#x3D; 2.5</p>
+        <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/157976140">https://zhuanlan.zhihu.com/p/157976140</a></p>
+<h5 id="一机多卡训练"><a href="#一机多卡训练" class="headerlink" title="一机多卡训练"></a>一机多卡训练</h5><pre><code class="python">import torch.distributed
+</code></pre>
+<h6 id="初始化后端"><a href="#初始化后端" class="headerlink" title="初始化后端"></a>初始化后端</h6><pre><code class="python">local_rank = args.local_rank
+torch.cuda.set_device(local_rank)
+torch.distributed.init_process_group(backend=&#39;nccl&#39;, init_method=&#39;env://&#39;)
+</code></pre>
+<h6 id="模型并行化"><a href="#模型并行化" class="headerlink" title="模型并行化"></a>模型并行化</h6><pre><code class="python">model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[local_rank], output_device=local_rank)
+</code></pre>
+<h6 id="数据并行"><a href="#数据并行" class="headerlink" title="数据并行"></a>数据并行</h6><pre><code class="python">sampler = torch.utils.data.distributed.DistributedSampler(dataset)
+rand_loader = DataLoader(dataset=dataset,batch_size=batch_size, shuffle=False, sampler=sampler)
+</code></pre>
+<h6 id="启动脚本"><a href="#启动脚本" class="headerlink" title="启动脚本"></a>启动脚本</h6><pre><code class="python">python -m torch.distributed.launch --nproc_per_node=8 train_face_troch.py
+</code></pre>
+<pre><code class="python">def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(&#39;--local_rank&#39;, default=0, type=int)
+    args = parser.parse_args()
+    return args
+</code></pre>
+<pre><code class="python">model, optimizer = amp.initialize(model, optimizer, opt_level=&#39;O1&#39;)  # 这里是字母O
+</code></pre>
+<pre><code class="python">if torch.cuda.is_available():
+    model.cuda()
+</code></pre>
 
     </div>
 
     <div class="post-meta">
         <i>
         
-            <span>2023-07-06</span>
-            
-                <span>该篇文章被 hong</span>
+            <span>2023-07-08</span>
             
             
-                <span>打上标签:
-                    
-                    
-                        <a href='/tags/%E6%9D%82/'>
-                            杂
-                        </a>
-                    
-                </span>
-             
              
         
         </i>
