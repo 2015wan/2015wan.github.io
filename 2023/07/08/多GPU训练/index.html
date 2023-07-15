@@ -110,7 +110,9 @@ torch.distributed.init_process_group(backend=&#39;nccl&#39;, init_method=&#39;en
 <h6 id="数据并行"><a href="#数据并行" class="headerlink" title="数据并行"></a>数据并行</h6><pre><code class="python">sampler = torch.utils.data.distributed.DistributedSampler(dataset)
 rand_loader = DataLoader(dataset=dataset,batch_size=batch_size, shuffle=False, sampler=sampler)
 </code></pre>
-<h6 id="启动脚本"><a href="#启动脚本" class="headerlink" title="启动脚本"></a>启动脚本</h6><pre><code class="python">python -m torch.distributed.launch --nproc_per_node=8 train_face_troch.py
+<h6 id="启动脚本"><a href="#启动脚本" class="headerlink" title="启动脚本"></a>启动脚本</h6><pre><code>python -m torch.distributed.launch --nproc_per_node=6 run_mvp_train_DDP_threepeople.py --overlap_slide
+</code></pre>
+<pre><code class="python">python -m torch.distributed.launch --nproc_per_node=8 train_face_troch.py
 </code></pre>
 <pre><code class="python">def parse_args():
     parser = argparse.ArgumentParser()
