@@ -96,11 +96,56 @@
 
     <div class="post-md">
         
-            
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%9D%82"><span class="post-toc-text">杂</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E4%BF%AE%E9%A5%B0%E5%99%A8"><span class="post-toc-text">修饰器</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#args-kwargs-python%E8%A7%A3%E9%87%8A"><span class="post-toc-text">*args, **kwargs python解释</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%9F%BA%E7%A1%80%E4%BB%8B%E7%BB%8D"><span class="post-toc-text">基础介绍</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#fileio"><span class="post-toc-text">fileio</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E6%B6%89%E5%8F%8A%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99%E7%9A%84-FileHandler"><span class="post-toc-text">涉及文件读写的 FileHandler</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E6%9D%82-1"><span class="post-toc-text">杂</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E6%96%87%E4%BB%B6%E8%8E%B7%E5%8F%96%E5%90%8E%E7%AB%AF-FileClient"><span class="post-toc-text">文件获取后端 FileClient</span></a></li></ol></li></ol></li></ol>
         
         <p><a target="_blank" rel="noopener" href="https://github.com/open-mmlab/mmpose">https://github.com/open-mmlab/mmpose</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/TommyZihao/MMPose_Tutorials">https://github.com/TommyZihao/MMPose_Tutorials</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/open-mmlab/OpenMMLabCourse">https://github.com/open-mmlab/OpenMMLabCourse</a></p>
+<h4 id="杂"><a href="#杂" class="headerlink" title="杂"></a>杂</h4><h6 id="修饰器"><a href="#修饰器" class="headerlink" title="修饰器"></a>修饰器</h6><p><a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/python-func-decorators.html">https://www.runoob.com/w3cnote/python-func-decorators.html</a></p>
+<h6 id="args-kwargs-python解释"><a href="#args-kwargs-python解释" class="headerlink" title="*args, **kwargs python解释"></a>*args, **kwargs python解释</h6><p>*args用于接收任意数量的位置参数，它将所有传递给函数的位置参数打包成一个元组（tuple）。例如：</p>
+<pre><code>def my_function(*args):
+    for arg in args:
+        print(arg)
+
+my_function(1, 2, 3)  # 输出 1 2 3
+</code></pre>
+<p>**kwargs用于接收任意数量的关键字参数，它将所有传递给函数的关键字参数打包成一个字典（dict）。例如：</p>
+<pre><code>def my_function(**kwargs):
+    for key, value in kwargs.items():
+        print(key, value)
+
+my_function(name=&#39;Tom&#39;, age=20)  # 输出 name Tom  age 20
+</code></pre>
+<p><img src="/../images/mmlab/image-20230716001111023.png" alt="image-20230716001111023"></p>
+<h4 id="基础介绍"><a href="#基础介绍" class="headerlink" title="基础介绍"></a>基础介绍</h4><p><strong>fileio、image、parallel、runner 和 utils 这几个非常通用的组件</strong></p>
+<h5 id="fileio"><a href="#fileio" class="headerlink" title="fileio"></a><strong>fileio</strong></h5><h6 id="涉及文件读写的-FileHandler"><a href="#涉及文件读写的-FileHandler" class="headerlink" title="涉及文件读写的 FileHandler"></a>涉及文件读写的 FileHandler</h6><p>根据待读写的文件后缀名自动选择对应的 handler 进行具体操作</p>
+<pre><code>mmcv/mmcv/fileio/handlers/base.py
+</code></pre>
+<h6 id="杂-1"><a href="#杂-1" class="headerlink" title="杂"></a>杂</h6><p>在Python中，如果要定义一个抽象类，需要使用abc模块。下面是一个使用@abstractmethod装饰器定义抽象方法的例子：</p>
+<pre><code>from abc import ABC, abstractmethod
+
+class MyAbstractClass(ABC):
+    @abstractmethod
+    def my_abstract_method(self):
+        pass
+</code></pre>
+<p>自己写装饰器</p>
+<p>先定义一个装饰器</p>
+<pre><code>def my_decorator(func):
+    def wrapper(*args, **kwargs):
+        print(&#39;Before the function is called.&#39;)
+        result = func(*args, **kwargs)
+        print(&#39;After the function is called.&#39;)
+        return result
+    return wrapper
+</code></pre>
+<p>上面的代码定义了一个名为my_decorator的装饰器，它接受一个函数作为参数，并返回一个新的函数wrapper。wrapper函数在调用原函数之前和之后会打印一些信息，以增强原函数的功能。使用装饰器时，只需要在原函数前面加上@my_decorator即可将装饰器应用到原函数中，例如：</p>
+<pre><code>@my_decorator
+def my_function():
+    print(&#39;This is my function.&#39;)
+</code></pre>
+<p>在上面的例子中，my_function函数被@my_decorator装饰器装饰，当调用my_function函数时，会先打印’Before the function is called.’，然后执行原函数的代码，最后打印’After the function is called.’。</p>
+<h6 id="文件获取后端-FileClient"><a href="#文件获取后端-FileClient" class="headerlink" title="文件获取后端 FileClient"></a>文件获取后端 FileClient</h6><p>主要用于训练过程中数据的读取，通过用户选择或者自定义不同的 FileClient 后端，可以轻松实现文件缓存、文件加速读取等功能</p>
 
     </div>
 

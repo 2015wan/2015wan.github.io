@@ -186,8 +186,37 @@ end
 <li><code>~/.profile</code>：登录shell级别的环境变量文件，仅适用于当前用户。</li>
 </ul>
 <p><a href="https://blog.csdn.net/weixin_45837114/article/details/128255248">https://blog.csdn.net/weixin_45837114/article/details/128255248</a></p>
-<p>1e-4 and decrease the<br>learning rate by a factor of 0.1 at 20 epochs during training</p>
-<p>λ &#x3D; 2.5</p>
+<h6 id="合成视频"><a href="#合成视频" class="headerlink" title="合成视频"></a>合成视频</h6><pre><code>import cv2
+import numpy as np
+
+videoLeft = cv2.VideoCapture(&#39;C:\\Users\\USTC\\Desktop\\debug_pose\\PRED\\0000\\all_frame.mp4&#39;)
+videoRight = cv2.VideoCapture(&#39;C:\\Users\\USTC\\Desktop\\debug_pose\\GT\\0000\\all_frame.mp4&#39;)
+
+fps = videoLeft.get(cv2.CAP_PROP_FPS)
+
+width = (int(videoLeft.get(cv2.CAP_PROP_FRAME_WIDTH)))
+height = (int(videoLeft.get(cv2.CAP_PROP_FRAME_HEIGHT)))
+
+videoWriter = cv2.VideoWriter(&#39;C:\\Users\\USTC\\Desktop\\debug_pose\\GT\\output.mp4&#39;, cv2.VideoWriter_fourcc(*&#39;mp4v&#39;), fps, (width*2, height))
+
+successLeft, frameLeft = videoLeft.read()
+successRight, frameRight = videoRight.read()
+
+while successLeft and successRight:
+    frameLeft = cv2.resize(frameLeft, (width, height), interpolation=cv2.INTER_CUBIC)
+    frameRight = cv2.resize(frameRight, (width, height), interpolation=cv2.INTER_CUBIC)
+
+    frame = np.hstack((frameLeft, frameRight))
+
+    videoWriter.write(frame)
+
+    successLeft, frameLeft = videoLeft.read()
+    successRight, frameRight = videoRight.read()
+
+videoWriter.release()
+videoLeft.release()
+videoRight.release()
+</code></pre>
 ]]></content>
       <tags>
         <tag>杂</tag>
@@ -246,6 +275,68 @@ rand_loader = DataLoader(dataset=dataset,batch_size=batch_size, shuffle=False, s
     <content><![CDATA[<p><a href="https://github.com/open-mmlab/mmpose">https://github.com/open-mmlab/mmpose</a></p>
 <p><a href="https://github.com/TommyZihao/MMPose_Tutorials">https://github.com/TommyZihao/MMPose_Tutorials</a></p>
 <p><a href="https://github.com/open-mmlab/OpenMMLabCourse">https://github.com/open-mmlab/OpenMMLabCourse</a></p>
+<h4 id="杂"><a href="#杂" class="headerlink" title="杂"></a>杂</h4><h6 id="修饰器"><a href="#修饰器" class="headerlink" title="修饰器"></a>修饰器</h6><p><a href="https://www.runoob.com/w3cnote/python-func-decorators.html">https://www.runoob.com/w3cnote/python-func-decorators.html</a></p>
+<h6 id="args-kwargs-python解释"><a href="#args-kwargs-python解释" class="headerlink" title="*args, **kwargs python解释"></a>*args, **kwargs python解释</h6><p>*args用于接收任意数量的位置参数，它将所有传递给函数的位置参数打包成一个元组（tuple）。例如：</p>
+<pre><code>def my_function(*args):
+    for arg in args:
+        print(arg)
+
+my_function(1, 2, 3)  # 输出 1 2 3
+</code></pre>
+<p>**kwargs用于接收任意数量的关键字参数，它将所有传递给函数的关键字参数打包成一个字典（dict）。例如：</p>
+<pre><code>def my_function(**kwargs):
+    for key, value in kwargs.items():
+        print(key, value)
+
+my_function(name=&#39;Tom&#39;, age=20)  # 输出 name Tom  age 20
+</code></pre>
+<p><img src="/../images/mmlab/image-20230716001111023.png" alt="image-20230716001111023"></p>
+<h4 id="基础介绍"><a href="#基础介绍" class="headerlink" title="基础介绍"></a>基础介绍</h4><p><strong>fileio、image、parallel、runner 和 utils 这几个非常通用的组件</strong></p>
+<h5 id="fileio"><a href="#fileio" class="headerlink" title="fileio"></a><strong>fileio</strong></h5><h6 id="涉及文件读写的-FileHandler"><a href="#涉及文件读写的-FileHandler" class="headerlink" title="涉及文件读写的 FileHandler"></a>涉及文件读写的 FileHandler</h6><p>根据待读写的文件后缀名自动选择对应的 handler 进行具体操作</p>
+<pre><code>mmcv/mmcv/fileio/handlers/base.py
+</code></pre>
+<h6 id="杂-1"><a href="#杂-1" class="headerlink" title="杂"></a>杂</h6><p>在Python中，如果要定义一个抽象类，需要使用abc模块。下面是一个使用@abstractmethod装饰器定义抽象方法的例子：</p>
+<pre><code>from abc import ABC, abstractmethod
+
+class MyAbstractClass(ABC):
+    @abstractmethod
+    def my_abstract_method(self):
+        pass
+</code></pre>
+<p>自己写装饰器</p>
+<p>先定义一个装饰器</p>
+<pre><code>def my_decorator(func):
+    def wrapper(*args, **kwargs):
+        print(&#39;Before the function is called.&#39;)
+        result = func(*args, **kwargs)
+        print(&#39;After the function is called.&#39;)
+        return result
+    return wrapper
+</code></pre>
+<p>上面的代码定义了一个名为my_decorator的装饰器，它接受一个函数作为参数，并返回一个新的函数wrapper。wrapper函数在调用原函数之前和之后会打印一些信息，以增强原函数的功能。使用装饰器时，只需要在原函数前面加上@my_decorator即可将装饰器应用到原函数中，例如：</p>
+<pre><code>@my_decorator
+def my_function():
+    print(&#39;This is my function.&#39;)
+</code></pre>
+<p>在上面的例子中，my_function函数被@my_decorator装饰器装饰，当调用my_function函数时，会先打印’Before the function is called.’，然后执行原函数的代码，最后打印’After the function is called.’。</p>
+<h6 id="文件获取后端-FileClient"><a href="#文件获取后端-FileClient" class="headerlink" title="文件获取后端 FileClient"></a>文件获取后端 FileClient</h6><p>主要用于训练过程中数据的读取，通过用户选择或者自定义不同的 FileClient 后端，可以轻松实现文件缓存、文件加速读取等功能</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>虚拟环境配置</title>
+    <url>/2023/07/15/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h5 id="likemmcv"><a href="#likemmcv" class="headerlink" title="likemmcv"></a>likemmcv</h5><p><a href="https://download.pytorch.org/whl/cu113/torch-1.12.0%2Bcu113-cp39-cp39-linux_x86_64.whl">torch-1.12.0+cu113-cp39-cp39-linux_x86_64.whl</a></p>
+<p>python 3.9</p>
+<pre><code>mmcv==2.0.0
+</code></pre>
+<pre><code>pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu113
+</code></pre>
+<p>conda install cudnn&#x3D;8.9.0  -c <a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/linux-64/">https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/linux-64/</a></p>
+<pre><code class="shell">conda install cudnn=8.9.0 -c http://mirrors.aliyun.com/anaconda/pkgs/main
+</code></pre>
+]]></content>
+      <tags>
+        <tag>杂</tag>
+      </tags>
   </entry>
 </search>
