@@ -96,12 +96,35 @@
 
     <div class="post-md">
         
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%9D%82"><span class="post-toc-text">杂</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E4%BF%AE%E9%A5%B0%E5%99%A8"><span class="post-toc-text">修饰器</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#args-kwargs-python%E8%A7%A3%E9%87%8A"><span class="post-toc-text">*args, **kwargs python解释</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%9F%BA%E7%A1%80%E4%BB%8B%E7%BB%8D"><span class="post-toc-text">基础介绍</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#fileio"><span class="post-toc-text">fileio</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E6%B6%89%E5%8F%8A%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99%E7%9A%84-FileHandler"><span class="post-toc-text">涉及文件读写的 FileHandler</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E6%9D%82-1"><span class="post-toc-text">杂</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E6%96%87%E4%BB%B6%E8%8E%B7%E5%8F%96%E5%90%8E%E7%AB%AF-FileClient"><span class="post-toc-text">文件获取后端 FileClient</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%9D%82"><span class="post-toc-text">杂</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E4%BF%AE%E9%A5%B0%E5%99%A8"><span class="post-toc-text">修饰器</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#args-kwargs-python%E8%A7%A3%E9%87%8A"><span class="post-toc-text">*args, **kwargs python解释</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%B8%8D%E5%90%8C%E7%BB%84%E4%BB%B6"><span class="post-toc-text">不同组件</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Config"><span class="post-toc-text">Config</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E9%80%9A%E8%BF%87-dict-%E7%94%9F%E6%88%90-config"><span class="post-toc-text">通过 dict 生成 config</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E9%80%9A%E8%BF%87%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%94%9F%E6%88%90config"><span class="post-toc-text">通过配置文件生成config</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E8%87%AA%E5%8A%A8%E6%9B%BF%E6%8D%A2%E9%A2%84%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F"><span class="post-toc-text">自动替换预定义变量</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E5%AF%BC%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97"><span class="post-toc-text">导入自定义模块</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AA%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="post-toc-text">合并多个配置文件</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E4%BB%8E-base-%E6%96%87%E4%BB%B6%E4%B8%AD%E5%90%88%E5%B9%B6"><span class="post-toc-text">从 base 文件中合并</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E4%BB%8E%E5%A4%9A%E4%B8%AA-base-%E6%96%87%E4%BB%B6%E4%B8%AD%E5%90%88%E5%B9%B6"><span class="post-toc-text">从多个 base 文件中合并</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E5%90%88%E5%B9%B6%E5%AD%97%E5%85%B8%E5%88%B0%E9%85%8D%E7%BD%AE"><span class="post-toc-text">合并字典到配置</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#allow-list-keys-%E6%A8%A1%E5%BC%8F%E5%90%88%E5%B9%B6"><span class="post-toc-text">allow_list_keys 模式合并</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E5%85%81%E8%AE%B8%E5%88%A0%E6%8E%89%E7%89%B9%E5%AE%9A%E5%86%85%E5%AE%B9"><span class="post-toc-text">允许删掉特定内容</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#pretty-text-%E5%92%8C-dump"><span class="post-toc-text">pretty_text 和 dump</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#fileio"><span class="post-toc-text">fileio</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#fileio-1"><span class="post-toc-text">fileio</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E6%B6%89%E5%8F%8A%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99%E7%9A%84-FileHandler"><span class="post-toc-text">涉及文件读写的 FileHandler</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#file-client"><span class="post-toc-text">file_client</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#class-FileClient"><span class="post-toc-text">class FileClient</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#mmcv-imfrombytes"><span class="post-toc-text">mmcv.imfrombytes</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E2%80%98BaseStorageBackend%E2%80%99"><span class="post-toc-text">‘BaseStorageBackend’</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E2%80%98FileClient%E2%80%99"><span class="post-toc-text">‘FileClient’</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#HardDiskBackend-BaseStorageBackend"><span class="post-toc-text">HardDiskBackend(BaseStorageBackend)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LmdbBackend-BaseStorageBackend"><span class="post-toc-text">LmdbBackend(BaseStorageBackend)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#fileclient%E7%94%A8%E6%B3%95"><span class="post-toc-text">fileclient用法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%AE%9E%E5%88%97%E4%BD%BF%E7%94%A8"><span class="post-toc-text">实列使用</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#io"><span class="post-toc-text">io</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E2%80%98load%E2%80%99"><span class="post-toc-text">‘load’</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E2%80%98dump%E2%80%99"><span class="post-toc-text">‘dump’</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E2%80%98register-handler%E2%80%99"><span class="post-toc-text">‘register_handler’</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#handlers"><span class="post-toc-text">handlers</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E2%80%98BaseFileHandler%E2%80%99"><span class="post-toc-text">‘BaseFileHandler’</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%9F%BA%E6%96%B9%E6%B3%95load-from-fileobj"><span class="post-toc-text">基方法load_from_fileobj</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%9F%BA%E6%96%B9%E6%B3%95dump-to-fileobj"><span class="post-toc-text">基方法dump_to_fileobj</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%9F%BA%E6%96%B9%E6%B3%95dump-to-str"><span class="post-toc-text">基方法dump_to_str</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#load-from-path"><span class="post-toc-text">load_from_path</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#dump-to-path"><span class="post-toc-text">dump_to_path</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E2%80%98JsonHandler%E2%80%99"><span class="post-toc-text">‘JsonHandler’</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E2%80%98PickleHandler%E2%80%99"><span class="post-toc-text">‘PickleHandler’</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E2%80%98YamlHandler%E2%80%99"><span class="post-toc-text">‘YamlHandler’</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#parse"><span class="post-toc-text">parse</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E2%80%98list-from-file"><span class="post-toc-text">‘list_from_file</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#dict-from-file"><span class="post-toc-text">dict_from_file</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%89%A9%E5%B1%95"><span class="post-toc-text">自定义扩展</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%9D%82-1"><span class="post-toc-text">杂</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E6%96%87%E4%BB%B6%E8%8E%B7%E5%8F%96%E5%90%8E%E7%AB%AF-FileClient"><span class="post-toc-text">文件获取后端 FileClient</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#np-generic%E4%B8%BE%E4%BE%8B"><span class="post-toc-text">np.generic举例</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E7%B1%BB%E5%9E%8B%E6%8F%90%E7%A4%BA-Type-Hints-%E8%AF%AD%E6%B3%95"><span class="post-toc-text">类型提示(Type Hints)语法</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#python-property"><span class="post-toc-text">python @property</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#python-abstractmethod"><span class="post-toc-text">python @abstractmethod</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#python-classmethod"><span class="post-toc-text">python @classmethod</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#python-staticmethod"><span class="post-toc-text">python @staticmethod</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#python-call"><span class="post-toc-text">python call</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#python-%E8%BF%90%E7%AE%97%E7%AC%A6%E5%AF%B9%E5%AD%97%E5%85%B8%E8%A7%A3%E5%8C%85"><span class="post-toc-text">python **运算符对字典解包</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#python-%E5%AD%97%E5%85%B8%E5%BD%A2%E5%8F%82"><span class="post-toc-text">python 字典形参</span></a></li></ol></li></ol></li></ol>
         
         <p><a target="_blank" rel="noopener" href="https://github.com/open-mmlab/mmpose">https://github.com/open-mmlab/mmpose</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/TommyZihao/MMPose_Tutorials">https://github.com/TommyZihao/MMPose_Tutorials</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/open-mmlab/OpenMMLabCourse">https://github.com/open-mmlab/OpenMMLabCourse</a></p>
+<p>MMCV 核心组件分析（一）：整体概述 - OpenMMLab的文章 - 知乎 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/336081587">https://zhuanlan.zhihu.com/p/336081587</a></p>
 <h4 id="杂"><a href="#杂" class="headerlink" title="杂"></a>杂</h4><h6 id="修饰器"><a href="#修饰器" class="headerlink" title="修饰器"></a>修饰器</h6><p><a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/python-func-decorators.html">https://www.runoob.com/w3cnote/python-func-decorators.html</a></p>
+<pre><code>def a_new_decorator(a_func):
+ 
+    def wrapTheFunction():
+        print(&quot;I am doing some boring work before executing a_func()&quot;)
+ 
+        a_func()
+ 
+        print(&quot;I am doing some boring work after executing a_func()&quot;)
+ 
+    return wrapTheFunction
+
+@a_new_decorator
+def a_function_requiring_decoration():
+    &quot;&quot;&quot;Hey you! Decorate me!&quot;&quot;&quot;
+    print(&quot;I am the function which needs some decoration to &quot;
+          &quot;remove my foul smell&quot;)
+          
+a_function_requiring_decoration()
+#outputs: I am doing some boring work before executing a_func()
+#         I am the function which needs some decoration to remove my foul smell
+#         I am doing some boring work after executing a_func()
+</code></pre>
 <h6 id="args-kwargs-python解释"><a href="#args-kwargs-python解释" class="headerlink" title="*args, **kwargs python解释"></a>*args, **kwargs python解释</h6><p>*args用于接收任意数量的位置参数，它将所有传递给函数的位置参数打包成一个元组（tuple）。例如：</p>
 <pre><code>def my_function(*args):
     for arg in args:
@@ -117,11 +140,537 @@ my_function(1, 2, 3)  # 输出 1 2 3
 my_function(name=&#39;Tom&#39;, age=20)  # 输出 name Tom  age 20
 </code></pre>
 <p><img src="/../images/mmlab/image-20230716001111023.png" alt="image-20230716001111023"></p>
-<h4 id="基础介绍"><a href="#基础介绍" class="headerlink" title="基础介绍"></a>基础介绍</h4><p><strong>fileio、image、parallel、runner 和 utils 这几个非常通用的组件</strong></p>
-<h5 id="fileio"><a href="#fileio" class="headerlink" title="fileio"></a><strong>fileio</strong></h5><h6 id="涉及文件读写的-FileHandler"><a href="#涉及文件读写的-FileHandler" class="headerlink" title="涉及文件读写的 FileHandler"></a>涉及文件读写的 FileHandler</h6><p>根据待读写的文件后缀名自动选择对应的 handler 进行具体操作</p>
+<h1 id="不同组件"><a href="#不同组件" class="headerlink" title="不同组件"></a>不同组件</h1><p><strong>fileio、image、parallel、runner 和 utils 这几个非常通用的组件</strong></p>
+<h1 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h1><p>py、json、ymal 和 yml配置文件解析功能。</p>
+<p>mmcv\utils\config.py</p>
+<h6 id="通过-dict-生成-config"><a href="#通过-dict-生成-config" class="headerlink" title="通过 dict 生成 config"></a>通过 dict 生成 config</h6><pre><code>cfg = Config(dict(a=1, b=dict(b1=[0, 1])))
+
+# 可以通过 .属性方式访问，比较方便
+cfg.b.b1 # [0, 1]
+</code></pre>
+<h6 id="通过配置文件生成config"><a href="#通过配置文件生成config" class="headerlink" title="通过配置文件生成config"></a>通过配置文件生成config</h6><pre><code># Copyright (c) OpenMMLab. All rights reserved.
+# &#39;tests/data/config/a.py&#39; 里面的内容
+item1 = [1, 2]
+item2 = &#123;&#39;a&#39;: 0&#125;
+item3 = True
+item4 = &#39;test&#39;
+</code></pre>
+<pre><code>cfg = Config.fromfile(&#39;tests/data/config/a.py&#39;)
+
+cfg.filename
+cfg.item4 # &#39;test&#39;
+cfg # 打印 config path，和字典内容...
+&gt;&gt;&gt; cfg = Config.fromfile(&#39;tests/data/config/a.py&#39;)
+&gt;&gt;&gt; cfg.filename
+&quot;/home/kchen/projects/mmcv/tests/data/config/a.py&quot;
+&gt;&gt;&gt; cfg.item4
+&#39;test&#39;
+&gt;&gt;&gt; cfg
+&quot;Config [path: /home/kchen/projects/mmcv/tests/data/config/a.py]: &quot;
+&quot;&#123;&#39;item1&#39;: [1, 2], &#39;item2&#39;: &#123;&#39;a&#39;: 0&#125;, &#39;item3&#39;: True, &#39;item4&#39;: &#39;test&#39;&#125;&quot;
+</code></pre>
+<h6 id="自动替换预定义变量"><a href="#自动替换预定义变量" class="headerlink" title="自动替换预定义变量"></a>自动替换预定义变量</h6><h6 id="导入自定义模块"><a href="#导入自定义模块" class="headerlink" title="导入自定义模块"></a>导入自定义模块</h6><h6 id="合并多个配置文件"><a href="#合并多个配置文件" class="headerlink" title="合并多个配置文件"></a>合并多个配置文件</h6><h6 id="从-base-文件中合并"><a href="#从-base-文件中合并" class="headerlink" title="从 base 文件中合并"></a>从 base 文件中合并</h6><h6 id="从多个-base-文件中合并"><a href="#从多个-base-文件中合并" class="headerlink" title="从多个 base 文件中合并"></a>从多个 base 文件中合并</h6><h6 id="合并字典到配置"><a href="#合并字典到配置" class="headerlink" title="合并字典到配置"></a>合并字典到配置</h6><h6 id="allow-list-keys-模式合并"><a href="#allow-list-keys-模式合并" class="headerlink" title="allow_list_keys 模式合并"></a>allow_list_keys 模式合并</h6><h6 id="允许删掉特定内容"><a href="#允许删掉特定内容" class="headerlink" title="允许删掉特定内容"></a>允许删掉特定内容</h6><h6 id="pretty-text-和-dump"><a href="#pretty-text-和-dump" class="headerlink" title="pretty_text 和 dump"></a>pretty_text 和 dump</h6><h1 id="fileio"><a href="#fileio" class="headerlink" title="fileio"></a>fileio</h1><h2 id="fileio-1"><a href="#fileio-1" class="headerlink" title="fileio"></a><strong>fileio</strong></h2><h6 id="涉及文件读写的-FileHandler"><a href="#涉及文件读写的-FileHandler" class="headerlink" title="涉及文件读写的 FileHandler"></a>涉及文件读写的 FileHandler</h6><p>根据待读写的文件后缀名自动选择对应的 handler 进行具体操作</p>
 <pre><code>mmcv/mmcv/fileio/handlers/base.py
 </code></pre>
-<h6 id="杂-1"><a href="#杂-1" class="headerlink" title="杂"></a>杂</h6><p>在Python中，如果要定义一个抽象类，需要使用abc模块。下面是一个使用@abstractmethod装饰器定义抽象方法的例子：</p>
+<img src="../images/mmlab/image-20230719161713484.png" alt="image-20230719161713484" style="zoom:50%;" />
+
+<h2 id="file-client"><a href="#file-client" class="headerlink" title="file_client"></a><em>file_client</em></h2><p>其作用是<strong>对外提供统一的文件内容获取 API，主要用于训练过程中数据的后端读取，通过用户选择默认或者自定义不同的 FileClient 后端，可以轻松实现文件缓存、文件加速读取等等功能</strong>。</p>
+<p>mmcv\fileio\file_client.py</p>
+<p><img src="/../images/mmlab/image-20230719194105940.png" alt="image-20230719194105940"></p>
+<p>图片的读取一般包括两个步骤：给定文件路径，读取文件内容（字节流），对文件字节内容进行解码</p>
+<p>第2步文件解码非常简单，通过 <code>mmcv.imfrombytes</code> 函数即可实现，该函数会对不同图片格式进行相应解码。</p>
+<h3 id="class-FileClient"><a href="#class-FileClient" class="headerlink" title="class FileClient"></a>class FileClient</h3><pre><code>class FileClient:
+    
+    #实现的5种后端
+    _backends = &#123;
+            &#39;disk&#39;: HardDiskBackend,
+            &#39;ceph&#39;: CephBackend,
+            &#39;memcached&#39;: MemcachedBackend,
+            &#39;lmdb&#39;: LmdbBackend,
+            &#39;petrel&#39;: PetrelBackend,
+            &#39;http&#39;: HTTPBackend,
+        &#125;
+    _prefix_to_backends = &#123;
+            &#39;s3&#39;: PetrelBackend,
+            &#39;http&#39;: HTTPBackend,
+            &#39;https&#39;: HTTPBackend,
+        &#125;
+        
+   #对外提供两个接口，所有后端必须实现
+   def get(self, filepath: Union[str, Path]) -&gt; Union[bytes, memoryview]:
+           return self.client.get(filepath)
+   
+   def get_text(self, filepath: Union[str, Path], encoding=&#39;utf-8&#39;) -&gt; str:
+           return self.client.get_text(filepath, encoding)
+</code></pre>
+<h3 id="mmcv-imfrombytes"><a href="#mmcv-imfrombytes" class="headerlink" title="mmcv.imfrombytes"></a>mmcv.imfrombytes</h3><p><code>mmcv.imfrombytes</code>函数的作用是将图像的二进制数据转换为一个多维数组（<code>numpy.ndarray</code>）表示的图像数据。</p>
+<ul>
+<li><code>content</code>：表示图像的二进制数据或者<code>numpy.ndarray</code>数组。</li>
+<li><code>flag</code>：表示图像读取的方式。默认值为<code>-1</code>，表示根据图像数据自动检测读取方式。</li>
+<li><code>backend</code>：表示图像读取的后端。默认值为<code>pillow</code>，表示使用Pillow库进行图像读取。</li>
+</ul>
+<h3 id="‘BaseStorageBackend’"><a href="#‘BaseStorageBackend’" class="headerlink" title="‘BaseStorageBackend’"></a>‘BaseStorageBackend’</h3><pre><code>class BaseStorageBackend(metaclass=ABCMeta):
+
+    _allow_symlink = False
+
+    @property
+    def name(self):
+        return self.__class__.__name__
+
+    @property
+    def allow_symlink(self):
+        return self._allow_symlink
+
+    @abstractmethod
+    def get(self, filepath):
+        pass
+
+    @abstractmethod
+    def get_text(self, filepath):
+        pass
+</code></pre>
+<h3 id="‘FileClient’"><a href="#‘FileClient’" class="headerlink" title="‘FileClient’"></a>‘FileClient’</h3><h3 id="HardDiskBackend-BaseStorageBackend"><a href="#HardDiskBackend-BaseStorageBackend" class="headerlink" title="HardDiskBackend(BaseStorageBackend)"></a>HardDiskBackend(BaseStorageBackend)</h3><pre><code>    def get(self, filepath: Union[str, Path]) -&gt; bytes:
+        &quot;&quot;&quot;Read data from a given ``filepath`` with &#39;rb&#39; mode.
+
+        Args:
+            filepath (str or Path): Path to read data.
+
+        Returns:
+            bytes: Expected bytes object.
+        &quot;&quot;&quot;
+        with open(filepath, &#39;rb&#39;) as f:
+            value_buf = f.read()
+        return value_buf
+</code></pre>
+<h3 id="LmdbBackend-BaseStorageBackend"><a href="#LmdbBackend-BaseStorageBackend" class="headerlink" title="LmdbBackend(BaseStorageBackend)"></a>LmdbBackend(BaseStorageBackend)</h3><pre><code>    &quot;&quot;&quot;Lmdb storage backend.
+
+    Args:
+        db_path (str): Lmdb database path.
+        readonly (bool, optional): Lmdb environment parameter. If True,
+            disallow any write operations. Default: True.
+        lock (bool, optional): Lmdb environment parameter. If False, when
+            concurrent access occurs, do not lock the database. Default: False.
+        readahead (bool, optional): Lmdb environment parameter. If False,
+            disable the OS filesystem readahead mechanism, which may improve
+            random read performance when a database is larger than RAM.
+            Default: False.
+
+    Attributes:
+        db_path (str): Lmdb database path.
+    &quot;&quot;&quot;
+</code></pre>
+<pre><code>class LmdbBackend(BaseStorageBackend):
+
+
+    def __init__(self,
+                 db_path,
+                 readonly=True,
+                 lock=False,
+                 readahead=False,
+                 **kwargs):
+        try:
+            import lmdb  # NOQA
+        except ImportError:
+            raise ImportError(&#39;Please install lmdb to enable LmdbBackend.&#39;)
+
+        self.db_path = str(db_path)
+        self.readonly = readonly
+        self.lock = lock
+        self.readahead = readahead
+        self.kwargs = kwargs
+        self._client = None
+    
+   def get(self, filepath):
+        &quot;&quot;&quot;Get values according to the filepath.
+
+        Args:
+            filepath (str | obj:`Path`): Here, filepath is the lmdb key.
+        &quot;&quot;&quot;
+        if self._client is None:
+            self._client = self._get_client()
+
+        with self._client.begin(write=False) as txn:
+            value_buf = txn.get(str(filepath).encode(&#39;utf-8&#39;))
+        return value_buf
+</code></pre>
+<h3 id="fileclient用法"><a href="#fileclient用法" class="headerlink" title="fileclient用法"></a>fileclient用法</h3><pre><code>@PIPELINES.register_module()
+class LoadImageFromFile(object):  # 加载图片到内存中
+
+    def __init__(self,
+                 to_float32=False,
+                 color_type=&#39;color&#39;,
+                 file_client_args=dict(backend=&#39;disk&#39;)):
+        self.to_float32 = to_float32
+        self.color_type = color_type
+        # 默认是 disk 后端
+        self.file_client_args = file_client_args.copy()
+        self.file_client = None
+
+    def __call__(self, results):
+        if self.file_client is None:
+            self.file_client = mmcv.FileClient(**self.file_client_args)
+        # 读取图片字节内容
+        img_bytes = self.file_client.get(filename)
+        # 对字节内容进行解码
+        img = mmcv.imfrombytes(img_bytes, flag=self.color_type)
+        ...
+        return results
+</code></pre>
+<h3 id="实列使用"><a href="#实列使用" class="headerlink" title="实列使用"></a>实列使用</h3><p><strong>annotations 文件和图片文件不在同一个地方</strong></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/339190576">https://zhuanlan.zhihu.com/p/339190576</a></p>
+<p>具体修改还是看知乎这里</p>
+<pre><code>import mmcv
+from mmcv import BaseStorageBackend, FileClient
+# 通过 FileClient.register_backend可以注册到_backends 字典中
+# 自己注册的
+@FileClient.register_backend(&#39;remote&#39;)			
+class RemoteUrlBackend(BaseStorageBackend):
+
+    def __init__(self, path_mapping):
+        assert isinstance(path_mapping, dict)
+        self.path_mapping = path_mapping
+
+    def get(self, filepath):
+        filepath = str(filepath)
+
+        # 本地相对路径替换为远程 url
+        for k, v in self.path_mapping.items():
+            filepath = filepath.replace(k, v)
+
+        # 拉取远程图片(可能比较复杂)
+        value_buf = self._get_remote_image()
+
+        return value_buf
+
+    def get_text(self, filepath):
+        raise NotImplementedError
+
+    def _get_remote_image(self):
+        pass
+</code></pre>
+<h2 id="io"><a href="#io" class="headerlink" title="io"></a><em>io</em></h2><pre><code># Copyright (c) OpenMMLab. All rights reserved.
+from io import BytesIO, StringIO
+from pathlib import Path
+from typing import Any, Callable, Dict, List, Optional, TextIO, Union	#它用于声明函数和变量的参数类型和返回值类型。
+
+from ..utils import is_list_of
+from .file_client import FileClient
+from .handlers import BaseFileHandler, JsonHandler, PickleHandler, YamlHandler
+
+FileLikeObject = Union[TextIO, StringIO, BytesIO]
+
+file_handlers = &#123;
+    &#39;json&#39;: JsonHandler(),
+    &#39;yaml&#39;: YamlHandler(),
+    &#39;yml&#39;: YamlHandler(),
+    &#39;pickle&#39;: PickleHandler(),
+    &#39;pkl&#39;: PickleHandler()
+&#125;
+
+
+def load(file: Union[str, Path, FileLikeObject],
+         file_format: Optional[str] = None,
+         file_client_args: Optional[Dict] = None,
+         **kwargs):
+    &quot;&quot;&quot;Load data from json/yaml/pickle files.
+
+    This method provides a unified api for loading data from serialized files.
+
+    Note:
+        In v1.3.16 and later, ``load`` supports loading data from serialized
+        files those can be storaged in different backends.
+
+    Args:
+        file (str or :obj:`Path` or file-like object): Filename or a file-like
+            object.
+        file_format (str, optional): If not specified, the file format will be
+            inferred from the file extension, otherwise use the specified one.
+            Currently supported formats include &quot;json&quot;, &quot;yaml/yml&quot; and
+            &quot;pickle/pkl&quot;.
+        file_client_args (dict, optional): Arguments to instantiate a
+            FileClient. See :class:`mmcv.fileio.FileClient` for details.
+            Default: None.
+
+    Examples:
+        &gt;&gt;&gt; load(&#39;/path/of/your/file&#39;)  # file is storaged in disk
+        &gt;&gt;&gt; load(&#39;https://path/of/your/file&#39;)  # file is storaged in Internet
+        &gt;&gt;&gt; load(&#39;s3://path/of/your/file&#39;)  # file is storaged in petrel
+
+    Returns:
+        The content from the file.
+    &quot;&quot;&quot;
+    if isinstance(file, Path):
+        file = str(file)
+    if file_format is None and isinstance(file, str):
+        file_format = file.split(&#39;.&#39;)[-1]
+    if file_format not in file_handlers:
+        raise TypeError(f&#39;Unsupported format: &#123;file_format&#125;&#39;)
+
+    handler = file_handlers[file_format]
+    f: FileLikeObject
+    if isinstance(file, str):
+        file_client = FileClient.infer_client(file_client_args, file)
+        if handler.str_like:
+            with StringIO(file_client.get_text(file)) as f:
+                obj = handler.load_from_fileobj(f, **kwargs)
+        else:
+            with BytesIO(file_client.get(file)) as f:
+                obj = handler.load_from_fileobj(f, **kwargs)
+    elif hasattr(file, &#39;read&#39;):
+        obj = handler.load_from_fileobj(file, **kwargs)
+    else:
+        raise TypeError(&#39;&quot;file&quot; must be a filepath str or a file-object&#39;)
+    return obj
+
+
+def dump(obj: Any,
+         file: Optional[Union[str, Path, FileLikeObject]] = None,
+         file_format: Optional[str] = None,
+         file_client_args: Optional[Dict] = None,
+         **kwargs):
+    &quot;&quot;&quot;Dump data to json/yaml/pickle strings or files.
+
+    This method provides a unified api for dumping data as strings or to files,
+    and also supports custom arguments for each file format.
+
+    Note:
+        In v1.3.16 and later, ``dump`` supports dumping data as strings or to
+        files which is saved to different backends.
+
+    Args:
+        obj (any): The python object to be dumped.
+        file (str or :obj:`Path` or file-like object, optional): If not
+            specified, then the object is dumped to a str, otherwise to a file
+            specified by the filename or file-like object.
+        file_format (str, optional): Same as :func:`load`.
+        file_client_args (dict, optional): Arguments to instantiate a
+            FileClient. See :class:`mmcv.fileio.FileClient` for details.
+            Default: None.
+
+    Examples:
+        &gt;&gt;&gt; dump(&#39;hello world&#39;, &#39;/path/of/your/file&#39;)  # disk
+        &gt;&gt;&gt; dump(&#39;hello world&#39;, &#39;s3://path/of/your/file&#39;)  # ceph or petrel
+
+    Returns:
+        bool: True for success, False otherwise.
+    &quot;&quot;&quot;
+    if isinstance(file, Path):
+        file = str(file)
+    if file_format is None:
+        if isinstance(file, str):
+            file_format = file.split(&#39;.&#39;)[-1]
+        elif file is None:
+            raise ValueError(
+                &#39;file_format must be specified since file is None&#39;)
+    if file_format not in file_handlers:
+        raise TypeError(f&#39;Unsupported format: &#123;file_format&#125;&#39;)
+    f: FileLikeObject
+    handler = file_handlers[file_format]
+    if file is None:
+        return handler.dump_to_str(obj, **kwargs)
+    elif isinstance(file, str):
+        file_client = FileClient.infer_client(file_client_args, file)
+        if handler.str_like:
+            with StringIO() as f:
+                handler.dump_to_fileobj(obj, f, **kwargs)
+                file_client.put_text(f.getvalue(), file)
+        else:
+            with BytesIO() as f:
+                handler.dump_to_fileobj(obj, f, **kwargs)
+                file_client.put(f.getvalue(), file)
+    elif hasattr(file, &#39;write&#39;):
+        handler.dump_to_fileobj(obj, file, **kwargs)
+    else:
+        raise TypeError(&#39;&quot;file&quot; must be a filename str or a file-object&#39;)
+
+
+def _register_handler(handler: BaseFileHandler,
+                      file_formats: Union[str, List[str]]) -&gt; None:
+    &quot;&quot;&quot;Register a handler for some file extensions.
+
+    Args:
+        handler (:obj:`BaseFileHandler`): Handler to be registered.
+        file_formats (str or list[str]): File formats to be handled by this
+            handler.
+    &quot;&quot;&quot;
+    if not isinstance(handler, BaseFileHandler):
+        raise TypeError(
+            f&#39;handler must be a child of BaseFileHandler, not &#123;type(handler)&#125;&#39;)
+    if isinstance(file_formats, str):
+        file_formats = [file_formats]
+    if not is_list_of(file_formats, str):
+        raise TypeError(&#39;file_formats must be a str or a list of str&#39;)
+    for ext in file_formats:
+        file_handlers[ext] = handler
+
+
+def register_handler(file_formats: Union[str, list], **kwargs) -&gt; Callable:
+
+    def wrap(cls):
+        _register_handler(cls(**kwargs), file_formats)
+        return cls
+
+    return wrap
+</code></pre>
+<h3 id="‘load’"><a href="#‘load’" class="headerlink" title="‘load’"></a>‘load’</h3><pre><code class="python">
+    handler = file_handlers[file_format]
+    file_client = FileClient.infer_client(file_client_args, file)
+    if isinstance(file, str):
+        file_client = FileClient.infer_client(file_client_args, file) 
+        # file_client_args 一般是None
+        # file字符串路径名
+        if handler.str_like:
+            with StringIO(file_client.get_text(file)) as f:
+                obj = handler.load_from_fileobj(f, **kwargs)
+        else:
+            with BytesIO(file_client.get(file)) as f:
+                obj = handler.load_from_fileobj(f, **kwargs)
+    elif hasattr(file, &#39;read&#39;):
+        obj = handler.load_from_fileobj(file, **kwargs)
+    else:
+        raise TypeError(&#39;&quot;file&quot; must be a filepath str or a file-object&#39;)
+    return obj
+</code></pre>
+<h3 id="‘dump’"><a href="#‘dump’" class="headerlink" title="‘dump’"></a>‘dump’</h3><h3 id="‘register-handler’"><a href="#‘register-handler’" class="headerlink" title="‘register_handler’"></a>‘register_handler’</h3><h2 id="handlers"><a href="#handlers" class="headerlink" title="handlers"></a><em>handlers</em></h2><h3 id="‘BaseFileHandler’"><a href="#‘BaseFileHandler’" class="headerlink" title="‘BaseFileHandler’"></a>‘BaseFileHandler’</h3><pre><code class="python">from abc import ABCMeta, abstractmethod
+# 继承ABCMeta元类，使其无法直接实例化
+class BaseFileHandler(metaclass=ABCMeta):
+
+    #@abstractmethod表示子类必须要实现该方法，否则报错
+    # 文件读取
+    @abstractmethod
+    def load_from_fileobj(self, file, **kwargs):
+        pass
+    # 文件存储，需要传入对象obj和file
+    @abstractmethod
+    def dump_to_fileobj(self, obj, file, **kwargs):
+        pass
+
+    #dump成字符串返回，当你不想保存时候使用
+    @abstractmethod
+    def dump_to_str(self, obj, **kwargs):
+        pass
+    # 对外实际上是采用下面两个api
+    def load_from_path(self, filepath, mode=&#39;r&#39;, **kwargs):
+        with open(filepath, mode) as f:
+            return self.load_from_fileobj(f, **kwargs)
+
+    def dump_to_path(self, obj, filepath, mode=&#39;w&#39;, **kwargs):
+        with open(filepath, mode) as f:
+            self.dump_to_fileobj(obj, f, **kwargs)
+</code></pre>
+<h4 id="基方法load-from-fileobj"><a href="#基方法load-from-fileobj" class="headerlink" title="基方法load_from_fileobj"></a>基方法load_from_fileobj</h4><h4 id="基方法dump-to-fileobj"><a href="#基方法dump-to-fileobj" class="headerlink" title="基方法dump_to_fileobj"></a>基方法dump_to_fileobj</h4><h4 id="基方法dump-to-str"><a href="#基方法dump-to-str" class="headerlink" title="基方法dump_to_str"></a>基方法dump_to_str</h4><h4 id="load-from-path"><a href="#load-from-path" class="headerlink" title="load_from_path"></a>load_from_path</h4><h4 id="dump-to-path"><a href="#dump-to-path" class="headerlink" title="dump_to_path"></a>dump_to_path</h4><h3 id="‘JsonHandler’"><a href="#‘JsonHandler’" class="headerlink" title="‘JsonHandler’"></a>‘JsonHandler’</h3><pre><code># Copyright (c) OpenMMLab. All rights reserved.
+import json
+
+import numpy as np
+
+from .base import BaseFileHandler
+
+
+def set_default(obj):
+    # 这些数据类型没办法序列化，比如numpy数组，就要变成列表
+    # 创建一个set my_set = &#123;1, 2, 3, 4, 5&#125;
+    # &lt;class &#39;range&#39;&gt; range()函数返回一个表示范围的对象，而不是一个列表。
+    # range(1, 6)
+    if isinstance(obj, (set, range)):
+        return list(obj)
+    elif isinstance(obj, np.ndarray):
+        return obj.tolist()
+    elif isinstance(obj, np.generic):
+        return obj.item()
+    raise TypeError(f&#39;&#123;type(obj)&#125; is unsupported for json dump&#39;)
+
+
+class JsonHandler(BaseFileHandler):
+
+    def load_from_fileobj(self, file):
+        return json.load(file)
+
+    def dump_to_fileobj(self, obj, file, **kwargs):
+        kwargs.setdefault(&#39;default&#39;, set_default)
+        json.dump(obj, file, **kwargs)
+
+    def dump_to_str(self, obj, **kwargs):
+        kwargs.setdefault(&#39;default&#39;, set_default)
+        return json.dumps(obj, **kwargs)
+</code></pre>
+<h3 id="‘PickleHandler’"><a href="#‘PickleHandler’" class="headerlink" title="‘PickleHandler’"></a>‘PickleHandler’</h3><pre><code># Copyright (c) OpenMMLab. All rights reserved.
+import pickle
+
+from .base import BaseFileHandler
+
+
+class PickleHandler(BaseFileHandler):
+
+    str_like = False
+
+    def load_from_fileobj(self, file, **kwargs):
+        return pickle.load(file, **kwargs)
+
+    def load_from_path(self, filepath, **kwargs):
+        return super().load_from_path(filepath, mode=&#39;rb&#39;, **kwargs)
+
+    def dump_to_str(self, obj, **kwargs):
+        kwargs.setdefault(&#39;protocol&#39;, 2)
+        return pickle.dumps(obj, **kwargs)
+
+    def dump_to_fileobj(self, obj, file, **kwargs):
+        kwargs.setdefault(&#39;protocol&#39;, 2)
+        pickle.dump(obj, file, **kwargs)
+
+    def dump_to_path(self, obj, filepath, **kwargs):
+        super().dump_to_path(obj, filepath, mode=&#39;wb&#39;, **kwargs)
+</code></pre>
+<h3 id="‘YamlHandler’"><a href="#‘YamlHandler’" class="headerlink" title="‘YamlHandler’"></a>‘YamlHandler’</h3><pre><code># Copyright (c) OpenMMLab. All rights reserved.
+import yaml
+
+try:
+    from yaml import CDumper as Dumper
+    from yaml import CLoader as Loader
+except ImportError:
+    from yaml import Loader, Dumper  # type: ignore
+
+from .base import BaseFileHandler  # isort:skip
+
+
+class YamlHandler(BaseFileHandler):
+
+    def load_from_fileobj(self, file, **kwargs):
+        kwargs.setdefault(&#39;Loader&#39;, Loader)
+        return yaml.load(file, **kwargs)
+
+    def dump_to_fileobj(self, obj, file, **kwargs):
+        kwargs.setdefault(&#39;Dumper&#39;, Dumper)
+        yaml.dump(obj, file, **kwargs)
+
+    def dump_to_str(self, obj, **kwargs):
+        kwargs.setdefault(&#39;Dumper&#39;, Dumper)
+        return yaml.dump(obj, **kwargs)
+</code></pre>
+<h2 id="parse"><a href="#parse" class="headerlink" title="parse"></a>parse</h2><h6 id="‘list-from-file"><a href="#‘list-from-file" class="headerlink" title="‘list_from_file"></a>‘list_from_file</h6><h6 id="dict-from-file"><a href="#dict-from-file" class="headerlink" title="dict_from_file"></a>dict_from_file</h6><h2 id="自定义扩展"><a href="#自定义扩展" class="headerlink" title="自定义扩展"></a>自定义扩展</h2><pre><code class="python">def register_handler(file_formats, **kwargs):
+
+    def wrap(cls):
+        # 这句话其实核心是：file_handlers[ext] = handler
+        # 把我们写的handler类设置到file_handlers的字典中
+        _register_handler(cls(**kwargs), file_formats)
+        return cls
+
+    return wrap
+</code></pre>
+<pre><code>@register_handler(&#39;npy&#39;)
+class NpyHandler(BaseFileHandler):
+    def load_from_fileobj(self, file, **kwargs):
+        return np.load(file)
+
+    def dump_to_fileobj(self, obj, file, **kwargs):
+        np.save(file, obj)
+
+    def dump_to_str(self, obj, **kwargs):
+        # 实际上这么写没有意义，这里只是举例
+        return obj.tobytes()
+</code></pre>
+<p><img src="/../images/mmlab/image-20230719192925462.png" alt="image-20230719192925462"></p>
+<p>在调用的时候，我们需要额外传入 mode 参数，原因是默认的 mode 参数是 ‘r’ 或者 ‘w’，但是在 numpy 中需要是 byte 格式。</p>
+<h2 id="杂-1"><a href="#杂-1" class="headerlink" title="杂"></a>杂</h2><p>在Python中，如果要定义一个抽象类，需要使用abc模块。下面是一个使用@abstractmethod装饰器定义抽象方法的例子：</p>
 <pre><code>from abc import ABC, abstractmethod
 
 class MyAbstractClass(ABC):
@@ -146,6 +695,97 @@ def my_function():
 </code></pre>
 <p>在上面的例子中，my_function函数被@my_decorator装饰器装饰，当调用my_function函数时，会先打印’Before the function is called.’，然后执行原函数的代码，最后打印’After the function is called.’。</p>
 <h6 id="文件获取后端-FileClient"><a href="#文件获取后端-FileClient" class="headerlink" title="文件获取后端 FileClient"></a>文件获取后端 FileClient</h6><p>主要用于训练过程中数据的读取，通过用户选择或者自定义不同的 FileClient 后端，可以轻松实现文件缓存、文件加速读取等功能</p>
+<h6 id="np-generic举例"><a href="#np-generic举例" class="headerlink" title="np.generic举例"></a>np.generic举例</h6><pre><code>import numpy as np
+
+# 创建一个numpy数组
+my_array = np.array([1, 2, 3], dtype=np.int32)
+
+# 将numpy数组转换为Python列表
+my_list = my_array.tolist()
+
+# 打印Python列表
+print(my_list)
+
+# 将numpy的generic类型转换为Python内置类型
+my_int32 = np.int32(3)
+my_int = my_int32.item()
+
+# 打印转换后的Python内置类型
+print(type(my_int))  # &lt;class &#39;int&#39;&gt;
+</code></pre>
+<h6 id="类型提示-Type-Hints-语法"><a href="#类型提示-Type-Hints-语法" class="headerlink" title="类型提示(Type Hints)语法"></a>类型提示(Type Hints)语法</h6><pre><code>from typing import Any, Callable, Dict, List, Optional, TextIO, Union
+</code></pre>
+<p><code>from typing import Any, Callable, Dict, List, Optional, TextIO, Union</code>这行代码是Python中的类型提示(Type Hints)语法，它用于声明函数和变量的参数类型和返回值类型。这样做可以提高代码的可读性、可维护性和可靠性。</p>
+<p>具体来说，这行代码中声明了以下类型：</p>
+<ul>
+<li><code>Any</code>: 表示任意类型，相当于不做类型限制。</li>
+<li><code>Callable</code>: 表示一个可调用对象，例如函数或方法。</li>
+<li><code>Dict</code>: 表示一个字典类型，其中键和值的类型可以是任意类型。</li>
+<li><code>List</code>: 表示一个列表类型，其中元素的类型可以是任意类型。</li>
+<li><code>Optional</code>: 表示一个可选类型，即参数可以是指定类型或<code>None</code>。</li>
+<li><code>TextIO</code>: 表示一个文本流对象，例如文件、标准输入输出等。</li>
+<li><code>Union</code>: 表示多个类型中的任意一种类型。</li>
+</ul>
+<pre><code>def my_function(my_list: List[int], my_dict: Optional[Dict[str, Any]]) -&gt; Union[int, float]:
+    # 函数体
+    pass
+</code></pre>
+<p>FileLikeObject &#x3D; Union[TextIO, StringIO, BytesIO]这行代码是Python中的类型提示(Type Hints)语法，用于定义一个新的类型FileLikeObject。在这个代码中，FileLikeObject是一个由Union类型组成的联合类型，它表示可以是TextIO、StringIO或BytesIO类型中的任何一种。</p>
+<p>TextIO、StringIO和BytesIO是Python内置的文件流对象，用于处理文本和二进制数据。TextIO可以用于读写文本文件，StringIO可以在内存中读写字符串，BytesIO可以在内存中读写二进制数据。这些对象都实现了文件流操作接口，并且可以像文件一样读写数据。</p>
+<pre><code>FileLikeObject = Union[TextIO, StringIO, BytesIO]
+</code></pre>
+<p>f是一个变量名，FileLikeObject是该变量的类型。</p>
+<pre><code>f: FileLikeObject
+</code></pre>
+<h6 id="python-property"><a href="#python-property" class="headerlink" title="python @property"></a>python @property</h6><p>用于将一个方法转换为属性调用。在Python中，属性通常被视为类的一部分，它们提供了一种简单的方式来访问和修改对象的状态。</p>
+<p>通过将一个方法标记为@property，我们可以将它转换为一个只读属性。这意味着，当我们访问该属性时，实际上是调用了该方法，并返回了它的返回值。</p>
+<pre><code>class MyClass:
+    @property
+    def name(self):
+        return self.__class__.__name__
+
+obj = MyClass()
+print(obj.name)  # 输出 &quot;MyClass&quot;
+</code></pre>
+<h6 id="python-abstractmethod"><a href="#python-abstractmethod" class="headerlink" title="python @abstractmethod"></a>python @abstractmethod</h6><p>用于将一个方法定义为抽象方法。抽象方法是一种特殊的方法，它没有具体的实现，只是定义了一个接口，需要在子类中进行实现。</p>
+<h6 id="python-classmethod"><a href="#python-classmethod" class="headerlink" title="python @classmethod"></a>python @classmethod</h6><p>通过将一个方法标记为@classmethod，我们可以将它转换为类方法。在类方法中，第一个参数通常被命名为cls，它指代当前类对象本身。使用cls参数，我们可以在类方法中访问类的属性和方法，从而实现对类的操作。</p>
+<pre><code>class MyClass:
+    @classmethod
+    def add(cls, x, y):
+        return x + y
+
+result = MyClass.add(10, 20)
+print(result)  # 输出 30
+</code></pre>
+<h6 id="python-staticmethod"><a href="#python-staticmethod" class="headerlink" title="python @staticmethod"></a>python @staticmethod</h6><p>静态方法是一种特殊的方法，它不需要访问实例的状态或类的状态，而是仅依赖于传入的参数。通过将一个方法标记为@staticmethod，我们可以将它转换为静态方法。在静态方法中，不需要使用self或cls等参数来引用实例或类对象，而是可以直接使用传入的参数进行计算。</p>
+<pre><code>class MyClass:
+    @staticmethod
+    def add(x, y):
+        return x + y
+
+result = MyClass.add(10, 20)
+print(result)  # 输出 30
+</code></pre>
+<h6 id="python-call"><a href="#python-call" class="headerlink" title="python call"></a>python <strong>call</strong></h6><pre><code>class MyClass:
+    def __call__(self, x):
+        return x + 1
+
+obj = MyClass()
+result = obj(10)
+print(result)  # 输出 11
+</code></pre>
+<h6 id="python-运算符对字典解包"><a href="#python-运算符对字典解包" class="headerlink" title="python **运算符对字典解包"></a>python **运算符对字典解包</h6><pre><code>def my_func(a, b):
+    print(a, b)
+
+env = &#123;&#39;a&#39;: 1, &#39;b&#39;: 2&#125;
+my_func(**env)  # 输出 1 2
+</code></pre>
+<h6 id="python-字典形参"><a href="#python-字典形参" class="headerlink" title="python 字典形参"></a>python 字典形参</h6><pre><code>def my_func(**kwargs):
+    for key, value in kwargs.items():
+        print(key, value)
+
+my_func(a=1, b=2, c=3)  # 输出 a 1 b 2 c 3
+</code></pre>
 
     </div>
 
