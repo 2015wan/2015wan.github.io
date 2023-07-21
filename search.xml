@@ -264,6 +264,24 @@ rand_loader = DataLoader(dataset=dataset,batch_size=batch_size, shuffle=False, s
 <p>GAN训练：模式崩溃和后置崩溃挑战</p>
 <p><a href="https://zhuanlan.zhihu.com/p/165577850">https://zhuanlan.zhihu.com/p/165577850</a> flow的文章</p>
 <p><a href="https://zhuanlan.zhihu.com/p/59615785">https://zhuanlan.zhihu.com/p/59615785</a> 讲flow的文章</p>
+<pre><code>20个采样点 10个实列
+all number of params: 43108693
+number of backbone params: 33841352
+</code></pre>
+<pre><code>20个采样点 5个实列
+all number of params: 43105908
+number of backbone params: 33841352
+</code></pre>
+<pre><code>10个采样点 5个实列
+all number of params: 42365748
+number of backbone params: 33841352
+</code></pre>
+<p>19416917</p>
+<p>尺寸不变</p>
+<pre><code>kernel_size=3, padding=1, stride=1 
+kernel_size=5, padding=2, stride=1
+kernel_size=7, padding=3, stride=1
+</code></pre>
 ]]></content>
       <tags>
         <tag>pose</tag>
@@ -317,6 +335,8 @@ my_function(name=&#39;Tom&#39;, age=20)  # 输出 name Tom  age 20
 <h1 id="不同组件"><a href="#不同组件" class="headerlink" title="不同组件"></a>不同组件</h1><p><strong>fileio、image、parallel、runner 和 utils 这几个非常通用的组件</strong></p>
 <h1 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h1><p>py、json、ymal 和 yml配置文件解析功能。</p>
 <p>mmcv\utils\config.py</p>
+<h6 id="Config-fromfile-函数"><a href="#Config-fromfile-函数" class="headerlink" title="Config.fromfile 函数"></a>Config.fromfile 函数</h6><p>参数：filename、use_predefined_variables、import_custom_modules</p>
+<h6 id="cfg-merge-from-dict函数"><a href="#cfg-merge-from-dict函数" class="headerlink" title="cfg.merge_from_dict函数"></a>cfg.merge_from_dict函数</h6><p>接口可以实现对字典内容进行合并</p>
 <h6 id="通过-dict-生成-config"><a href="#通过-dict-生成-config" class="headerlink" title="通过 dict 生成 config"></a>通过 dict 生成 config</h6><pre><code>cfg = Config(dict(a=1, b=dict(b1=[0, 1])))
 
 # 可以通过 .属性方式访问，比较方便
@@ -343,7 +363,136 @@ cfg # 打印 config path，和字典内容...
 &quot;Config [path: /home/kchen/projects/mmcv/tests/data/config/a.py]: &quot;
 &quot;&#123;&#39;item1&#39;: [1, 2], &#39;item2&#39;: &#123;&#39;a&#39;: 0&#125;, &#39;item3&#39;: True, &#39;item4&#39;: &#39;test&#39;&#125;&quot;
 </code></pre>
-<h6 id="自动替换预定义变量"><a href="#自动替换预定义变量" class="headerlink" title="自动替换预定义变量"></a>自动替换预定义变量</h6><h6 id="导入自定义模块"><a href="#导入自定义模块" class="headerlink" title="导入自定义模块"></a>导入自定义模块</h6><h6 id="合并多个配置文件"><a href="#合并多个配置文件" class="headerlink" title="合并多个配置文件"></a>合并多个配置文件</h6><h6 id="从-base-文件中合并"><a href="#从-base-文件中合并" class="headerlink" title="从 base 文件中合并"></a>从 base 文件中合并</h6><h6 id="从多个-base-文件中合并"><a href="#从多个-base-文件中合并" class="headerlink" title="从多个 base 文件中合并"></a>从多个 base 文件中合并</h6><h6 id="合并字典到配置"><a href="#合并字典到配置" class="headerlink" title="合并字典到配置"></a>合并字典到配置</h6><h6 id="allow-list-keys-模式合并"><a href="#allow-list-keys-模式合并" class="headerlink" title="allow_list_keys 模式合并"></a>allow_list_keys 模式合并</h6><h6 id="允许删掉特定内容"><a href="#允许删掉特定内容" class="headerlink" title="允许删掉特定内容"></a>允许删掉特定内容</h6><h6 id="pretty-text-和-dump"><a href="#pretty-text-和-dump" class="headerlink" title="pretty_text 和 dump"></a>pretty_text 和 dump</h6><h1 id="fileio"><a href="#fileio" class="headerlink" title="fileio"></a>fileio</h1><h2 id="fileio-1"><a href="#fileio-1" class="headerlink" title="fileio"></a><strong>fileio</strong></h2><h6 id="涉及文件读写的-FileHandler"><a href="#涉及文件读写的-FileHandler" class="headerlink" title="涉及文件读写的 FileHandler"></a>涉及文件读写的 FileHandler</h6><p>根据待读写的文件后缀名自动选择对应的 handler 进行具体操作</p>
+<h6 id="自动替换预定义变量"><a href="#自动替换预定义变量" class="headerlink" title="自动替换预定义变量"></a>自动替换预定义变量</h6><p>tests\data\config\h.py</p>
+<p>h.py内容为</p>
+<pre><code># Copyright (c) OpenMMLab. All rights reserved.
+item1 = &#39;&#123;&#123;fileBasename&#125;&#125;&#39;
+item2 = &#39;&#123;&#123; fileDirname&#125;&#125;&#39;
+item3 = &#39;abc_&#123;&#123; fileBasenameNoExtension &#125;&#125;&#39;
+</code></pre>
+<p>上面的fileBasename,fileDirname,fileBasenameNoExtension都是预定义的变量，那变量的定义是参考vscode里面设计的</p>
+<p><a href="https://code.visualstudio.com/docs/editor/variables-reference">https://code.visualstudio.com/docs/editor/variables-reference</a></p>
+<p>使用过程：</p>
+<pre><code># cfg_file 文件名是 h.py
+cfg = Config.fromfile(cfg_file, use_predefined_variables=True)
+print(cfg.pretty_text)
+
+# 输出
+item1 = &#39;h.py&#39;
+item2 = &#39;config 文件路径&#39;
+item3 = &#39;abc_h&#39;
+</code></pre>
+<p>该参数主要用途是自动替换 Config 类中已经预定义好的变量模板为真实值，在某些场合有用</p>
+<h6 id="导入自定义模块"><a href="#导入自定义模块" class="headerlink" title="导入自定义模块"></a>导入自定义模块</h6><p>Config.fromfile 函数除了有 filename 和 use_predefined_variables 参数外，还有 import_custom_modules，默认是 True，即当 cfg中存在 custom_imports 键时候会对里面的内容进行自动导入，其输入格式要么是 str 要么是 list[str]，表示待导入的模块路径，一个典型用法是：假设你在 mmdet 中新增了自定义模型 MobileNet ，你需要在 mmdet&#x2F;models&#x2F;backbones&#x2F;<strong>init</strong>.py 里面加入如下代码，否则在调用时候会提示该模块没有被注册进去：</p>
+<pre><code>from .mobilenet import MobileNet
+</code></pre>
+<p>但是上述做法在某些场景下会比较麻烦。例如该模块处于非常深的层级，那么就需要逐层修改 <code>__init__.py</code>，有了本参数，便可以采用如下做法优雅避免：</p>
+<pre><code># .py 文件里面存储如下内容
+custom_imports = dict(
+    imports=[&#39;mmdet.models.backbones.mobilenet&#39;],
+    allow_failed_imports=False)
+
+# 自动导入 mmdet.models.backbones.mobilenet
+Config.fromfile(cfg_file, import_custom_modules=True)
+</code></pre>
+<h6 id="合并多个配置文件"><a href="#合并多个配置文件" class="headerlink" title="合并多个配置文件"></a>合并多个配置文件</h6><ul>
+<li><p>base 文件的 key 是不允许改的，必须是 <code>_base_</code> ，否则程序不知道哪个字段才是 base</p>
+</li>
+<li><p>多个 base 以 list 方式并行构建模式下，不允许多个 base 文件中有相同字段，程序会报 Duplicate Key Error，因为此时不知道以哪个配置为主</p>
+</li>
+<li><p>从单个base文件中合并:</p>
+<p>base.p与d.py在同一文件夹下！</p>
+<p>. 表示当前目录，&#x2F; 表示目录的分隔符，.. 表示上一级目录，</p>
+<pre><code># base.py 内容
+
+item1 = [1, 2]
+item2 = &#123;&#39;a&#39;: 0&#125;
+item3 = True
+item4 = &#39;test&#39;
+
+# d.py 内容
+_base_ = &#39;./base.py&#39;
+item1 = [2, 3]
+item2 = &#123;&#39;a&#39;: 1&#125;
+item3 = False
+item4 = &#39;test_base&#39;
+
+# 用法
+cfg = Config.fromfile(&#39;d.py&#39;)
+
+# 输出
+item1 = [2, 3]
+item2 = dict(a=1)
+item3 = False
+item4 = &#39;test_base&#39;
+</code></pre>
+</li>
+<li><p>从多个base文件中合并Config：</p>
+<p>用户只需要在非 base 配置文件中将类似 <em>base</em> &#x3D; ‘.&#x2F;base.py’改成 <em>base</em> &#x3D; [‘.&#x2F;base.py’,…] 即可。</p>
+</li>
+<li><p>合并字典到配置</p>
+<pre><code># Copyright (c) OpenMMLab. All rights reserved.
+item1 = [1, 2]
+item2 = &#123;&#39;a&#39;: 0&#125;
+item3 = True
+item4 = &#39;test&#39;
+</code></pre>
+<pre><code>cfg_file = osp.join(data_path, &#39;config/a.py&#39;)
+cfg = Config.fromfile(cfg_file)
+input_options = &#123;&#39;item2.a&#39;: 1, &#39;item2.b&#39;: 0.1, &#39;item3&#39;: False&#125;
+cfg.merge_from_dict(input_options)
+
+# 原始 a.py 内容为：
+item1 = [1, 2]
+item2 = &#123;&#39;a&#39;: 0&#125;
+item3 = True
+item4 = &#39;test&#39;
+
+# 进行合并后, cfg 内容
+item1 = [1, 2]
+item2 = dict(a=1, b=0.1)
+item3 = False
+item4 = &#39;test&#39;
+</code></pre>
+</li>
+<li><h6 id="allow-list-keys-模式合并"><a href="#allow-list-keys-模式合并" class="headerlink" title="allow_list_keys 模式合并"></a>allow_list_keys 模式合并</h6><p>假设某个配置文件中内容为：item &#x3D; [dict(a&#x3D;0), dict(b&#x3D;0, c&#x3D;0)]可以通过如下方式修改 list 内容：</p>
+<pre><code class="python">input_options = &#123;&#39;item.0.a&#39;: 1, &#39;item.1.b&#39;: 1&#125;
+cfg.merge_from_dict(input_options, allow_list_keys=True)
+
+# 输出
+item = [dict(a=1), dict(b=1, c=0)]
+</code></pre>
+</li>
+</ul>
+<p>​		如果 input_options 内部索引越界或者 allow_list_keys&#x3D;False (默认是 True)，则会报错。</p>
+<h6 id="允许删掉特定内容"><a href="#允许删掉特定内容" class="headerlink" title="允许删掉特定内容"></a>允许删掉特定内容</h6><p>该功能也比较常用，思考如下场景：在 RetinaNet 算法中，其采用的 bbox 回归 loss 配置如下：</p>
+<pre><code class="python">loss_bbox=dict(type=&#39;L1Loss&#39;, loss_weight=1.0，其他参数)
+</code></pre>
+<p>上述配置是在 base 文件中，但是在 FASF 算法中采用的是 IOULoss，现在要做的事情是在 FASF 配置中自动覆盖掉 base 配置中的 L1Loss，可以采用如下做法：</p>
+<pre><code class="python">loss_bbox=dict(
+    _delete_=True,
+    type=&#39;IoULoss&#39;,
+    eps=1e-6,
+    loss_weight=1.0,
+    reduction=&#39;none&#39;)
+</code></pre>
+<p>如果没有 <em>delete</em>&#x3D;True 参数，则两个配置会自动合并，L1Loss 中的其他参数始终会保留，无法删除，这肯定是不正确的( IoULoss 中不需要 L1Loss 的初始化参数)，现在通过引入 <em>delete</em> 保留字则可以实现忽略 base 相关配置，直接采用新配置文件字段功能。</p>
+<h6 id="pretty-text-和-dump"><a href="#pretty-text-和-dump" class="headerlink" title="pretty_text 和 dump"></a>pretty_text 和 dump</h6><p>pretty_text 函数可以将字典内容按照 PEP8 格式打印，输出结构清晰，非常好看，如下所示：</p>
+<pre><code># 直接打印字典内容
+print(cfg._cfg_dict)
+# 输出
+&#123;&#39;item1&#39;: [1, 2], &#39;item2&#39;: &#123;&#39;a&#39;: 1, &#39;b&#39;: 0.1&#125;, &#39;item3&#39;: False, &#39;item4&#39;: &#39;test&#39;&#125;
+
+# pretty 打印字典内容
+print(cfg.pretty_text)
+# 输出
+item1 = [1, 2]
+item2 = dict(a=1, b=0.1)
+item3 = False
+item4 = &#39;test&#39;
+</code></pre>
+<p>上述功能是解决第三方库 yapf 实现。而 dump 功能就是将 cfg 内容保存，当想查看实验配置是否正确、查看实验记录以及复现以前实验结果时候非常有用。</p>
+<h1 id="fileio"><a href="#fileio" class="headerlink" title="fileio"></a>fileio</h1><h2 id="fileio-1"><a href="#fileio-1" class="headerlink" title="fileio"></a><strong>fileio</strong></h2><h6 id="涉及文件读写的-FileHandler"><a href="#涉及文件读写的-FileHandler" class="headerlink" title="涉及文件读写的 FileHandler"></a>涉及文件读写的 FileHandler</h6><p>根据待读写的文件后缀名自动选择对应的 handler 进行具体操作</p>
 <pre><code>mmcv/mmcv/fileio/handlers/base.py
 </code></pre>
 <img src="../images/mmlab/image-20230719161713484.png" alt="image-20230719161713484" style="zoom:50%;" />
@@ -960,6 +1109,19 @@ my_func(**env)  # 输出 1 2
 
 my_func(a=1, b=2, c=3)  # 输出 a 1 b 2 c 3
 </code></pre>
+<h6 id="python-占位符"><a href="#python-占位符" class="headerlink" title="python 占位符"></a>python 占位符</h6><pre><code>item1 = &#39;&#123;&#125;&#39;
+item2 = &#39;&#123;&#125;/path/to/dir&#39;
+item3 = &#39;abc_&#123;&#125;.txt&#39;
+
+item1 = &#39;&#123;&#125;&#39;.format(&#39;filename&#39;)
+item2 = &#39;&#123;&#125;/path/to/dir&#39;.format(&#39;C:/&#39;)
+item3 = &#39;abc_&#123;&#125;.txt&#39;.format(&#39;file&#39;)
+</code></pre>
+<h6 id="python-文件"><a href="#python-文件" class="headerlink" title="python 文件"></a>python 文件</h6><p>..&#x2F;a2与..a2一样吗</p>
+<p>不完全相同。..&#x2F;a2 和 ..a2 都表示上一级目录下的 a2 目录，但是它们所表示的路径格式不同。</p>
+<p>..&#x2F;a2 使用了标准的相对路径格式，其中 .. 表示上一级目录，&#x2F; 表示目录的分隔符，因此 ..&#x2F;a2 表示上一级目录下的 a2 目录。这种表示方法是在文件系统中广泛使用的相对路径格式。</p>
+<p>..a2 则是一种非标准的相对路径格式，使用了点号 . 和 .. 表示路径的相对位置。在 Python 等编程语言中，通常使用点号 . 表示当前目录，使用 .. 表示上一级目录，将它们与目录名拼接起来表示相对路径。因此，..a2 可以理解为上一级目录下的 a2 目录，但是这种表示方法在文件系统中并不通用。</p>
+<p>总之，..&#x2F;a2 是标准的相对路径格式，而 ..a2 则是一种非标准的相对路径格式，使用时需要注意。</p>
 ]]></content>
   </entry>
   <entry>
@@ -979,6 +1141,40 @@ my_func(a=1, b=2, c=3)  # 输出 a 1 b 2 c 3
 ]]></content>
       <tags>
         <tag>杂</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>UniHCP</title>
+    <url>/2023/07/21/UniHCP/</url>
+    <content><![CDATA[<h1 id="卖点"><a href="#卖点" class="headerlink" title="卖点"></a>卖点</h1><p>使用99.97%共享的参数，</p>
+<p>最核心的是最后四个单元统一五个任务！</p>
+<h1 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h1><p><a href="https://arxiv.org/abs/2303.02936">https://arxiv.org/abs/2303.02936</a></p>
+<p><a href="https://github.com/OpenGVLab/HumanBench">https://github.com/OpenGVLab/HumanBench</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/624776660">https://zhuanlan.zhihu.com/p/624776660</a></p>
+<h1 id="问题【待学】："><a href="#问题【待学】：" class="headerlink" title="问题【待学】："></a>问题【待学】：</h1><p>思考: 内功看成的是共享位置嵌入，具体是怎么实现的，能不能用生成模型来做？</p>
+<p>UNIFIED-IO: A UNIFIED MODEL FOR VISION, LANGUAGE, AND MULTI-MODAL TASKS 这篇论文用到啦VQ-VAE，看看是怎么用的</p>
+<p>对于pose的query设计是直接14个关键点变成14，256，还是说怎么样？</p>
+<ul>
+<li>Masked-attention Mask Transformer for Universal Image Segmentation，这篇论文里面有query关于注意力mask的机制，mask有什么好处？</li>
+<li>A Unified Sequence Interface for Vision Tasks，这篇论文使用了VQ-VAE</li>
+</ul>
+<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><h2 id="任务解释机制"><a href="#任务解释机制" class="headerlink" title="任务解释机制"></a>任务解释机制</h2><h3 id="任务引导的解释器"><a href="#任务引导的解释器" class="headerlink" title="任务引导的解释器"></a>任务引导的解释器</h3><p>UniHCP首先将不同任务的图片输入转化为公用的输出空间，而为了适应不同任务的最终输出，在decoder的末尾设计了任务引导的解释器（task-guided interpreter），用极少的参数量构建了四种输出单元，让UniHCP能根据不同任务选择相应的输出单元。同样的，task-guided  interpreter中的参数也是task间共享的。</p>
+<p>query独立的设计让其成为了天生的prompt，让UniHCP在promtp tuning方面具有出色的表现和潜力。</p>
+<img src="../images/UniHCP/image-20230721105540492.png" alt="image-20230721105540492" style="zoom:150%;" />
+
+<p>特征表示，局部概率图  ,全局概率图  ,边界框坐标 。</p>
+<p>共享99.7%的参数量</p>
+<p><img src="/../images/UniHCP/image-20230721112749245.png" alt="image-20230721112749245"></p>
+<p><img src="/../images/UniHCP/image-20230721113410803.png" alt="image-20230721113410803"></p>
+<h3 id="任务无关的Encoder"><a href="#任务无关的Encoder" class="headerlink" title="任务无关的Encoder"></a>任务无关的Encoder</h3><p>UniHCP选用Vision  Transformer(ViT)作为其编码器模型，在此基础上，UniHCP采用了一个共享的可学习位置嵌入(Learnable  Positional  Embedding)，使其可以关注不同人体任务数据中的人体知识本身,而非任务特有的时空结构,这有利于其学习人体知识的共性与内在联结。值得一提的是，共享位置嵌入还可以减少编码器的参数量与计算负载，避免对于不同任务、数据集学习额外的位置嵌入，带来下游部署上的麻烦。</p>
+<p>具体来说，我们选择了各个任务中最大图片高、宽的输入（检测中的长边1333像素），下采样16倍后，学习一个所有任务间共享的 84×84 的 Positional Embedding，<em><strong>并根据具体任务的需要，对Positional  Embedding进行interpolation后作为输入。</strong></em></p>
+<h3 id="Decoder和任务相关的Queries"><a href="#Decoder和任务相关的Queries" class="headerlink" title="Decoder和任务相关的Queries"></a><strong>Decoder和任务相关的Queries</strong></h3><p>UniHCP的Decoder的所有参数在所有任务之间完全相同，针对不同数据集、不同人体任务有所区别的只有用于查询人体知识的Queries。不同Queries仅激活编码器中相关的人体知识,而不改变其对这些知识的理解。这使Queries的变化不会影响UniHCP对人体知识的表达,所以其可以在不同Queries(任务)间最大限度地复用与迁移所学知识。</p>
+<p><img src="/../images/UniHCP/image-20230721113807935.png" alt="image-20230721113807935"></p>
+<h3 id="关于query的初始化"><a href="#关于query的初始化" class="headerlink" title="关于query的初始化:"></a>关于query的初始化:</h3><h4 id="pedestrian-detection"><a href="#pedestrian-detection" class="headerlink" title="pedestrian detection"></a>pedestrian detection</h4><p>query初始化采用Anchor DETR的设计，并且tgt不断的refine,query_pos不refine</p>
+<h4 id="别的任务"><a href="#别的任务" class="headerlink" title="别的任务"></a>别的任务</h4><p>query的初始化都是随机初始化的</p>
+]]></content>
+      <tags>
+        <tag>pose论文</tag>
       </tags>
   </entry>
 </search>
