@@ -1,217 +1,1388 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
+<search>
+  <entry>
+    <title>搭建博客记录</title>
+    <url>/2023/06/26/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<ol>
+<li><a href="https://blog.csdn.net/yaorongke/article/details/119089190">https://blog.csdn.net/yaorongke/article/details/119089190</a> 龙哥的链接</li>
+<li>hexo主题相关的<a href="https://hexo.io/themes/">https://hexo.io/themes/</a></li>
+<li>我博客使用的主题<a href="https://github.com/HiNinoJay/hexo-theme-A4">https://github.com/HiNinoJay/hexo-theme-A4</a></li>
+<li>typora添加图片<a href="https://blog.51cto.com/u_15854687/5811585">https://blog.51cto.com/u_15854687/5811585</a><br><a href="https://blog.csdn.net/Qxiaofei_/article/details/124629908">https://blog.csdn.net/Qxiaofei_/article/details/124629908</a></li>
+<li>typora安装url</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>杂</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ovd</title>
+    <url>/2023/06/27/ovd/</url>
+    <content><![CDATA[<h6 id="COCO数据集"><a href="#COCO数据集" class="headerlink" title="COCO数据集"></a>COCO数据集</h6><p>Base类48个，Novel17个，一共65个。</p>
+<h6 id="多模态相关工作"><a href="#多模态相关工作" class="headerlink" title="多模态相关工作"></a>多模态相关工作</h6><p>CLIP、ALIGN、R2D2</p>
+<h6 id="OVR-CNN"><a href="#OVR-CNN" class="headerlink" title="OVR-CNN"></a>OVR-CNN</h6><p>无类别区域检测器与无标注数据的跨模态模型</p>
+<p><img src="/../images/ovd/image-20230627105546152.png" alt="image-20230627105546152"></p>
+<p><img src="/../images/ovd/image-20230627110708030.png" alt="image-20230627110708030"></p>
+<p>待看后两篇 <a href="https://mp.weixin.qq.com/s/f7hlh32TGPwktRhc64yejw">https://mp.weixin.qq.com/s/f7hlh32TGPwktRhc64yejw</a> </p>
+]]></content>
+      <tags>
+        <tag>detect</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hw</title>
+    <url>/2023/06/27/hw/</url>
+    <content><![CDATA[<h6 id="杂"><a href="#杂" class="headerlink" title="杂"></a>杂</h6><pre><code>
+tree = struct(&#39;value&#39;, &#39;null&#39;, &#39;left&#39;, &#39;null&#39;, &#39;right&#39;, &#39;null&#39;);
+相当于字典
+值的索引是tree.value,用点的方式
+#
+length(attrib) attrib shape为150，5 返回150
+索引是 attrib(:,1) 圆括号，从1开始
+# 
+bool数组对应的logical数组，可以用sum函数
+#
+</code></pre>
+<h6 id="sortrows函数的使用："><a href="#sortrows函数的使用：" class="headerlink" title="sortrows函数的使用："></a>sortrows函数的使用：</h6><p>函数返回一个按照指定列排序后的矩阵或表格。如果两行在排序列中具有相同的值，则按照后续列进行排序。如果两行在所有列中都具有相同的值，则它们的顺序在结果中未定义。</p>
+<p>例如，以下代码将一个3x3的矩阵按第二列进行排序：</p>
+<p>A &#x3D; [4 3 9; 2 1 8; 7 6 5];<br>B &#x3D; sortrows(A, 2);</p>
+<p>B &#x3D;<br>2 1 8<br>7 6 5<br>4 3 9</p>
+<h6 id="cell-array"><a href="#cell-array" class="headerlink" title="cell array"></a>cell array</h6><pre><code>attri&#123;1,1&#125;=sortrows(attrib,1);
+attri&#123;1,2&#125;=sortrows(attrib,2);
+attri&#123;1,3&#125;=sortrows(attrib,3);
+attri&#123;1,4&#125;=sortrows(attrib,4);
+</code></pre>
+<p>在Matlab中，<code>attri</code>的数据类型取决于 <code>sortrows</code> 函数的输出。根据代码中的赋值语句，我们可以猜测 <code>attri</code> 是一个单元格数组（cell array）。</p>
+<p>单元格数组是Matlab中的一种数据类型，可以存储不同类型的数据，包括矩阵、向量、字符数组等等。它们可以通过花括号 <code>&#123;&#125;</code> 引用其中的元素，例如 <code>attri&#123;1,1&#125;</code> 就是单元格数组 <code>attri</code> 中第1行第1列元素的值。</p>
+<p>在这个赋值语句中，<code>sortrows</code> 函数的输出是一个按第1列排序后的矩阵，然后将其赋值给 <code>attri&#123;1,1&#125;</code> 这个单元格数组的第1行第1列元素。因此，<code>attri</code> 的类型是单元格数组，而 <code>attri&#123;1,1&#125;</code> 的类型是矩阵。</p>
+<h5 id="复杂语句"><a href="#复杂语句" class="headerlink" title="复杂语句"></a>复杂语句</h5><p>1:3 &#x3D; 1 2 3 开始与结束都包括</p>
+<h6 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h6><pre><code class="matlab">for i = start:end
+    ~
+end
+</code></pre>
+<h6 id="逻辑判断符"><a href="#逻辑判断符" class="headerlink" title="逻辑判断符"></a>逻辑判断符</h6><p>不等于~&#x3D; </p>
+]]></content>
+      <tags>
+        <tag>杂</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>生成模型</title>
+    <url>/2023/06/29/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="Oh, these decrypted content cannot be verified, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="5057b9112820d7395cbe1c7f38c24e6181012e2ac82551ee34fb6fe04422641f">7feab2e74e7ac8c26f5b44aac0c3756726ff17e5f378d5a54c6adfbf5c70da15b58222ea465b9890607a6c959423b0818f265f6d30eaddc92f49fdfbd01806eaabdefe1ba5ddaf53fa278beee8539cd0293d8ceb205c25c87dbd235933282f6c3f60e83cb5fe12b369eb82e2120434b623961fcebc543ed62a044dcc6b0c8210f99ae6df792d1dadae4d8c5389bb7c204a128326c89b175a862741406815d766ca060ea076e55e37f4e2e926939cf90e0bb86c59874af34ea7f433cae0a8bac83b5fc5571e7af7b70c5ede7364d6ccefc5b864503f0a6743a7c29d3b3e2c64f1f8221a703ba9c2095978a85d0cc5833faf380dfb9b3e553d64436353248ed7292d006862148e6663565aff60c5fc1a962461a2efad9a5d1bc8910a61fb925314324f38714f393189c05f33243fd34b22a3a469c28b825f51411c58a16bf7cf8ff24275bcab64e1aa23e61a3c34ef2d5a3c8f3b327d65ba2b49aa30ff4b285851a60d40fc78c62720d2d908139d0c87760d145d904b31146cddfdde1824e3b8a8efec3c53bf5084e892f564e8c23d5e7ff62efe015c0cf230b80df29accef9ab73cdfb095417fd981b122c03be0168b55e0b30ca0e67607cdc80d0091d72da593123053ab2bdc9e0584eb6656d974358d1fd03fcaa6777eb0169dbba49ac0983629f4462709af82467a5c5afc9b1c51060c74f55c53c9d1d84a5b1437f017ca195a6791efb8694d48c62b37d439d5499f71cd0f2ba59025a00a51bd8d1295a4e98ab72b84676987897fdd90feb013f12eb09f5d94c3c5f4abb505adf88aa2765e5d74610800653e06724216d17255278f9f7771f44153d75fc5487137de18060acfe0439980b163be21c2e0033be83b22dfdadb7e89fd82956844bcaba1423bda2e3dfad77ff80acee8cc2c36b952d2ab2fe7e5cdd9fd0d443917b83340a8b96157860123badca666ff09e225ca42f5325104dbfc7b8a29a03c3a46f6ff937fe4972bcf1ae9a2e507ff2447e4de5bae70057ee2f8674788c856f43d3df968d2013937f76d683f7f7542f58b6b5449bcd6c52a1244d47c407dc2a964ac701de30213ad080a4aada420fec518a9b25cb83fdef46f796390cde922b5f2c7fe9f8686a4ba9b8b34bf0a8f22c686328a16fd3f64274dde5fb473d4e430b689e6044af6dfb86d6b5e1b0b0d34a0f79e68a7e95811c989c5c096bc0dd5e22b063190e430cbd83503d524b0745fb178687a5b9ad47a3202b9a4722c2f042e0cefd29bec26309e4a44f8d28531d88efa91db16efde641aa467dd465737a71a5b98a7214585868b138fdf5ac8bf0862efd72e67b585d6bb80d3a86322046e0c29493508b22291c85f353ba352779dc8bd5de3ab79b09669b8875dcc4df0dd6ba28134f0fa3daee57043415990668ad0724d046e677b41a5d25e882753bfcfb9e8d9130d7bfe38eb5d88411f479a4762c57edd4d07d0b3329d34dbe576dea46d0b7f796a44a26cebce43e99a1fd975faba6e8dc9a3c4504384b14cbc2b74205911e12eae8fc39c71500e6431cb5dc1ea9869c65e18d8f8876f710ce384a0355d6dd9465ecfb7e25dba386f63ab7e2ae39cc1ac709345969f0c73d51d1680d94bb24ddc6130a93fc8053d589757c1ad491e03d2af7d5b1ce083b82f39c522d0d231558fd11bb29a7ac22e67398613011faa11988605acd6aecd0b6ad20d20c31a9db6ad597a25a67530f9349bb060064ffeab4d6851eeea70be1c932cb5b0bcb54a1888a942cee462dced23072c096125bb0133a99b8327440e8977b3e886a3ae9581bce18aeb1f5ca8a1441ac16749fb303951a904bdada863f5810aa764a89cce607d35348ee7f99e509aff5017ddc8ee9e4055e92b171c7a70cb13cae5d1bd426fea44f3f403c1495dfec7139f0082359bedb44c44050199117383501ecc2e3556856665ec11f0628ef402aa4e4cede4edd28d1b679328fdd4d347e2f9c1ed07a3b0d8b7d7b597a26537cd0792999639179e63fcf20c162982a5d4501fd2ce87ef77c4ddfaab79bcda213c71ef277e0bcdc519db33aabdf67f36603a58e287f055a170f15121878925c252e60da5523f80650f542cb25e5585e7f4dee7095e905605d7beb0fa4f8e990f06dca44e043fa20cc7c3f7ceab55b326dce0b91615f1e0b6d616e9f9018bd4736dd178edf992ff4ba78e6b8acefbde86a6c199726bde7f987ec6d3bc0874d14f69f66912a30bedd2b9e32bc34fb1d80a901ed15c80f62981e061164ac7db2f510fbfe592881ccb4f06a20991f68df3ca4f2e445e791d3aa346d9f9ab1f20515e1a3a121cbb852866425a5d86587420cf6ca4a3022b8eb55a999b78c62ce7352aec9e8bb3898819644e00c77b2abfeeb264c81e65b8c5e8911c5aa31039cc665f280169fd87e973b1eba56f15c2968e3393824d5392032f9ea11f0ee7f3794a73d4b2380ae2b98d78c75acdd33e344e57310be7dc221a2a30caec9c83332ac8afb71abda834e7a19074e8f674fa6cfeb811fca04a59649ad5e0232427d8dc61c2571a01907341dc2f4c0c09fbdce33e414214760dbdb1a5dff463c33509ef7b140b2ce354a0c887f32799d68031eefa101179476075c23793b916f7d7ff57b1afd6270d49626dac23422540d953de7eb061ed09ec8361526378323a05e0b3fe764875a5daddb5fdb6d1125f9c6b48d2e4e903d6a999408ce0f23bbae10e0b42f1b88431aa6b4f44a7da1a14d11b7a2196c01c4b8841f6ea6e9290254677e5bd196a1c62d9037c8fd7ef4d4f2314c84fb04af06e0c23ef85246572ce8823cfc23220cb289d578005ea76fffb7f35a4a3f1f6de98fef91dd4ce9321a7818d2efd63e9bdc8b97566275a542cc03e26779b8ae714bb58bfb1f43d664a275281ce959c1baac0126295dfbf873fe244b874d85b1d0de6ab73426f82f4c9522ef583c530894052f57da2cf56956e3c0689267fdbc3637a1009128c20fe0b869871b5c3fd032fdb9bb9ecb9cf02e62563885eca760b86ce9db8f1ab8979d7219d3ee650175d707f05a8a5aabc6e62dc5fdd7156fa9e0ab6737dcddb7528ad708d4cdacf04fbe0bf4934189445780ab53e758f21a9235f4fe3f58f126eaa9634659783be40c16be5999d8d1932f70f38979026b6c5cf95558ed6f70739e750a118dd5ac9e193126531a43491999c50b08cf224a436e2ea5b6082d82836b8203a6fad36bad0724f5ee56d3799963341c4d19ef905c643fe80ddc44bb4ee9ae955</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <tags>
+        <tag>生成模型</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2023/06/29/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="梯度投影法原理"><a href="#梯度投影法原理" class="headerlink" title="梯度投影法原理"></a><strong>梯度投影法原理</strong></h1><h2 id="一、解决问题"><a href="#一、解决问题" class="headerlink" title="一、解决问题"></a>一、解决问题</h2><p>​		在无约束优化问题中，我们一般使用梯度下降法便可以找到凸优化问题的最优解，但是如果有约束呢，这时候梯度投影法给出自己的做法，便是通过约束条件来重新计算可行方向，以及在这个可行方向下降多少步可以。</p>
+<p>​		考虑问题：<br>$$<br>\begin{array}{ll}<br>\min &amp; f(\boldsymbol{x}) \<br>\text { s.t. } &amp; \boldsymbol{A} \boldsymbol{x} \geqslant \boldsymbol{b}, \<br>&amp; \boldsymbol{E} \boldsymbol{x}&#x3D;\boldsymbol{e},<br>\end{array}<br>$$<br>其中$$f(\boldsymbol{x})$$是可微函数 ,A 为 m × n 矩阵 ，E 为 l × n 矩阵。梯度投影法的基本思想仍然是从可行点出发 ，沿可行方向进行搜索 ．当迭代出发点在可行域内部时 ，沿负梯度方向搜索 ．当迭代出发点在某些约束的边界上时 ，将该点处的负梯度投影到 M 的零空间 ，M 是以起作用约束或部分起作用约束的梯度为行构造成的矩阵 。</p>
+<p>​		现在抛开梯度投影法是如何投影这件事，了解一下什么叫做有约束条件下的可行方向，给出定理即， <strong>d</strong> 为$$\hat{\boldsymbol{x}}$$</p>
+<p>处的可行方向是如下定义的，首先假设$$\hat{\boldsymbol{x}}$$是上述优化问题的可行解，那么对于不等式约束有$$<br>\boldsymbol{A}_1 \hat{\boldsymbol{x}}&#x3D;\boldsymbol{b}_1, \boldsymbol{A}_2 \hat{\boldsymbol{x}}&gt;\boldsymbol{b}_2<br>$$，其中A &#x3D; [$$A_1$$;$$A_2$$],b&#x3D;[$$b_1$$;$$b_2$$],非零向量d为$$\hat{\boldsymbol{x}}$$处的可行方向的充要条件是$$<br>A_1 d \geqslant \mathbf{0}, \boldsymbol{E d}&#x3D;\mathbf{0}<br>$$。</p>
+<p>​		现在假设我们有一个可行方向，那应该按这个方向移动多少步呢？假设$$\boldsymbol{x}^{(k)}$$位置，$$\boldsymbol{x}^{(k+1)}$$是接下来通过可行方向移动$$\lambda$$长距离得到的点，其中$$\lambda$$是解下面优化便可以得到：<br>$$<br>\begin{array}{ll}<br>\min &amp; f\left(\boldsymbol{x}^{(k)}+\lambda \boldsymbol{d}^{(k)}\right) \<br>\text { s.t. } &amp; 0 \leqslant \lambda \leqslant \lambda_{\max },<br>\end{array}<br>$$<br>​		其中，$$\lambda _ {max}$$是由下式得到的:<br>$$<br>\lambda _{\max}&#x3D;\begin{cases}<br>    \min \left{ \frac{\hat{b}_i}{\hat{d}_i}\mid \hat{d}_i&lt;0 \right} ,&amp;		\boldsymbol{\hat{d}}\ngeq 0,\<br>    \infty ,&amp;		\boldsymbol{\hat{d}}\ge 0\<br>\end{cases}<br>$$<br>​		重新回到梯度投影法，首先是梯度投影法是如何修改负梯度方向为带约束对应下的可行方向，设x是上面优化问题的可行解，在点x处，有$$\boldsymbol{A}_1 \hat{\boldsymbol{x}}&#x3D;\boldsymbol{b}_1, \boldsymbol{A}_2 \hat{\boldsymbol{x}}&gt;\boldsymbol{b}_2$$,其中$$A &#x3D; [$$A_1$$;$$A_2$$],b&#x3D;[$$b_1$$;$$b_2],这时候把令不等式约束为等号的条件即$$A_1$$拿出来，构造新的矩阵M&#x3D;[$$A_1$$;E],构造投影矩阵$$\boldsymbol{P}&#x3D;\boldsymbol{I}-\boldsymbol{M}^{\text{T}}\left( \boldsymbol{MM}^{\text{T}} \right) ^{-1}\boldsymbol{M,P}\Delta f\left( \boldsymbol{x} \right) \ne 0$$</p>
+<p>令$$\boldsymbol{d}&#x3D;-\boldsymbol{P} \Delta f(\boldsymbol{x})$$,则d是下降可行方向！那么知道梯度投影法是如何得到下降可行方向，那么是如何用的呢？梯度下降法计算步骤如下:</p>
+<p>1.给定初始可行点$$x^{(1)}$$,置k&#x3D;1。</p>
+<p>2.在点$$x^{(k)}$$处，将A和b分解成：<br>$$<br>\begin{equation}<br>\left[\begin{array}{l}<br>\boldsymbol{A}_1 \<br>\boldsymbol{A}_2<br>\end{array}\right],\left[\begin{array}{l}<br>\boldsymbol{b}_1 \<br>\boldsymbol{b}_2<br>\end{array}\right],<br>\end{equation}<br>$$<br>使得$$\boldsymbol{A}_1 \boldsymbol{x}^{(k)}&#x3D;\boldsymbol{b}_1, \boldsymbol{A}_2 \boldsymbol{x}^{(k)}&gt;\boldsymbol{b}_2$$</p>
+<p>3.令:<br>$$<br>\begin{equation}<br>\boldsymbol{M}&#x3D;\left[\begin{array}{c}<br>\boldsymbol{A}_1 \<br>\boldsymbol{E}<br>\end{array}\right]<br>\end{equation}<br>$$<br>如果M是空的，则令 P&#x3D;I（单位矩阵），当P是单位矩阵的时候就是相当于梯度下降，否则令$$\boldsymbol{P}&#x3D;\boldsymbol{I}-\boldsymbol{M}^{\text{T}}\left( \boldsymbol{MM}^{\text{T}} \right) ^{-1}\boldsymbol{M,}$$</p>
+<p>4.令$$\boldsymbol{d}^{(k)}&#x3D;-\boldsymbol{P} \Delta f\left(\boldsymbol{x}^{(k)}\right)$$, 若$$\boldsymbol{d}^{(k)} \neq \mathbf{0}$$,则转步骤6；若$$\boldsymbol{d}^{(k)}&#x3D;\mathbf{0}$$，则进行步骤5</p>
+<p>5.若M是空的，则停止计算，得到$$\boldsymbol{x}^{(k)}$$;否则，令<br>$$<br>\begin{equation}<br>\boldsymbol{W}&#x3D;\left(\boldsymbol{M} \boldsymbol{M}^{\mathrm{T}}\right)^{-1} \boldsymbol{M} \Delta f\left(\boldsymbol{x}^{(k)}\right)&#x3D;\left[\begin{array}{l}<br>\boldsymbol{u} \<br>\boldsymbol{v}<br>\end{array}\right]<br>\end{equation}<br>$$<br>如果$$u \geqslant 0$$,则停止计算，$$x^{(k)}$$为K-T点，如果 u 包含负分量 ，则选择一个负分量 ，比如$$u_j$$,修正$$A_1$$,去掉$$A_1$$中对应$$u_j$$的行,返回步骤3</p>
+<p>6.解下列问题，求步长$$\lambda_k$$:<br>$$<br>\begin{array}{ll}<br>\min &amp; f\left(\boldsymbol{x}^{(k)}+\lambda \boldsymbol{d}^{(k)}\right) \<br>\text { s.t. } &amp; 0 \leqslant \lambda \leqslant \lambda_{\max },<br>\end{array}<br>$$<br>$$\lambda_{\max }$$算完，得到解$$\lambda_k$$,令<br>$$<br>\begin{equation}<br>\boldsymbol{x}^{(k+1)}&#x3D;\boldsymbol{x}^{(k)}+\lambda_z \boldsymbol{d}^{(k)}<br>\end{equation}<br>$$<br>接着k&#x3D;k+1,返回步骤2。</p>
+<h2 id="二、代码简单实现"><a href="#二、代码简单实现" class="headerlink" title="二、代码简单实现"></a>二、代码简单实现</h2><p>使用matlab实现精度参数ε对优化结果的影响初始点位置对优化结果的影响陷入局部最优解；</p>
+<p>约束条件为：<br>$$<br>\begin{equation}<br>A&#x3D;\left(\begin{array}{cc}<br>-1 &amp; -1 \<br>-1 &amp; -5 \<br>1 &amp; 0 \<br>0 &amp; 1<br>\end{array}\right), B&#x3D;\left(\begin{array}{c}<br>-2 \<br>-5 \<br>0 \<br>0<br>\end{array}\right)<br>\end{equation}<br>$$<br><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629165937006.png" alt="image-20230629165937006"></p>
+<p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629165949456.png" alt="image-20230629165949456"></p>
+<h2 id="三、代码结果"><a href="#三、代码结果" class="headerlink" title="三、代码结果"></a>三、代码结果</h2><h3 id="1-初始点的影响"><a href="#1-初始点的影响" class="headerlink" title="1.初始点的影响"></a>1.初始点的影响</h3><p>目标函数 $$f(x)&#x3D;\left(x_1^2+x_2-11\right)^2+\left(x_1+x_2^2-7\right)^2$$,初始点(0.5, 0.8),讨论参数$$\mathcal{E}$$越大，搜索的速度越快，迭代次数越少；越小，搜索的粒度越细，越可能找到最优解。参数$$\mathcal{E}$$&#x3D;1e−6。</p>
+<p>初始点的位置选取是获得最优解的关键影响最优解的值和收敛速度。</p>
+<p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629170654684.png" alt="image-20230629170654684"></p>
+<p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629170820125.png" alt="image-20230629170820125"></p>
+<h3 id="2-陷入局部优化"><a href="#2-陷入局部优化" class="headerlink" title="2.陷入局部优化"></a>2.陷入局部优化</h3><p>目标函数$$f(x)&#x3D;2 x_1^2-1.05 x_1^4+\frac{1}{6} x_1^6+x_1 x_2+x_2^4$$,$$\varepsilon&#x3D;1 e-6$$,初始点的位置选取是获得最优解的关键,陷入局部最优解;</p>
+<p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629171152819.png" alt="image-20230629171152819"></p>
+<p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629171228001.png" alt="image-20230629171228001"></p>
+<h3 id="3-初始点的位置影响优化结果"><a href="#3-初始点的位置影响优化结果" class="headerlink" title="3.初始点的位置影响优化结果"></a>3.初始点的位置影响优化结果</h3><p>目标函数$$f(x)&#x3D;-20 e^{-0.2 \sqrt{0.5\left(x_1^2+x_2^2\right)}}-e^{0.5\left(\cos \left(2 \pi x_2\right)\right)}+20+e$$,,$$\varepsilon&#x3D;1 e-6$$,</p>
+<p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629171417845.png" alt="image-20230629171417845"></p>
+<p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629171453237.png" alt="image-20230629171453237"></p>
+<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><p>优点：直接沿负梯度下降的方式可能导致非可行点，保持迭代点的可行性获得最优解，可用于凸优化、非凸优化问题，对约束条件没有太多限制</p>
+<p>缺点：基于梯度，无法解决非光滑问题，算法结果与运行速度受初始点位置影响较大，仍然可能陷入局部最优解，无法避免发生振荡，无法解决高度非凸优化问题</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>三维重建</title>
+    <url>/2023/07/05/%E4%B8%89%E7%BB%B4%E9%87%8D%E5%BB%BA/</url>
+    <content><![CDATA[<h5 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h5><h6 id="多视图三维重建的传统流程"><a href="#多视图三维重建的传统流程" class="headerlink" title="多视图三维重建的传统流程"></a>多视图三维重建的传统流程</h6><ul>
+<li><p>多视图三维重建的传统流程：</p>
+</li>
+<li><p>图像特征匹配，SfM求解相机位姿，MVS稠密重建</p>
+<p>相机位姿（Camera Pose）是指相机在三维空间中的位置和朝向,旋转矩阵和一个平移向量来描述相机位姿为了实现MVS稠密重建，</p>
+<p>MVS 稠密重建通常包括以下步骤：</p>
+<ol>
+<li>xxxxxxxxxx if torch.cuda.is_available():    model.cuda()python</li>
+<li>基础矩阵和本质矩阵估计。使用特征点匹配，可以估计相邻图像之间的基础矩阵或本质矩阵，这些矩阵描述了相机之间的几何关系，包括旋转和平移。</li>
+<li>稠密点云重建。根据相邻图像之间的几何关系，可以将每个像素点从图像坐标系转换到世界坐标系。将这些点云数据结合起来，可以得到一个稠密的点云模型。</li>
+<li>点云表面重建。稠密点云中包含大量的噪声和无用点，需要进行过滤和表面重建，得到一个光滑的表面模型。</li>
+</ol>
+<p>需要进行以下步骤：</p>
+</li>
+</ul>
+<ol>
+<li>相机位姿估计：利用SfM技术估计每个视角的相机位姿。</li>
+<li>立体匹配：对于每个像素点，利用多个视角的图像进行立体匹配，估计该像素点在三维空间中的位置。</li>
+<li>三维重建：将所有像素点的三维位置整合起来，重建出整个物体的三维几何形状。</li>
+</ol>
+<ul>
+<li>缺点：重建流程<a href="https://www.zhihu.com/search?q=%E9%B2%81%E6%A3%92%E6%80%A7&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:2648027035%7D">鲁棒性</a>差，不可导：无反馈机制</li>
+</ul>
+<h6 id="基于表示学习的图像特征匹配："><a href="#基于表示学习的图像特征匹配：" class="headerlink" title="基于表示学习的图像特征匹配："></a>基于表示学习的图像特征匹配：</h6><ul>
+<li>​	SuperPoint，SuperGlue、ORB</li>
+</ul>
+<p>SuperPoint具有更快的速度和更好的鲁棒性。SuperPoint使用卷积神经网络来学习特征表示，其中包括特征点的位置、尺度和方向，以及对应的描述子。</p>
+<p>SuperGlue是一种基于深度学习的图像特征匹配算法，它可以通过对两个图像中提取的特征进行匹配，找到它们之间的对应关系和相对位姿。</p>
+<p>LoFTR：Detector-free Local Feature Matching with Transformers是一种detector-free的特征匹配算法，它不需要使用传统的特征检测器来提取局部特征点</p>
+<h6 id="基于神经表示学习的三维场景重建"><a href="#基于神经表示学习的三维场景重建" class="headerlink" title="基于神经表示学习的三维场景重建"></a>基于神经表示学习的三维场景重建</h6><ul>
+<li>重建流程：1. 比较渲染图像雨输入图像，计算误差。 2.通过梯度回传修改网络参数，优化隐式神经表示待解决问题：</li>
+<li>隐式神经表示重建<strong>（采样）</strong>效率低下，难以扩展到大规模场景室内弱纹理区域缺乏足够约束，隐式神经表示重建成为病态话问题</li>
+</ul>
+<h6 id="杂"><a href="#杂" class="headerlink" title="杂"></a>杂</h6><p>Neural Reconsturction in the Wild</p>
+<ul>
+<li>核心思想：表面引导的层次化采样，基于互联网图像进行场景重建核心思想：平面先验</li>
+</ul>
+<p>基于神经表示学习的动态人体重建<br>    动态人体重建传统方案通过稠密相机阵列逐帧重建Neural Body<br>挑战：如何减少输入视点的数量<br>从稀疏的输入视图重建神经表示是病态问题</p>
+<h6 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h6><p>核心思想：整合时序观测，假设不同时刻的观测来自于同一组隐编码</p>
+<p>挑战：如何建模多人场景核心</p>
+<p>思想：同步重建与分割</p>
+<p>二维图像特征表示学习   -〉更鲁邦的图像匹配和位姿估计</p>
+<p>三维几何&#x2F;外观表示学习 -〉更鲁棒更高质量的三维重建</p>
+<p>NGP</p>
+<h5 id="Nerf"><a href="#Nerf" class="headerlink" title="Nerf"></a>Nerf</h5><p><a href="https://yconquesty.github.io/blog/ml/nerf/">https://yconquesty.github.io/blog/ml/nerf/</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/631284285">https://zhuanlan.zhihu.com/p/631284285</a></p>
+<p>NeRF,neural radiance field，翻译为神经辐射场</p>
+<p><img src="https://pic2.zhimg.com/v2-6bf894d1fd88981551751cf4337b931d_b.jpg"></p>
+<p>Instant-NGP的pipeline</p>
+<p><img src="https://pic1.zhimg.com/v2-4e7016eb074496cf0235a7ff685d8c24_r.jpg"></p>
+]]></content>
+      <tags>
+        <tag>cv</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>杂</title>
+    <url>/2023/07/06/%E6%9D%82/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/weixin_43863869/article/details/125002909">https://blog.csdn.net/weixin_43863869/article/details/125002909</a></p>
+<ul>
+<li><code>/etc/environment</code>：系统级环境变量文件，适用于所有用户和进程。</li>
+<li><code>~/.bashrc</code>：登录shell级别的环境变量文件，适用于当前用户和其子进程。</li>
+<li><code>~/.bash_profile</code>：登录shell级别的环境变量文件，仅适用于当前用户。</li>
+<li><code>~/.profile</code>：登录shell级别的环境变量文件，仅适用于当前用户。</li>
+</ul>
+<p><a href="https://blog.csdn.net/weixin_45837114/article/details/128255248">https://blog.csdn.net/weixin_45837114/article/details/128255248</a></p>
+<h6 id="合成视频"><a href="#合成视频" class="headerlink" title="合成视频"></a>合成视频</h6><pre><code>import cv2
+import numpy as np
+
+videoLeft = cv2.VideoCapture(&#39;C:\\Users\\USTC\\Desktop\\debug_pose\\PRED\\0000\\all_frame.mp4&#39;)
+videoRight = cv2.VideoCapture(&#39;C:\\Users\\USTC\\Desktop\\debug_pose\\GT\\0000\\all_frame.mp4&#39;)
+
+fps = videoLeft.get(cv2.CAP_PROP_FPS)
+
+width = (int(videoLeft.get(cv2.CAP_PROP_FRAME_WIDTH)))
+height = (int(videoLeft.get(cv2.CAP_PROP_FRAME_HEIGHT)))
+
+videoWriter = cv2.VideoWriter(&#39;C:\\Users\\USTC\\Desktop\\debug_pose\\GT\\output.mp4&#39;, cv2.VideoWriter_fourcc(*&#39;mp4v&#39;), fps, (width*2, height))
+
+successLeft, frameLeft = videoLeft.read()
+successRight, frameRight = videoRight.read()
+
+while successLeft and successRight:
+    frameLeft = cv2.resize(frameLeft, (width, height), interpolation=cv2.INTER_CUBIC)
+    frameRight = cv2.resize(frameRight, (width, height), interpolation=cv2.INTER_CUBIC)
+
+    frame = np.hstack((frameLeft, frameRight))
+
+    videoWriter.write(frame)
+
+    successLeft, frameLeft = videoLeft.read()
+    successRight, frameRight = videoRight.read()
+
+videoWriter.release()
+videoLeft.release()
+videoRight.release()
+</code></pre>
+]]></content>
+      <tags>
+        <tag>杂</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>多GPU训练</title>
+    <url>/2023/07/08/%E5%A4%9AGPU%E8%AE%AD%E7%BB%83/</url>
+    <content><![CDATA[<p><a href="https://zhuanlan.zhihu.com/p/157976140">https://zhuanlan.zhihu.com/p/157976140</a></p>
+<h5 id="一机多卡训练"><a href="#一机多卡训练" class="headerlink" title="一机多卡训练"></a>一机多卡训练</h5><pre><code class="python">import torch.distributed
+</code></pre>
+<h6 id="初始化后端"><a href="#初始化后端" class="headerlink" title="初始化后端"></a>初始化后端</h6><pre><code class="python">local_rank = args.local_rank
+torch.cuda.set_device(local_rank)
+torch.distributed.init_process_group(backend=&#39;nccl&#39;, init_method=&#39;env://&#39;)
+</code></pre>
+<h6 id="模型并行化"><a href="#模型并行化" class="headerlink" title="模型并行化"></a>模型并行化</h6><pre><code class="python">model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[local_rank], output_device=local_rank)
+</code></pre>
+<h6 id="数据并行"><a href="#数据并行" class="headerlink" title="数据并行"></a>数据并行</h6><pre><code class="python">sampler = torch.utils.data.distributed.DistributedSampler(dataset)
+rand_loader = DataLoader(dataset=dataset,batch_size=batch_size, shuffle=False, sampler=sampler)
+</code></pre>
+<h6 id="启动脚本"><a href="#启动脚本" class="headerlink" title="启动脚本"></a>启动脚本</h6><pre><code>python -m torch.distributed.launch --nproc_per_node=6 run_mvp_train_DDP_threepeople.py --overlap_slide
+</code></pre>
+<pre><code class="python">python -m torch.distributed.launch --nproc_per_node=8 train_face_troch.py
+</code></pre>
+<pre><code class="python">def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(&#39;--local_rank&#39;, default=0, type=int)
+    args = parser.parse_args()
+    return args
+</code></pre>
+<pre><code class="python">model, optimizer = amp.initialize(model, optimizer, opt_level=&#39;O1&#39;)  # 这里是字母O
+</code></pre>
+<pre><code class="python">if torch.cuda.is_available():
+    model.cuda()
+</code></pre>
+]]></content>
+  </entry>
+  <entry>
+    <title>POSE</title>
+    <url>/2023/07/13/POSE/</url>
+    <content><![CDATA[<h1 id="RLE"><a href="#RLE" class="headerlink" title="RLE"></a>RLE</h1><p><a href="https://zhuanlan.zhihu.com/p/625023463">https://zhuanlan.zhihu.com/p/625023463</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/440567782">https://zhuanlan.zhihu.com/p/440567782</a></p>
+<p><a href="https://github.com/Jeff-sjtu/res-loglikelihood-regression">https://github.com/Jeff-sjtu/res-loglikelihood-regression</a></p>
+<p><a href="https://www.bilibili.com/video/BV18E411w7Jh/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV18E411w7Jh/?spm_id_from=333.999.0.0</a> 讲flow的视频</p>
+<p>GAN训练：模式崩溃和后置崩溃挑战</p>
+<p><a href="https://zhuanlan.zhihu.com/p/165577850">https://zhuanlan.zhihu.com/p/165577850</a> flow的文章</p>
+<p><a href="https://zhuanlan.zhihu.com/p/59615785">https://zhuanlan.zhihu.com/p/59615785</a> 讲flow的文章</p>
+<pre><code>20个采样点 10个实列
+all number of params: 43108693
+number of backbone params: 33841352
+</code></pre>
+<pre><code>20个采样点 5个实列
+all number of params: 43105908
+number of backbone params: 33841352
+</code></pre>
+<pre><code>10个采样点 5个实列
+all number of params: 42365748
+number of backbone params: 33841352
+</code></pre>
+<p>19416917</p>
+<p>尺寸不变</p>
+<pre><code>kernel_size=3, padding=1, stride=1 
+kernel_size=5, padding=2, stride=1
+kernel_size=7, padding=3, stride=1
+</code></pre>
+<h1 id="与姿态相关的论文主要看数据组织结构"><a href="#与姿态相关的论文主要看数据组织结构" class="headerlink" title="与姿态相关的论文主要看数据组织结构"></a>与姿态相关的论文主要看数据组织结构</h1><h2 id="DAS"><a href="#DAS" class="headerlink" title="DAS"></a>DAS</h2><pre><code>$&#123;ROOT&#125;
+|-- data
+|   |-- panoptic
+|   |   |-- 160226_haggling1
+|   |   |   |-- hdImgs
+|   |   |   |   |-- 00_16
+|   |   |   |   |-- 00_30
+|   |   |-- 160422_haggling1
+|   |   |-- 160226_mafia1
+|   |   |-- 160422_mafia2
+|   |   |-- 160226_ultimatum1
+|   |   |-- 160422_ultimatum1
+|   |   |-- 160906_pizza1
+|   |   |-- annotations
+|   |   |   |-- train.json
+|   |   |   |-- haggling.json
+|   |   |   |-- mafia.json
+|   |   |   |-- ultimatum.json
+|   |   |   |-- pizza.json
+|   |-- coco
+|   |   |-- train2017
+|   |   |-- annotations
+|   |   |   |-- person_keypoints_train2017.json
+|   |-- muco
+|   |   |-- unaugmented_set
+|   |   |-- augmented_set
+|   |   |-- annotations
+|   |   |   |-- train_all_interv1.json
+|   |-- mupots
+|   |   |-- TS1
+|   |   |   |-- img_000000.jpg
+|   |   |   |-- ...
+|   |   |-- ...
+|   |   |-- TS20
+|   |   |-- annotations
+|   |   |   |-- MuPoTS-3D.json
+</code></pre>
+<h2 id="voxel-pose"><a href="#voxel-pose" class="headerlink" title="voxel_pose"></a>voxel_pose</h2><pre><code>$&#123;POSE_ROOT&#125;
+|-- models
+|   |-- pose_resnet50_panoptic.pth.tar
+|-- data
+    |-- panoptic-toolbox
+        |-- data
+            |-- 16060224_haggling1
+            |   |-- hdImgs
+            |   |-- hdvideos
+            |   |-- hdPose3d_stage1_coco19
+            |   |-- calibration_160224_haggling1.json
+            |-- 160226_haggling1  
+            |-- ...
+</code></pre>
+<h2 id="PCT"><a href="#PCT" class="headerlink" title="PCT"></a>PCT</h2><pre><code>$&#123;POSE_ROOT&#125;
+|-- data
+`-- |-- coco
+    `-- |-- annotations
+        |   |-- person_keypoints_train2017.json
+        |   `-- person_keypoints_val2017.json
+        |-- person_detection_results
+        |   |-- COCO_val2017_detections_AP_H_56_person.json
+        |   |-- COCO_test-dev2017_detections_AP_H_609_person.json
+        `-- images
+            |-- train2017
+            |   |-- 000000000009.jpg
+            |   |-- 000000000025.jpg
+            |   |-- 000000000030.jpg
+            |   |-- ... 
+            `-- val2017
+                |-- 000000000139.jpg
+                |-- 000000000285.jpg
+                |-- 000000000632.jpg
+                |-- ... 
+</code></pre>
+<h2 id="GFPose"><a href="#GFPose" class="headerlink" title="GFPose"></a>GFPose</h2><pre><code>$&#123;POSE_ROOT&#125;
+|-- configs
+|-- lib
+|-- run
+|-- checkpoint
+    |-- u3d
+        |-- best_model.pth
+|-- data
+    |-- h36m
+        |-- h36m_train.pkl
+        |-- h36m_test.pkl
+        |-- h36m_sh_dt_ft.pkl
+</code></pre>
+<h1 id="姿态相关的数据"><a href="#姿态相关的数据" class="headerlink" title="姿态相关的数据"></a>姿态相关的数据</h1><h2 id="CrowdPose"><a href="#CrowdPose" class="headerlink" title="CrowdPose"></a>CrowdPose</h2><h2 id="OCHuman"><a href="#OCHuman" class="headerlink" title="OCHuman"></a>OCHuman</h2><h2 id="SyncOCC"><a href="#SyncOCC" class="headerlink" title="SyncOCC"></a>SyncOCC</h2><p>合成的数据</p>
+<h2 id="MPII"><a href="#MPII" class="headerlink" title="MPII"></a>MPII</h2><p>The dataset includes around <strong>25K images</strong> containing over <strong>40K people</strong> with annotated body joints；</p>
+<p><strong>410 human activities</strong> and each image is provided with an activity label；</p>
+<p>POSENET也有下载链接，组织为</p>
+<pre><code>|   |-- MPII
+|   |   |-- images
+|   |   |-- annotations
+</code></pre>
+<p>官网也有</p>
+<p><a href="http://human-pose.mpi-inf.mpg.de/#download">http://human-pose.mpi-inf.mpg.de/#download</a></p>
+<h2 id="CMU-Panoptic"><a href="#CMU-Panoptic" class="headerlink" title="CMU Panoptic"></a>CMU Panoptic</h2><p><a href="http://domedb.perception.cs.cmu.edu/">http://domedb.perception.cs.cmu.edu/</a> 数据主页</p>
+<p><a href="https://github.com/CMU-Perceptual-Computing-Lab/panoptic-toolbox">https://github.com/CMU-Perceptual-Computing-Lab/panoptic-toolbox</a></p>
+<p>31个 多视角HD video（高清视频）通常指 1080p（1920x1080 像素）或更高分辨率的视频。</p>
+<h6 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h6><p>下载这个PanopticStudio Toolbox，然后</p>
+<pre><code>./scripts/getData.sh 171204_pose1_sample 举列子
+./scripts/getData.sh 171204_pose1
+
+./scripts/getData.sh (sequenceName) (VGA_Video_Number) (HD_Video_Number)
+列如./scripts/getData.sh 171204_pose1_sample 240 10 
+240 vga videos and 10 videos.
+
+可选的序列名称
+https://docs.google.com/spreadsheets/d/1eoe74dHRtoMVVFLKCTJkAtF8zqxAnoo2Nt15CYYvHEE/edit#gid=1333444170
+
+./scripts/getDB_panopticHD_ver1_2.sh
+下载1.2数据版本所有数据
+上述命令默认是不下载视频数据的，就要像上面一样指定视频个数
+
+假如说现在下载好了视频，需要将视频变成每一帧每一帧的，然后将一视频的标签也变成一帧一帧图片对应的pose;注需要ffmpeg
+运行这个命令有
+./scripts/extractAll.sh 171204_pose1_sample
+171204_pose1_sample/hdImgs/00_00/00_00_00000000.jpg
+171204_pose1_sample/hdPose3d_stage1_coco19/body3DScene_00000000.json
+
+在这个工具里面有一些可视化的代码，以及从3D重投影到2D的方法
+还有一些kinect数据点云的
+
+注：https://github.com/wangzt-halo/das在DAS这个项目有一个代码可以将原始标签转化
+</code></pre>
+<p>480 views VGA video（标准视频）是指分辨率为 640x480 像素的视频。</p>
+<ul>
+<li>171204_pose1_sample&#x2F;hdVideos&#x2F;hd_00_XX.mp4  #synchronized HD video files (31 views)</li>
+<li>171204_pose1_sample&#x2F;vgaVideos&#x2F;KINECTNODE%d&#x2F;vga_XX_XX.mp4 #synchrponized VGA video files (480 views)</li>
+<li>171204_pose1_sample&#x2F;calibration_171204_pose1_sample.json #calibration files</li>
+<li>171204_pose1_sample&#x2F;hdPose3d_stage1_coco19.tar #3D Body Keypoint Data (coco19 keypoint definition)</li>
+<li>171204_pose1_sample&#x2F;hdFace3d.tar #3D Face Keypoint Data</li>
+<li>171204_pose1_sample&#x2F;hdHand3d.tar #3D Hand Keypoint Data</li>
+</ul>
+<h2 id="COCO-keypoint数据"><a href="#COCO-keypoint数据" class="headerlink" title="COCO keypoint数据"></a>COCO keypoint数据</h2><p>150K训练5K验证30K测试</p>
+<img src="../images/POSE/image-20230721142637523.png" alt="image-20230721142637523" style="zoom:80%;" />
+
+<img src="../images/POSE/image-20230721142828338.png" alt="image-20230721142828338" style="zoom:50%;" />
+
+<img src="../images/POSE/image-20230721142920961.png" alt="image-20230721142920961" style="zoom:80%;" />
+
+
+
+<h2 id="MuPoTS"><a href="#MuPoTS" class="headerlink" title="MuPoTS"></a>MuPoTS</h2><p>POSENET组织格式</p>
+<p>POSENET也有下载链接</p>
+<pre><code>|   |-- MuPoTS
+|   |   |-- bbox_root
+|   |   |   |-- bbox_mupots_output.json
+|   |   |-- data
+|   |   |   |-- MultiPersonTestSet
+|   |   |   |-- MuPoTS-3D.json
+</code></pre>
+<h2 id="MuCo"><a href="#MuCo" class="headerlink" title="MuCo"></a>MuCo</h2><p>POSENET组织格式</p>
+<p>POSENET也有下载链接</p>
+<pre><code>|   |-- MuCo
+|   |   |-- data
+|   |   |   |-- augmented_set
+|   |   |   |-- unaugmented_set
+|   |   |   |-- MuCo-3DHP.json
+</code></pre>
+<h2 id="Human-3-6使用"><a href="#Human-3-6使用" class="headerlink" title="Human 3.6使用"></a>Human 3.6使用</h2><p>原始数据下载</p>
+<p><a href="https://blog.csdn.net/qq_42951560/article/details/126380971">https://blog.csdn.net/qq_42951560/article/details/126380971</a></p>
+<h3 id="POSENET组织格式"><a href="#POSENET组织格式" class="headerlink" title="POSENET组织格式"></a>POSENET组织格式</h3><p>POSENET也有下载链接</p>
+<p><a href="https://github.com/mks0601/3DMPPE_POSENET_RELEASE">https://github.com/mks0601/3DMPPE_POSENET_RELEASE</a></p>
+<pre><code>|   |-- Human36M
+|   |   |-- bbox_root
+|   |   |   |-- bbox_root_human36m_output.json
+|   |   |-- images
+|   |   |-- annotations
+</code></pre>
+<p><a href="https://doc-b8-ak-drive-data-export.googleusercontent.com/download/40shbj3872datmg2bsnkse8nfmui74d0/e5js71t1onhtj9mljlb0aplm9d2b03ns/1689943500000/5ffc7048-f1de-47e5-a14c-09362b75d777/112379303555465919682/ADt3v-PKi_jwa5HtU_U9_6Dxmaqdhaa8A7_Rbu6BlhsgUYuuuxKtnMeqxoiE_Rn4HZ7wP2NXZQKPOAK7o75D1vZdNPb0gI8w3K8OqWvRhrD1vNgfvCa7iOtX8O4FmQbcgq8VKiitOGBbXHsvPKV6CsoI9Yxjo27CjDWavkwY0IbrI1VbQrkBEB4GMGusswgtInVBprHVacyfGdpPva8YH7kZMe3RfPv51oSU-iQUCnEzfceM-_ErXD5WtjuAA0LfBRpEuJ-1Jf62LSu5lUt5GWLEA-7ZRiABSN5vEDZojtgA4RHMlYAic0o=?authuser=0&nonce=tdfqllrmp99i4&user=112379303555465919682&hash=l05kl7k8oq39m1mv856518br053aom1j">https://doc-b8-ak-drive-data-export.googleusercontent.com/download/40shbj3872datmg2bsnkse8nfmui74d0/e5js71t1onhtj9mljlb0aplm9d2b03ns/1689943500000/5ffc7048-f1de-47e5-a14c-09362b75d777/112379303555465919682/ADt3v-PKi_jwa5HtU_U9_6Dxmaqdhaa8A7_Rbu6BlhsgUYuuuxKtnMeqxoiE_Rn4HZ7wP2NXZQKPOAK7o75D1vZdNPb0gI8w3K8OqWvRhrD1vNgfvCa7iOtX8O4FmQbcgq8VKiitOGBbXHsvPKV6CsoI9Yxjo27CjDWavkwY0IbrI1VbQrkBEB4GMGusswgtInVBprHVacyfGdpPva8YH7kZMe3RfPv51oSU-iQUCnEzfceM-_ErXD5WtjuAA0LfBRpEuJ-1Jf62LSu5lUt5GWLEA-7ZRiABSN5vEDZojtgA4RHMlYAic0o=?authuser=0&amp;nonce=tdfqllrmp99i4&amp;user=112379303555465919682&amp;hash=l05kl7k8oq39m1mv856518br053aom1j</a></p>
+<p><a href="https://doc-b8-ak-drive-data-export.googleusercontent.com/download/40shbj3872datmg2bsnkse8nfmui74d0/vongor8391pbnunhkc69ttkgi5eq2suj/1689943500000/5ffc7048-f1de-47e5-a14c-09362b75d777/112379303555465919682/ADt3v-OB6JOj-u_-o6uenLnkM22tWQQdUzU3BgXjobrour4LJ0V0PPV-iWSkaArSgkW3f78flniShupE14xmBUyK39dwftyPxKBRjunI9K1vpT5lRgph1dJ91zCib0Ln-VvLqFICj-uTAIYbBRnhw2UuuIsRTthqSqXfWrv-j7SgRUd0ykznHLW1C8a40_RBjYde1GZb-fmBAJcBABAOemUob0TLCKKkJ9D8rNEr5j5muV4PrSgDXpyGvHtJZFv4ipNLq6aU31gXJDxGM0pKeP1a-1ilhpTSEQKmh0gAnL46Xn9LHW3v69U=?nonce=bul6vlkrm3kq2&user=112379303555465919682&authuser=0&hash=vs1ctmpadubviucra1b4clouqi695lgn">https://doc-b8-ak-drive-data-export.googleusercontent.com/download/40shbj3872datmg2bsnkse8nfmui74d0/vongor8391pbnunhkc69ttkgi5eq2suj/1689943500000/5ffc7048-f1de-47e5-a14c-09362b75d777/112379303555465919682/ADt3v-OB6JOj-u_-o6uenLnkM22tWQQdUzU3BgXjobrour4LJ0V0PPV-iWSkaArSgkW3f78flniShupE14xmBUyK39dwftyPxKBRjunI9K1vpT5lRgph1dJ91zCib0Ln-VvLqFICj-uTAIYbBRnhw2UuuIsRTthqSqXfWrv-j7SgRUd0ykznHLW1C8a40_RBjYde1GZb-fmBAJcBABAOemUob0TLCKKkJ9D8rNEr5j5muV4PrSgDXpyGvHtJZFv4ipNLq6aU31gXJDxGM0pKeP1a-1ilhpTSEQKmh0gAnL46Xn9LHW3v69U=?nonce=bul6vlkrm3kq2&amp;user=112379303555465919682&amp;authuser=0&amp;hash=vs1ctmpadubviucra1b4clouqi695lgn</a></p>
+<p><a href="https://doc-1o-ak-drive-data-export.googleusercontent.com/download/40shbj3872datmg2bsnkse8nfmui74d0/3lilh4rg3m34334olbfrf2oa013c1ena/1689943500000/5ffc7048-f1de-47e5-a14c-09362b75d777/112379303555465919682/ADt3v-PBMFi_-GcjR_tISSWMRNgI2Gken7LvMvxfvsbg-VA-gHV396ezN9lGdmXyrpwU0Ma8BcxvPcqiCPnfTRTZxy4lAvrVeqXpwl5CBRVGCUsiQ5fV2FSw7y3xsEI7Mv70wTJCr7NOLG8SEtoqwAyj10JwhkTLLhc8r6bekyyJl9iyrLC7YoLZkxGNi7Y9IpSI6cvonYnlouiag9Qa1R93mlexQH6vb36G9MGc8dEiOO1jF4D-DT3U2m4fQH0P7sVgIQDkuFn593nTKUEFHusapeGAeIQJ2vF5Jlrvp8Tfth35MEJ0X08=?authuser=0&nonce=7lrariac1p2cq&user=112379303555465919682&hash=i1ea80cn97oaetmqqfenginq9maphjqm">https://doc-1o-ak-drive-data-export.googleusercontent.com/download/40shbj3872datmg2bsnkse8nfmui74d0/3lilh4rg3m34334olbfrf2oa013c1ena/1689943500000/5ffc7048-f1de-47e5-a14c-09362b75d777/112379303555465919682/ADt3v-PBMFi_-GcjR_tISSWMRNgI2Gken7LvMvxfvsbg-VA-gHV396ezN9lGdmXyrpwU0Ma8BcxvPcqiCPnfTRTZxy4lAvrVeqXpwl5CBRVGCUsiQ5fV2FSw7y3xsEI7Mv70wTJCr7NOLG8SEtoqwAyj10JwhkTLLhc8r6bekyyJl9iyrLC7YoLZkxGNi7Y9IpSI6cvonYnlouiag9Qa1R93mlexQH6vb36G9MGc8dEiOO1jF4D-DT3U2m4fQH0P7sVgIQDkuFn593nTKUEFHusapeGAeIQJ2vF5Jlrvp8Tfth35MEJ0X08=?authuser=0&amp;nonce=7lrariac1p2cq&amp;user=112379303555465919682&amp;hash=i1ea80cn97oaetmqqfenginq9maphjqm</a></p>
+<p><a href="https://doc-4o-ak-drive-data-export.googleusercontent.com/download/40shbj3872datmg2bsnkse8nfmui74d0/8jjt4vn03l9e6rqfc0lp8vqa051tbd79/1689943500000/5ffc7048-f1de-47e5-a14c-09362b75d777/112379303555465919682/ADt3v-PLoxtBTO8Y2hbpsnHnAWuc_QHL4tSXfgXyzZKIikaqGeGtNNzwwp2QgI3MAv9uS8qGt4iQENjCiAWo5oHtvvXofcSY8E6OxbBt-8sbx9aX5dnPnumRu4i5hmBJNQTTxou3Fv1uKr_BVpKI_bqfk-UIviiVvQWTZncT6nvv9DzL90HyvvtZKWba5tHkGWtssshNwmrSWhNYwTCwmNYbG-Q-jAn2pw0ScwrTp0_XAHUD-Jea-YZd1SvT1m1uMTPqcRUNw7PJcse8speNMxv5xu0716tcE5Ew6zsSu0_JQWjvfSYCi9o=?authuser=0&nonce=k0ha675m9dcis&user=112379303555465919682&hash=53mkvg2k37r5suvhfp7ma3ddefmfqi94">https://doc-4o-ak-drive-data-export.googleusercontent.com/download/40shbj3872datmg2bsnkse8nfmui74d0/8jjt4vn03l9e6rqfc0lp8vqa051tbd79/1689943500000/5ffc7048-f1de-47e5-a14c-09362b75d777/112379303555465919682/ADt3v-PLoxtBTO8Y2hbpsnHnAWuc_QHL4tSXfgXyzZKIikaqGeGtNNzwwp2QgI3MAv9uS8qGt4iQENjCiAWo5oHtvvXofcSY8E6OxbBt-8sbx9aX5dnPnumRu4i5hmBJNQTTxou3Fv1uKr_BVpKI_bqfk-UIviiVvQWTZncT6nvv9DzL90HyvvtZKWba5tHkGWtssshNwmrSWhNYwTCwmNYbG-Q-jAn2pw0ScwrTp0_XAHUD-Jea-YZd1SvT1m1uMTPqcRUNw7PJcse8speNMxv5xu0716tcE5Ew6zsSu0_JQWjvfSYCi9o=?authuser=0&amp;nonce=k0ha675m9dcis&amp;user=112379303555465919682&amp;hash=53mkvg2k37r5suvhfp7ma3ddefmfqi94</a></p>
+<p><a href="https://doc-3g-ak-drive-data-export.googleusercontent.com/download/40shbj3872datmg2bsnkse8nfmui74d0/02uavs006jb1jiqf7j14fvvodlehevvp/1689943500000/5ffc7048-f1de-47e5-a14c-09362b75d777/112379303555465919682/ADt3v-N4NUPSJPBPEEc2eGimZ_aOk1nhAuxlKsderKOwL4sBGxX3ieyYz0X4OEzygLwXxFbZ0mdhOcAFlNpsbhDRxfM972kM25arOkceNaiy2RQJFKMF_VmiOs-tp1-aa6B9z907_rliJOpSdqujMISZIPP_hO2nq1-7MINzuawH__jNOK4dFNTaqXoC9LEJAoZ8hqPWrJTM_xdxDXcYvzykEu5FvevTlusNO2T_jFqQKcBPE6eOKVR9wMKN7p-_0KgOKLzXMMJzvsl-LEpyWYsXqvhp2Pe9koEkQ2cNewh5d2f3-1uAlc8=?authuser=0&nonce=mf619eivuk9gm&user=112379303555465919682&hash=qgnugfhl74mpisshnpeu3m98b5gmtmsb">https://doc-3g-ak-drive-data-export.googleusercontent.com/download/40shbj3872datmg2bsnkse8nfmui74d0/02uavs006jb1jiqf7j14fvvodlehevvp/1689943500000/5ffc7048-f1de-47e5-a14c-09362b75d777/112379303555465919682/ADt3v-N4NUPSJPBPEEc2eGimZ_aOk1nhAuxlKsderKOwL4sBGxX3ieyYz0X4OEzygLwXxFbZ0mdhOcAFlNpsbhDRxfM972kM25arOkceNaiy2RQJFKMF_VmiOs-tp1-aa6B9z907_rliJOpSdqujMISZIPP_hO2nq1-7MINzuawH__jNOK4dFNTaqXoC9LEJAoZ8hqPWrJTM_xdxDXcYvzykEu5FvevTlusNO2T_jFqQKcBPE6eOKVR9wMKN7p-_0KgOKLzXMMJzvsl-LEpyWYsXqvhp2Pe9koEkQ2cNewh5d2f3-1uAlc8=?authuser=0&amp;nonce=mf619eivuk9gm&amp;user=112379303555465919682&amp;hash=qgnugfhl74mpisshnpeu3m98b5gmtmsb</a></p>
+<p><a href="https://doc-58-ak-drive-data-export.googleusercontent.com/download/40shbj3872datmg2bsnkse8nfmui74d0/7vee2hfstaqkc5hbncjcout1j8uh330j/1689943500000/5ffc7048-f1de-47e5-a14c-09362b75d777/112379303555465919682/ADt3v-O0265xVJRe9CENy299rlnt_KfNcTdVwu-LLQXcU-Br6dRj94g1IfGWB7I5EmwGfZBgAqh9iKi2PVNErxz_1pGRoL_Wo372hh9gpdShv2swtHiMH4j11ngs8BCgHmRaRG5HyrHteuIPmtctAoo1FAwsBPHd0sZqhUwV_WlTOBKx_tCf7OtWkOyvGhAnRyqvoLbHzZoUXE5a0Gs6aBknNWSmwk_OeyOr2nhWhVT6AMWnVeLR65F3MbXV1H8CuEb1JBbJzVYJlHj17L3anOQJR8dQnHhfhgqi4M7XrhBvRPhjA7WIBgU=?authuser=0&nonce=gus7e03l87t86&user=112379303555465919682&hash=82fvobin9m1u8jmvnv6osafhttnacmgu">https://doc-58-ak-drive-data-export.googleusercontent.com/download/40shbj3872datmg2bsnkse8nfmui74d0/7vee2hfstaqkc5hbncjcout1j8uh330j/1689943500000/5ffc7048-f1de-47e5-a14c-09362b75d777/112379303555465919682/ADt3v-O0265xVJRe9CENy299rlnt_KfNcTdVwu-LLQXcU-Br6dRj94g1IfGWB7I5EmwGfZBgAqh9iKi2PVNErxz_1pGRoL_Wo372hh9gpdShv2swtHiMH4j11ngs8BCgHmRaRG5HyrHteuIPmtctAoo1FAwsBPHd0sZqhUwV_WlTOBKx_tCf7OtWkOyvGhAnRyqvoLbHzZoUXE5a0Gs6aBknNWSmwk_OeyOr2nhWhVT6AMWnVeLR65F3MbXV1H8CuEb1JBbJzVYJlHj17L3anOQJR8dQnHhfhgqi4M7XrhBvRPhjA7WIBgU=?authuser=0&amp;nonce=gus7e03l87t86&amp;user=112379303555465919682&amp;hash=82fvobin9m1u8jmvnv6osafhttnacmgu</a></p>
+<p><a href="https://doc-44-ak-drive-data-export.googleusercontent.com/download/40shbj3872datmg2bsnkse8nfmui74d0/t6paca3r6b2noghd2a4g2fq3rnsh8ar3/1689943500000/5ffc7048-f1de-47e5-a14c-09362b75d777/112379303555465919682/ADt3v-MsD17FFqpGpAf2nn_guLK9srxaZw7QRoeYONNky1WztJXbiJ6QinYpZURxBbXUrAXS6R9mXa7N_xqwVZdeu-quICYwReO9Lkx6_-oc3JhxZKVsaah_vXwCe15Io6sgG6ixwfSwm95Xo5prL-g8uUQJwRYcZfuqWvvHLraobZgrYeU7NRtRYuyLwA-fn6r6XS4TUNx1Z3_zB8oVdZHlAvE-QIbfT6f29OUAhN5yH8W5FsFaWArZQdJnq6zv3TU4b01la2E9pdXIy6yKJOpdm5-eCM-Oaf44VvC1DUzxuaOBkcBYFDI=?authuser=0&nonce=kdamb8pb7aph6&user=112379303555465919682&hash=a8vkcpg6biqc42dfjrpdqbqdme5kvp4d">https://doc-44-ak-drive-data-export.googleusercontent.com/download/40shbj3872datmg2bsnkse8nfmui74d0/t6paca3r6b2noghd2a4g2fq3rnsh8ar3/1689943500000/5ffc7048-f1de-47e5-a14c-09362b75d777/112379303555465919682/ADt3v-MsD17FFqpGpAf2nn_guLK9srxaZw7QRoeYONNky1WztJXbiJ6QinYpZURxBbXUrAXS6R9mXa7N_xqwVZdeu-quICYwReO9Lkx6_-oc3JhxZKVsaah_vXwCe15Io6sgG6ixwfSwm95Xo5prL-g8uUQJwRYcZfuqWvvHLraobZgrYeU7NRtRYuyLwA-fn6r6XS4TUNx1Z3_zB8oVdZHlAvE-QIbfT6f29OUAhN5yH8W5FsFaWArZQdJnq6zv3TU4b01la2E9pdXIy6yKJOpdm5-eCM-Oaf44VvC1DUzxuaOBkcBYFDI=?authuser=0&amp;nonce=kdamb8pb7aph6&amp;user=112379303555465919682&amp;hash=a8vkcpg6biqc42dfjrpdqbqdme5kvp4d</a></p>
+<p><a href="https://doc-9o-ak-drive-data-export.googleusercontent.com/download/40shbj3872datmg2bsnkse8nfmui74d0/1n38h43k3p5e22tkksqo2j6omibjgj0b/1689943500000/5ffc7048-f1de-47e5-a14c-09362b75d777/112379303555465919682/ADt3v-N1bJxzPYacZ8s8pp3xbyELX_7G7ZV-TUpfQPFg0igiP8y14NkBBNnNoqRKqj0Pmuv-Hamsu6u0dHjbh3YPU2oC9XulN_2MpNs2XRIJGS_I2Zv69cqmnPOHz2WLB0-clUneEHparpLAtsqPDZ1YRFDRPDw2XcmTQpjcRnWKO7QDmEsSQmdef-MybmRIW-F8uA2vsZmyKbv8Mj0up8koXF8QDAnKb9riXrwq5qOWNKzjwHPP81FVoYxvDWIYQIsHXAiPy0I6cc614iZOHVdKedqAXJlDbPhALWRxMppcxdf5gsVUd-K2pwQJFw8bcLID95WqL6uT?authuser=0&nonce=jv51pstlaekn4&user=112379303555465919682&hash=0g6pg34rjr43j3uasphvlpclaqbilms1">https://doc-9o-ak-drive-data-export.googleusercontent.com/download/40shbj3872datmg2bsnkse8nfmui74d0/1n38h43k3p5e22tkksqo2j6omibjgj0b/1689943500000/5ffc7048-f1de-47e5-a14c-09362b75d777/112379303555465919682/ADt3v-N1bJxzPYacZ8s8pp3xbyELX_7G7ZV-TUpfQPFg0igiP8y14NkBBNnNoqRKqj0Pmuv-Hamsu6u0dHjbh3YPU2oC9XulN_2MpNs2XRIJGS_I2Zv69cqmnPOHz2WLB0-clUneEHparpLAtsqPDZ1YRFDRPDw2XcmTQpjcRnWKO7QDmEsSQmdef-MybmRIW-F8uA2vsZmyKbv8Mj0up8koXF8QDAnKb9riXrwq5qOWNKzjwHPP81FVoYxvDWIYQIsHXAiPy0I6cc614iZOHVdKedqAXJlDbPhALWRxMppcxdf5gsVUd-K2pwQJFw8bcLID95WqL6uT?authuser=0&amp;nonce=jv51pstlaekn4&amp;user=112379303555465919682&amp;hash=0g6pg34rjr43j3uasphvlpclaqbilms1</a></p>
+<h3 id="RLE组织格式"><a href="#RLE组织格式" class="headerlink" title="RLE组织格式"></a>RLE组织格式</h3><pre><code>    |-- h36m
+    `-- |-- annotations
+        |   |-- Sample_trainmin_train_Human36M_protocol_2.json
+        |   `-- Sample_64_test_Human36M_protocol_2.json
+        `-- images
+            |-- s_01_act_02_subact_01_ca_01
+            |   |-- ...
+            |-- s_01_act_02_subact_01_ca_02
+            |   |-- ...
+            `-- ... 
+</code></pre>
+<p>Human3.6是没有遮挡的数据的</p>
+<p>Pixel-level 24 body part labels for each configuration</p>
+<p>Time-of-flight range data 测距的数据</p>
+<p>3D laser scans of the actors mesh数据</p>
+<p><a href="http://vision.imar.ro/human3.6m/description.php">http://vision.imar.ro/human3.6m/description.php</a></p>
+<p>对于测距以及mesh的数据的描述</p>
+<p>pose数据还包括relative 3D joint positions (R3DJP)和kinematic representation (KR)，KR用于描述物体的运动状态，例如位置、速度和加速度等。</p>
+<img src="../images/POSE/image-20230721143257782.png" alt="image-20230721143257782" style="zoom:50%;" />
+
+<p><a href="http://visiondata.cis.upenn.edu/volumetric/h36m/h36m_annot.tar">http://visiondata.cis.upenn.edu/volumetric/h36m/h36m_annot.tar</a></p>
+<p><a href="http://visiondata.cis.upenn.edu/volumetric/h36m/S1.tar">http://visiondata.cis.upenn.edu/volumetric/h36m/S1.tar</a></p>
+<p><a href="http://visiondata.cis.upenn.edu/volumetric/h36m/S5.tar">http://visiondata.cis.upenn.edu/volumetric/h36m/S5.tar</a></p>
+<p><a href="http://visiondata.cis.upenn.edu/volumetric/h36m/S6.tar">http://visiondata.cis.upenn.edu/volumetric/h36m/S6.tar</a></p>
+<p><a href="http://visiondata.cis.upenn.edu/volumetric/h36m/S7.tar">http://visiondata.cis.upenn.edu/volumetric/h36m/S7.tar</a></p>
+<p><a href="http://visiondata.cis.upenn.edu/volumetric/h36m/S8.tar">http://visiondata.cis.upenn.edu/volumetric/h36m/S8.tar</a></p>
+<p><a href="http://visiondata.cis.upenn.edu/volumetric/h36m/S9.tar">http://visiondata.cis.upenn.edu/volumetric/h36m/S9.tar</a></p>
+<p><a href="http://visiondata.cis.upenn.edu/volumetric/h36m/S11.tar">http://visiondata.cis.upenn.edu/volumetric/h36m/S11.tar</a></p>
+<h1 id="如何使用RLE-loss"><a href="#如何使用RLE-loss" class="headerlink" title="如何使用RLE loss"></a>如何使用RLE loss</h1>]]></content>
+      <tags>
+        <tag>pose论文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mmlab</title>
+    <url>/2023/07/14/mmlab/</url>
+    <content><![CDATA[<p><a href="https://github.com/open-mmlab/mmpose">https://github.com/open-mmlab/mmpose</a></p>
+<p><a href="https://github.com/TommyZihao/MMPose_Tutorials">https://github.com/TommyZihao/MMPose_Tutorials</a></p>
+<p><a href="https://github.com/open-mmlab/OpenMMLabCourse">https://github.com/open-mmlab/OpenMMLabCourse</a></p>
+<p>MMCV 核心组件分析（一）：整体概述 - OpenMMLab的文章 - 知乎 <a href="https://zhuanlan.zhihu.com/p/336081587">https://zhuanlan.zhihu.com/p/336081587</a></p>
+<h4 id="杂"><a href="#杂" class="headerlink" title="杂"></a>杂</h4><h6 id="修饰器"><a href="#修饰器" class="headerlink" title="修饰器"></a>修饰器</h6><p><a href="https://www.runoob.com/w3cnote/python-func-decorators.html">https://www.runoob.com/w3cnote/python-func-decorators.html</a></p>
+<pre><code>def a_new_decorator(a_func):
+ 
+    def wrapTheFunction():
+        print(&quot;I am doing some boring work before executing a_func()&quot;)
+ 
+        a_func()
+ 
+        print(&quot;I am doing some boring work after executing a_func()&quot;)
+ 
+    return wrapTheFunction
+
+@a_new_decorator
+def a_function_requiring_decoration():
+    &quot;&quot;&quot;Hey you! Decorate me!&quot;&quot;&quot;
+    print(&quot;I am the function which needs some decoration to &quot;
+          &quot;remove my foul smell&quot;)
+          
+a_function_requiring_decoration()
+#outputs: I am doing some boring work before executing a_func()
+#         I am the function which needs some decoration to remove my foul smell
+#         I am doing some boring work after executing a_func()
+</code></pre>
+<h6 id="args-kwargs-python解释"><a href="#args-kwargs-python解释" class="headerlink" title="*args, **kwargs python解释"></a>*args, **kwargs python解释</h6><p>*args用于接收任意数量的位置参数，它将所有传递给函数的位置参数打包成一个元组（tuple）。例如：</p>
+<pre><code>def my_function(*args):
+    for arg in args:
+        print(arg)
+
+my_function(1, 2, 3)  # 输出 1 2 3
+</code></pre>
+<p>**kwargs用于接收任意数量的关键字参数，它将所有传递给函数的关键字参数打包成一个字典（dict）。例如：</p>
+<pre><code>def my_function(**kwargs):
+    for key, value in kwargs.items():
+        print(key, value)
+
+my_function(name=&#39;Tom&#39;, age=20)  # 输出 name Tom  age 20
+</code></pre>
+<p><img src="/../images/mmlab/image-20230716001111023.png" alt="image-20230716001111023"></p>
+<h1 id="不同组件"><a href="#不同组件" class="headerlink" title="不同组件"></a>不同组件</h1><p><strong>fileio、image、parallel、runner 和 utils 这几个非常通用的组件</strong></p>
+<h1 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h1><p>py、json、ymal 和 yml配置文件解析功能。</p>
+<p>mmcv\utils\config.py</p>
+<h6 id="Config-fromfile-函数"><a href="#Config-fromfile-函数" class="headerlink" title="Config.fromfile 函数"></a>Config.fromfile 函数</h6><p>参数：filename、use_predefined_variables、import_custom_modules</p>
+<h6 id="cfg-merge-from-dict函数"><a href="#cfg-merge-from-dict函数" class="headerlink" title="cfg.merge_from_dict函数"></a>cfg.merge_from_dict函数</h6><p>接口可以实现对字典内容进行合并</p>
+<h6 id="通过-dict-生成-config"><a href="#通过-dict-生成-config" class="headerlink" title="通过 dict 生成 config"></a>通过 dict 生成 config</h6><pre><code>cfg = Config(dict(a=1, b=dict(b1=[0, 1])))
+
+# 可以通过 .属性方式访问，比较方便
+cfg.b.b1 # [0, 1]
+</code></pre>
+<h6 id="通过配置文件生成config"><a href="#通过配置文件生成config" class="headerlink" title="通过配置文件生成config"></a>通过配置文件生成config</h6><pre><code># Copyright (c) OpenMMLab. All rights reserved.
+# &#39;tests/data/config/a.py&#39; 里面的内容
+item1 = [1, 2]
+item2 = &#123;&#39;a&#39;: 0&#125;
+item3 = True
+item4 = &#39;test&#39;
+</code></pre>
+<pre><code>cfg = Config.fromfile(&#39;tests/data/config/a.py&#39;)
+
+cfg.filename
+cfg.item4 # &#39;test&#39;
+cfg # 打印 config path，和字典内容...
+&gt;&gt;&gt; cfg = Config.fromfile(&#39;tests/data/config/a.py&#39;)
+&gt;&gt;&gt; cfg.filename
+&quot;/home/kchen/projects/mmcv/tests/data/config/a.py&quot;
+&gt;&gt;&gt; cfg.item4
+&#39;test&#39;
+&gt;&gt;&gt; cfg
+&quot;Config [path: /home/kchen/projects/mmcv/tests/data/config/a.py]: &quot;
+&quot;&#123;&#39;item1&#39;: [1, 2], &#39;item2&#39;: &#123;&#39;a&#39;: 0&#125;, &#39;item3&#39;: True, &#39;item4&#39;: &#39;test&#39;&#125;&quot;
+</code></pre>
+<h6 id="自动替换预定义变量"><a href="#自动替换预定义变量" class="headerlink" title="自动替换预定义变量"></a>自动替换预定义变量</h6><p>tests\data\config\h.py</p>
+<p>h.py内容为</p>
+<pre><code># Copyright (c) OpenMMLab. All rights reserved.
+item1 = &#39;&#123;&#123;fileBasename&#125;&#125;&#39;
+item2 = &#39;&#123;&#123; fileDirname&#125;&#125;&#39;
+item3 = &#39;abc_&#123;&#123; fileBasenameNoExtension &#125;&#125;&#39;
+</code></pre>
+<p>上面的fileBasename,fileDirname,fileBasenameNoExtension都是预定义的变量，那变量的定义是参考vscode里面设计的</p>
+<p><a href="https://code.visualstudio.com/docs/editor/variables-reference">https://code.visualstudio.com/docs/editor/variables-reference</a></p>
+<p>使用过程：</p>
+<pre><code># cfg_file 文件名是 h.py
+cfg = Config.fromfile(cfg_file, use_predefined_variables=True)
+print(cfg.pretty_text)
+
+# 输出
+item1 = &#39;h.py&#39;
+item2 = &#39;config 文件路径&#39;
+item3 = &#39;abc_h&#39;
+</code></pre>
+<p>该参数主要用途是自动替换 Config 类中已经预定义好的变量模板为真实值，在某些场合有用</p>
+<h6 id="导入自定义模块"><a href="#导入自定义模块" class="headerlink" title="导入自定义模块"></a>导入自定义模块</h6><p>Config.fromfile 函数除了有 filename 和 use_predefined_variables 参数外，还有 import_custom_modules，默认是 True，即当 cfg中存在 custom_imports 键时候会对里面的内容进行自动导入，其输入格式要么是 str 要么是 list[str]，表示待导入的模块路径，一个典型用法是：假设你在 mmdet 中新增了自定义模型 MobileNet ，你需要在 mmdet&#x2F;models&#x2F;backbones&#x2F;<strong>init</strong>.py 里面加入如下代码，否则在调用时候会提示该模块没有被注册进去：</p>
+<pre><code>from .mobilenet import MobileNet
+</code></pre>
+<p>但是上述做法在某些场景下会比较麻烦。例如该模块处于非常深的层级，那么就需要逐层修改 <code>__init__.py</code>，有了本参数，便可以采用如下做法优雅避免：</p>
+<pre><code># .py 文件里面存储如下内容
+custom_imports = dict(
+    imports=[&#39;mmdet.models.backbones.mobilenet&#39;],
+    allow_failed_imports=False)
+
+# 自动导入 mmdet.models.backbones.mobilenet
+Config.fromfile(cfg_file, import_custom_modules=True)
+</code></pre>
+<h6 id="合并多个配置文件"><a href="#合并多个配置文件" class="headerlink" title="合并多个配置文件"></a>合并多个配置文件</h6><ul>
+<li><p>base 文件的 key 是不允许改的，必须是 <code>_base_</code> ，否则程序不知道哪个字段才是 base</p>
+</li>
+<li><p>多个 base 以 list 方式并行构建模式下，不允许多个 base 文件中有相同字段，程序会报 Duplicate Key Error，因为此时不知道以哪个配置为主</p>
+</li>
+<li><p>从单个base文件中合并:</p>
+<p>base.p与d.py在同一文件夹下！</p>
+<p>. 表示当前目录，&#x2F; 表示目录的分隔符，.. 表示上一级目录，</p>
+<pre><code># base.py 内容
+
+item1 = [1, 2]
+item2 = &#123;&#39;a&#39;: 0&#125;
+item3 = True
+item4 = &#39;test&#39;
+
+# d.py 内容
+_base_ = &#39;./base.py&#39;
+item1 = [2, 3]
+item2 = &#123;&#39;a&#39;: 1&#125;
+item3 = False
+item4 = &#39;test_base&#39;
+
+# 用法
+cfg = Config.fromfile(&#39;d.py&#39;)
+
+# 输出
+item1 = [2, 3]
+item2 = dict(a=1)
+item3 = False
+item4 = &#39;test_base&#39;
+</code></pre>
+</li>
+<li><p>从多个base文件中合并Config：</p>
+<p>用户只需要在非 base 配置文件中将类似 <em>base</em> &#x3D; ‘.&#x2F;base.py’改成 <em>base</em> &#x3D; [‘.&#x2F;base.py’,…] 即可。</p>
+</li>
+<li><p>合并字典到配置</p>
+<pre><code># Copyright (c) OpenMMLab. All rights reserved.
+item1 = [1, 2]
+item2 = &#123;&#39;a&#39;: 0&#125;
+item3 = True
+item4 = &#39;test&#39;
+</code></pre>
+<pre><code>cfg_file = osp.join(data_path, &#39;config/a.py&#39;)
+cfg = Config.fromfile(cfg_file)
+input_options = &#123;&#39;item2.a&#39;: 1, &#39;item2.b&#39;: 0.1, &#39;item3&#39;: False&#125;
+cfg.merge_from_dict(input_options)
+
+# 原始 a.py 内容为：
+item1 = [1, 2]
+item2 = &#123;&#39;a&#39;: 0&#125;
+item3 = True
+item4 = &#39;test&#39;
+
+# 进行合并后, cfg 内容
+item1 = [1, 2]
+item2 = dict(a=1, b=0.1)
+item3 = False
+item4 = &#39;test&#39;
+</code></pre>
+</li>
+<li><h6 id="allow-list-keys-模式合并"><a href="#allow-list-keys-模式合并" class="headerlink" title="allow_list_keys 模式合并"></a>allow_list_keys 模式合并</h6><p>假设某个配置文件中内容为：item &#x3D; [dict(a&#x3D;0), dict(b&#x3D;0, c&#x3D;0)]可以通过如下方式修改 list 内容：</p>
+<pre><code class="python">input_options = &#123;&#39;item.0.a&#39;: 1, &#39;item.1.b&#39;: 1&#125;
+cfg.merge_from_dict(input_options, allow_list_keys=True)
+
+# 输出
+item = [dict(a=1), dict(b=1, c=0)]
+</code></pre>
+</li>
+</ul>
+<p>​		如果 input_options 内部索引越界或者 allow_list_keys&#x3D;False (默认是 True)，则会报错。</p>
+<h6 id="允许删掉特定内容"><a href="#允许删掉特定内容" class="headerlink" title="允许删掉特定内容"></a>允许删掉特定内容</h6><p>该功能也比较常用，思考如下场景：在 RetinaNet 算法中，其采用的 bbox 回归 loss 配置如下：</p>
+<pre><code class="python">loss_bbox=dict(type=&#39;L1Loss&#39;, loss_weight=1.0，其他参数)
+</code></pre>
+<p>上述配置是在 base 文件中，但是在 FASF 算法中采用的是 IOULoss，现在要做的事情是在 FASF 配置中自动覆盖掉 base 配置中的 L1Loss，可以采用如下做法：</p>
+<pre><code class="python">loss_bbox=dict(
+    _delete_=True,
+    type=&#39;IoULoss&#39;,
+    eps=1e-6,
+    loss_weight=1.0,
+    reduction=&#39;none&#39;)
+</code></pre>
+<p>如果没有 <em>delete</em>&#x3D;True 参数，则两个配置会自动合并，L1Loss 中的其他参数始终会保留，无法删除，这肯定是不正确的( IoULoss 中不需要 L1Loss 的初始化参数)，现在通过引入 <em>delete</em> 保留字则可以实现忽略 base 相关配置，直接采用新配置文件字段功能。</p>
+<h6 id="pretty-text-和-dump"><a href="#pretty-text-和-dump" class="headerlink" title="pretty_text 和 dump"></a>pretty_text 和 dump</h6><p>pretty_text 函数可以将字典内容按照 PEP8 格式打印，输出结构清晰，非常好看，如下所示：</p>
+<pre><code># 直接打印字典内容
+print(cfg._cfg_dict)
+# 输出
+&#123;&#39;item1&#39;: [1, 2], &#39;item2&#39;: &#123;&#39;a&#39;: 1, &#39;b&#39;: 0.1&#125;, &#39;item3&#39;: False, &#39;item4&#39;: &#39;test&#39;&#125;
+
+# pretty 打印字典内容
+print(cfg.pretty_text)
+# 输出
+item1 = [1, 2]
+item2 = dict(a=1, b=0.1)
+item3 = False
+item4 = &#39;test&#39;
+</code></pre>
+<p>上述功能是解决第三方库 yapf 实现。而 dump 功能就是将 cfg 内容保存，当想查看实验配置是否正确、查看实验记录以及复现以前实验结果时候非常有用。</p>
+<h1 id="fileio"><a href="#fileio" class="headerlink" title="fileio"></a>fileio</h1><h2 id="fileio-1"><a href="#fileio-1" class="headerlink" title="fileio"></a><strong>fileio</strong></h2><h6 id="涉及文件读写的-FileHandler"><a href="#涉及文件读写的-FileHandler" class="headerlink" title="涉及文件读写的 FileHandler"></a>涉及文件读写的 FileHandler</h6><p>根据待读写的文件后缀名自动选择对应的 handler 进行具体操作</p>
+<pre><code>mmcv/mmcv/fileio/handlers/base.py
+</code></pre>
+<img src="../images/mmlab/image-20230719161713484.png" alt="image-20230719161713484" style="zoom:50%;" />
+
+<h2 id="file-client"><a href="#file-client" class="headerlink" title="file_client"></a><em>file_client</em></h2><p>其作用是<strong>对外提供统一的文件内容获取 API，主要用于训练过程中数据的后端读取，通过用户选择默认或者自定义不同的 FileClient 后端，可以轻松实现文件缓存、文件加速读取等等功能</strong>。</p>
+<p>mmcv\fileio\file_client.py</p>
+<p><img src="/../images/mmlab/image-20230719194105940.png" alt="image-20230719194105940"></p>
+<p>图片的读取一般包括两个步骤：给定文件路径，读取文件内容（字节流），对文件字节内容进行解码</p>
+<p>第2步文件解码非常简单，通过 <code>mmcv.imfrombytes</code> 函数即可实现，该函数会对不同图片格式进行相应解码。</p>
+<h3 id="class-FileClient"><a href="#class-FileClient" class="headerlink" title="class FileClient"></a>class FileClient</h3><pre><code>class FileClient:
     
-    <entry>
-      <title>UniHCP</title>
-      <link href="/2023/07/21/UniHCP/"/>
-      <url>/2023/07/21/UniHCP/</url>
-      
-        <content type="html"><![CDATA[<h1 id="卖点"><a href="#卖点" class="headerlink" title="卖点"></a>卖点</h1><p>使用99.97%共享的参数，</p><p>最核心的是最后四个单元统一五个任务！</p><h1 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h1><p><a href="https://arxiv.org/abs/2303.02936">https://arxiv.org/abs/2303.02936</a></p><p><a href="https://github.com/OpenGVLab/HumanBench">https://github.com/OpenGVLab/HumanBench</a></p><p><a href="https://zhuanlan.zhihu.com/p/624776660">https://zhuanlan.zhihu.com/p/624776660</a></p><h1 id="问题【待学】："><a href="#问题【待学】：" class="headerlink" title="问题【待学】："></a>问题【待学】：</h1><p>思考: 内功看成的是共享位置嵌入，具体是怎么实现的，能不能用生成模型来做？</p><p>UNIFIED-IO: A UNIFIED MODEL FOR VISION, LANGUAGE, AND MULTI-MODAL TASKS 这篇论文用到啦VQ-VAE，看看是怎么用的</p><p>对于pose的query设计是直接14个关键点变成14，256，还是说怎么样？</p><ul><li>Masked-attention Mask Transformer for Universal Image Segmentation，这篇论文里面有query关于注意力mask的机制，mask有什么好处？</li><li>A Unified Sequence Interface for Vision Tasks，这篇论文使用了VQ-VAE</li></ul><h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><h2 id="任务解释机制"><a href="#任务解释机制" class="headerlink" title="任务解释机制"></a>任务解释机制</h2><h3 id="任务引导的解释器"><a href="#任务引导的解释器" class="headerlink" title="任务引导的解释器"></a>任务引导的解释器</h3><p>UniHCP首先将不同任务的图片输入转化为公用的输出空间，而为了适应不同任务的最终输出，在decoder的末尾设计了任务引导的解释器（task-guided interpreter），用极少的参数量构建了四种输出单元，让UniHCP能根据不同任务选择相应的输出单元。同样的，task-guided  interpreter中的参数也是task间共享的。</p><p>query独立的设计让其成为了天生的prompt，让UniHCP在promtp tuning方面具有出色的表现和潜力。</p><img src="../images/UniHCP/image-20230721105540492.png" alt="image-20230721105540492" style="zoom:150%;" /><p>特征表示，局部概率图  ,全局概率图  ,边界框坐标 。</p><p>共享99.7%的参数量</p><p><img src="/../images/UniHCP/image-20230721112749245.png" alt="image-20230721112749245"></p><p><img src="/../images/UniHCP/image-20230721113410803.png" alt="image-20230721113410803"></p><h3 id="任务无关的Encoder"><a href="#任务无关的Encoder" class="headerlink" title="任务无关的Encoder"></a>任务无关的Encoder</h3><p>UniHCP选用Vision  Transformer(ViT)作为其编码器模型，在此基础上，UniHCP采用了一个共享的可学习位置嵌入(Learnable  Positional  Embedding)，使其可以关注不同人体任务数据中的人体知识本身,而非任务特有的时空结构,这有利于其学习人体知识的共性与内在联结。值得一提的是，共享位置嵌入还可以减少编码器的参数量与计算负载，避免对于不同任务、数据集学习额外的位置嵌入，带来下游部署上的麻烦。</p><p>具体来说，我们选择了各个任务中最大图片高、宽的输入（检测中的长边1333像素），下采样16倍后，学习一个所有任务间共享的 84×84 的 Positional Embedding，<em><strong>并根据具体任务的需要，对Positional  Embedding进行interpolation后作为输入。</strong></em></p><h3 id="Decoder和任务相关的Queries"><a href="#Decoder和任务相关的Queries" class="headerlink" title="Decoder和任务相关的Queries"></a><strong>Decoder和任务相关的Queries</strong></h3><p>UniHCP的Decoder的所有参数在所有任务之间完全相同，针对不同数据集、不同人体任务有所区别的只有用于查询人体知识的Queries。不同Queries仅激活编码器中相关的人体知识,而不改变其对这些知识的理解。这使Queries的变化不会影响UniHCP对人体知识的表达,所以其可以在不同Queries(任务)间最大限度地复用与迁移所学知识。</p><p><img src="/../images/UniHCP/image-20230721113807935.png" alt="image-20230721113807935"></p><h3 id="关于query的初始化"><a href="#关于query的初始化" class="headerlink" title="关于query的初始化:"></a>关于query的初始化:</h3><h4 id="pedestrian-detection"><a href="#pedestrian-detection" class="headerlink" title="pedestrian detection"></a>pedestrian detection</h4><p>query初始化采用Anchor DETR的设计，并且tgt不断的refine,query_pos不refine</p><h4 id="别的任务"><a href="#别的任务" class="headerlink" title="别的任务"></a>别的任务</h4><p>query的初始化都是随机初始化的</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> pose论文 </tag>
-            
-        </tags>
-      
-    </entry>
+    #实现的5种后端
+    _backends = &#123;
+            &#39;disk&#39;: HardDiskBackend,
+            &#39;ceph&#39;: CephBackend,
+            &#39;memcached&#39;: MemcachedBackend,
+            &#39;lmdb&#39;: LmdbBackend,
+            &#39;petrel&#39;: PetrelBackend,
+            &#39;http&#39;: HTTPBackend,
+        &#125;
+    _prefix_to_backends = &#123;
+            &#39;s3&#39;: PetrelBackend,
+            &#39;http&#39;: HTTPBackend,
+            &#39;https&#39;: HTTPBackend,
+        &#125;
+        
+   #对外提供两个接口，所有后端必须实现
+   def get(self, filepath: Union[str, Path]) -&gt; Union[bytes, memoryview]:
+           return self.client.get(filepath)
+   
+   def get_text(self, filepath: Union[str, Path], encoding=&#39;utf-8&#39;) -&gt; str:
+           return self.client.get_text(filepath, encoding)
+</code></pre>
+<h3 id="mmcv-imfrombytes"><a href="#mmcv-imfrombytes" class="headerlink" title="mmcv.imfrombytes"></a>mmcv.imfrombytes</h3><p><code>mmcv.imfrombytes</code>函数的作用是将图像的二进制数据转换为一个多维数组（<code>numpy.ndarray</code>）表示的图像数据。</p>
+<ul>
+<li><code>content</code>：表示图像的二进制数据或者<code>numpy.ndarray</code>数组。</li>
+<li><code>flag</code>：表示图像读取的方式。默认值为<code>-1</code>，表示根据图像数据自动检测读取方式。</li>
+<li><code>backend</code>：表示图像读取的后端。默认值为<code>pillow</code>，表示使用Pillow库进行图像读取。</li>
+</ul>
+<h3 id="‘BaseStorageBackend’"><a href="#‘BaseStorageBackend’" class="headerlink" title="‘BaseStorageBackend’"></a>‘BaseStorageBackend’</h3><pre><code>class BaseStorageBackend(metaclass=ABCMeta):
+
+    _allow_symlink = False
+
+    @property
+    def name(self):
+        return self.__class__.__name__
+
+    @property
+    def allow_symlink(self):
+        return self._allow_symlink
+
+    @abstractmethod
+    def get(self, filepath):
+        pass
+
+    @abstractmethod
+    def get_text(self, filepath):
+        pass
+</code></pre>
+<h3 id="‘FileClient’"><a href="#‘FileClient’" class="headerlink" title="‘FileClient’"></a>‘FileClient’</h3><h3 id="HardDiskBackend-BaseStorageBackend"><a href="#HardDiskBackend-BaseStorageBackend" class="headerlink" title="HardDiskBackend(BaseStorageBackend)"></a>HardDiskBackend(BaseStorageBackend)</h3><pre><code>    def get(self, filepath: Union[str, Path]) -&gt; bytes:
+        &quot;&quot;&quot;Read data from a given ``filepath`` with &#39;rb&#39; mode.
+
+        Args:
+            filepath (str or Path): Path to read data.
+
+        Returns:
+            bytes: Expected bytes object.
+        &quot;&quot;&quot;
+        with open(filepath, &#39;rb&#39;) as f:
+            value_buf = f.read()
+        return value_buf
+</code></pre>
+<h3 id="LmdbBackend-BaseStorageBackend"><a href="#LmdbBackend-BaseStorageBackend" class="headerlink" title="LmdbBackend(BaseStorageBackend)"></a>LmdbBackend(BaseStorageBackend)</h3><pre><code>    &quot;&quot;&quot;Lmdb storage backend.
+
+    Args:
+        db_path (str): Lmdb database path.
+        readonly (bool, optional): Lmdb environment parameter. If True,
+            disallow any write operations. Default: True.
+        lock (bool, optional): Lmdb environment parameter. If False, when
+            concurrent access occurs, do not lock the database. Default: False.
+        readahead (bool, optional): Lmdb environment parameter. If False,
+            disable the OS filesystem readahead mechanism, which may improve
+            random read performance when a database is larger than RAM.
+            Default: False.
+
+    Attributes:
+        db_path (str): Lmdb database path.
+    &quot;&quot;&quot;
+</code></pre>
+<pre><code>class LmdbBackend(BaseStorageBackend):
+
+
+    def __init__(self,
+                 db_path,
+                 readonly=True,
+                 lock=False,
+                 readahead=False,
+                 **kwargs):
+        try:
+            import lmdb  # NOQA
+        except ImportError:
+            raise ImportError(&#39;Please install lmdb to enable LmdbBackend.&#39;)
+
+        self.db_path = str(db_path)
+        self.readonly = readonly
+        self.lock = lock
+        self.readahead = readahead
+        self.kwargs = kwargs
+        self._client = None
     
-    
-    
-    <entry>
-      <title>虚拟环境配置</title>
-      <link href="/2023/07/15/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-      <url>/2023/07/15/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
-      
-        <content type="html"><![CDATA[<h5 id="likemmcv环境名"><a href="#likemmcv环境名" class="headerlink" title="likemmcv环境名"></a>likemmcv环境名</h5><p><a href="https://download.pytorch.org/whl/cu113/torch-1.12.0%2Bcu113-cp39-cp39-linux_x86_64.whl">torch-1.12.0+cu113-cp39-cp39-linux_x86_64.whl</a></p><p>python 3.9</p><pre><code>mmcv==2.0.0</code></pre><pre><code>pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu113</code></pre><p>conda install cudnn&#x3D;8.9.0  -c <a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/linux-64/">https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/linux-64/</a></p><pre><code class="shell">conda install cudnn=8.9.0 -c http://mirrors.aliyun.com/anaconda/pkgs/main</code></pre><p>为了运行DAS,做如下改变：</p><p>Successfully installed mmdet-2.14.0 pycocotools-2.0.6 terminaltables-3.1.10</p><p>Successfully installed mmsegmentation-1.0.0 prettytable-3.7.0 scipy-1.10.1 wcwidth-0.2.6</p><h6 id="PCT复制的mvp"><a href="#PCT复制的mvp" class="headerlink" title="PCT复制的mvp"></a>PCT复制的mvp</h6><p><a href="https://blog.csdn.net/qq_37764129/article/details/102496746">https://blog.csdn.net/qq_37764129/article/details/102496746</a></p><p>复制虚拟环境</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 杂 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>mmlab</title>
-      <link href="/2023/07/14/mmlab/"/>
-      <url>/2023/07/14/mmlab/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://github.com/open-mmlab/mmpose">https://github.com/open-mmlab/mmpose</a></p><p><a href="https://github.com/TommyZihao/MMPose_Tutorials">https://github.com/TommyZihao/MMPose_Tutorials</a></p><p><a href="https://github.com/open-mmlab/OpenMMLabCourse">https://github.com/open-mmlab/OpenMMLabCourse</a></p><p>MMCV 核心组件分析（一）：整体概述 - OpenMMLab的文章 - 知乎 <a href="https://zhuanlan.zhihu.com/p/336081587">https://zhuanlan.zhihu.com/p/336081587</a></p><h4 id="杂"><a href="#杂" class="headerlink" title="杂"></a>杂</h4><h6 id="修饰器"><a href="#修饰器" class="headerlink" title="修饰器"></a>修饰器</h6><p><a href="https://www.runoob.com/w3cnote/python-func-decorators.html">https://www.runoob.com/w3cnote/python-func-decorators.html</a></p><pre><code>def a_new_decorator(a_func):     def wrapTheFunction():        print(&quot;I am doing some boring work before executing a_func()&quot;)         a_func()         print(&quot;I am doing some boring work after executing a_func()&quot;)     return wrapTheFunction@a_new_decoratordef a_function_requiring_decoration():    &quot;&quot;&quot;Hey you! Decorate me!&quot;&quot;&quot;    print(&quot;I am the function which needs some decoration to &quot;          &quot;remove my foul smell&quot;)          a_function_requiring_decoration()#outputs: I am doing some boring work before executing a_func()#         I am the function which needs some decoration to remove my foul smell#         I am doing some boring work after executing a_func()</code></pre><h6 id="args-kwargs-python解释"><a href="#args-kwargs-python解释" class="headerlink" title="*args, **kwargs python解释"></a>*args, **kwargs python解释</h6><p>*args用于接收任意数量的位置参数，它将所有传递给函数的位置参数打包成一个元组（tuple）。例如：</p><pre><code>def my_function(*args):    for arg in args:        print(arg)my_function(1, 2, 3)  # 输出 1 2 3</code></pre><p>**kwargs用于接收任意数量的关键字参数，它将所有传递给函数的关键字参数打包成一个字典（dict）。例如：</p><pre><code>def my_function(**kwargs):    for key, value in kwargs.items():        print(key, value)my_function(name=&#39;Tom&#39;, age=20)  # 输出 name Tom  age 20</code></pre><p><img src="/../images/mmlab/image-20230716001111023.png" alt="image-20230716001111023"></p><h1 id="不同组件"><a href="#不同组件" class="headerlink" title="不同组件"></a>不同组件</h1><p><strong>fileio、image、parallel、runner 和 utils 这几个非常通用的组件</strong></p><h1 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h1><p>py、json、ymal 和 yml配置文件解析功能。</p><p>mmcv\utils\config.py</p><h6 id="Config-fromfile-函数"><a href="#Config-fromfile-函数" class="headerlink" title="Config.fromfile 函数"></a>Config.fromfile 函数</h6><p>参数：filename、use_predefined_variables、import_custom_modules</p><h6 id="cfg-merge-from-dict函数"><a href="#cfg-merge-from-dict函数" class="headerlink" title="cfg.merge_from_dict函数"></a>cfg.merge_from_dict函数</h6><p>接口可以实现对字典内容进行合并</p><h6 id="通过-dict-生成-config"><a href="#通过-dict-生成-config" class="headerlink" title="通过 dict 生成 config"></a>通过 dict 生成 config</h6><pre><code>cfg = Config(dict(a=1, b=dict(b1=[0, 1])))# 可以通过 .属性方式访问，比较方便cfg.b.b1 # [0, 1]</code></pre><h6 id="通过配置文件生成config"><a href="#通过配置文件生成config" class="headerlink" title="通过配置文件生成config"></a>通过配置文件生成config</h6><pre><code># Copyright (c) OpenMMLab. All rights reserved.# &#39;tests/data/config/a.py&#39; 里面的内容item1 = [1, 2]item2 = &#123;&#39;a&#39;: 0&#125;item3 = Trueitem4 = &#39;test&#39;</code></pre><pre><code>cfg = Config.fromfile(&#39;tests/data/config/a.py&#39;)cfg.filenamecfg.item4 # &#39;test&#39;cfg # 打印 config path，和字典内容...&gt;&gt;&gt; cfg = Config.fromfile(&#39;tests/data/config/a.py&#39;)&gt;&gt;&gt; cfg.filename&quot;/home/kchen/projects/mmcv/tests/data/config/a.py&quot;&gt;&gt;&gt; cfg.item4&#39;test&#39;&gt;&gt;&gt; cfg&quot;Config [path: /home/kchen/projects/mmcv/tests/data/config/a.py]: &quot;&quot;&#123;&#39;item1&#39;: [1, 2], &#39;item2&#39;: &#123;&#39;a&#39;: 0&#125;, &#39;item3&#39;: True, &#39;item4&#39;: &#39;test&#39;&#125;&quot;</code></pre><h6 id="自动替换预定义变量"><a href="#自动替换预定义变量" class="headerlink" title="自动替换预定义变量"></a>自动替换预定义变量</h6><p>tests\data\config\h.py</p><p>h.py内容为</p><pre><code># Copyright (c) OpenMMLab. All rights reserved.item1 = &#39;&#123;&#123;fileBasename&#125;&#125;&#39;item2 = &#39;&#123;&#123; fileDirname&#125;&#125;&#39;item3 = &#39;abc_&#123;&#123; fileBasenameNoExtension &#125;&#125;&#39;</code></pre><p>上面的fileBasename,fileDirname,fileBasenameNoExtension都是预定义的变量，那变量的定义是参考vscode里面设计的</p><p><a href="https://code.visualstudio.com/docs/editor/variables-reference">https://code.visualstudio.com/docs/editor/variables-reference</a></p><p>使用过程：</p><pre><code># cfg_file 文件名是 h.pycfg = Config.fromfile(cfg_file, use_predefined_variables=True)print(cfg.pretty_text)# 输出item1 = &#39;h.py&#39;item2 = &#39;config 文件路径&#39;item3 = &#39;abc_h&#39;</code></pre><p>该参数主要用途是自动替换 Config 类中已经预定义好的变量模板为真实值，在某些场合有用</p><h6 id="导入自定义模块"><a href="#导入自定义模块" class="headerlink" title="导入自定义模块"></a>导入自定义模块</h6><p>Config.fromfile 函数除了有 filename 和 use_predefined_variables 参数外，还有 import_custom_modules，默认是 True，即当 cfg中存在 custom_imports 键时候会对里面的内容进行自动导入，其输入格式要么是 str 要么是 list[str]，表示待导入的模块路径，一个典型用法是：假设你在 mmdet 中新增了自定义模型 MobileNet ，你需要在 mmdet&#x2F;models&#x2F;backbones&#x2F;<strong>init</strong>.py 里面加入如下代码，否则在调用时候会提示该模块没有被注册进去：</p><pre><code>from .mobilenet import MobileNet</code></pre><p>但是上述做法在某些场景下会比较麻烦。例如该模块处于非常深的层级，那么就需要逐层修改 <code>__init__.py</code>，有了本参数，便可以采用如下做法优雅避免：</p><pre><code># .py 文件里面存储如下内容custom_imports = dict(    imports=[&#39;mmdet.models.backbones.mobilenet&#39;],    allow_failed_imports=False)# 自动导入 mmdet.models.backbones.mobilenetConfig.fromfile(cfg_file, import_custom_modules=True)</code></pre><h6 id="合并多个配置文件"><a href="#合并多个配置文件" class="headerlink" title="合并多个配置文件"></a>合并多个配置文件</h6><ul><li><p>base 文件的 key 是不允许改的，必须是 <code>_base_</code> ，否则程序不知道哪个字段才是 base</p></li><li><p>多个 base 以 list 方式并行构建模式下，不允许多个 base 文件中有相同字段，程序会报 Duplicate Key Error，因为此时不知道以哪个配置为主</p></li><li><p>从单个base文件中合并:</p><p>base.p与d.py在同一文件夹下！</p><p>. 表示当前目录，&#x2F; 表示目录的分隔符，.. 表示上一级目录，</p><pre><code># base.py 内容item1 = [1, 2]item2 = &#123;&#39;a&#39;: 0&#125;item3 = Trueitem4 = &#39;test&#39;# d.py 内容_base_ = &#39;./base.py&#39;item1 = [2, 3]item2 = &#123;&#39;a&#39;: 1&#125;item3 = Falseitem4 = &#39;test_base&#39;# 用法cfg = Config.fromfile(&#39;d.py&#39;)# 输出item1 = [2, 3]item2 = dict(a=1)item3 = Falseitem4 = &#39;test_base&#39;</code></pre></li><li><p>从多个base文件中合并Config：</p><p>用户只需要在非 base 配置文件中将类似 <em>base</em> &#x3D; ‘.&#x2F;base.py’改成 <em>base</em> &#x3D; [‘.&#x2F;base.py’,…] 即可。</p></li><li><p>合并字典到配置</p><pre><code># Copyright (c) OpenMMLab. All rights reserved.item1 = [1, 2]item2 = &#123;&#39;a&#39;: 0&#125;item3 = Trueitem4 = &#39;test&#39;</code></pre><pre><code>cfg_file = osp.join(data_path, &#39;config/a.py&#39;)cfg = Config.fromfile(cfg_file)input_options = &#123;&#39;item2.a&#39;: 1, &#39;item2.b&#39;: 0.1, &#39;item3&#39;: False&#125;cfg.merge_from_dict(input_options)# 原始 a.py 内容为：item1 = [1, 2]item2 = &#123;&#39;a&#39;: 0&#125;item3 = Trueitem4 = &#39;test&#39;# 进行合并后, cfg 内容item1 = [1, 2]item2 = dict(a=1, b=0.1)item3 = Falseitem4 = &#39;test&#39;</code></pre></li><li><h6 id="allow-list-keys-模式合并"><a href="#allow-list-keys-模式合并" class="headerlink" title="allow_list_keys 模式合并"></a>allow_list_keys 模式合并</h6><p>假设某个配置文件中内容为：item &#x3D; [dict(a&#x3D;0), dict(b&#x3D;0, c&#x3D;0)]可以通过如下方式修改 list 内容：</p><pre><code class="python">input_options = &#123;&#39;item.0.a&#39;: 1, &#39;item.1.b&#39;: 1&#125;cfg.merge_from_dict(input_options, allow_list_keys=True)# 输出item = [dict(a=1), dict(b=1, c=0)]</code></pre></li></ul><p>​如果 input_options 内部索引越界或者 allow_list_keys&#x3D;False (默认是 True)，则会报错。</p><h6 id="允许删掉特定内容"><a href="#允许删掉特定内容" class="headerlink" title="允许删掉特定内容"></a>允许删掉特定内容</h6><p>该功能也比较常用，思考如下场景：在 RetinaNet 算法中，其采用的 bbox 回归 loss 配置如下：</p><pre><code class="python">loss_bbox=dict(type=&#39;L1Loss&#39;, loss_weight=1.0，其他参数)</code></pre><p>上述配置是在 base 文件中，但是在 FASF 算法中采用的是 IOULoss，现在要做的事情是在 FASF 配置中自动覆盖掉 base 配置中的 L1Loss，可以采用如下做法：</p><pre><code class="python">loss_bbox=dict(    _delete_=True,    type=&#39;IoULoss&#39;,    eps=1e-6,    loss_weight=1.0,    reduction=&#39;none&#39;)</code></pre><p>如果没有 <em>delete</em>&#x3D;True 参数，则两个配置会自动合并，L1Loss 中的其他参数始终会保留，无法删除，这肯定是不正确的( IoULoss 中不需要 L1Loss 的初始化参数)，现在通过引入 <em>delete</em> 保留字则可以实现忽略 base 相关配置，直接采用新配置文件字段功能。</p><h6 id="pretty-text-和-dump"><a href="#pretty-text-和-dump" class="headerlink" title="pretty_text 和 dump"></a>pretty_text 和 dump</h6><p>pretty_text 函数可以将字典内容按照 PEP8 格式打印，输出结构清晰，非常好看，如下所示：</p><pre><code># 直接打印字典内容print(cfg._cfg_dict)# 输出&#123;&#39;item1&#39;: [1, 2], &#39;item2&#39;: &#123;&#39;a&#39;: 1, &#39;b&#39;: 0.1&#125;, &#39;item3&#39;: False, &#39;item4&#39;: &#39;test&#39;&#125;# pretty 打印字典内容print(cfg.pretty_text)# 输出item1 = [1, 2]item2 = dict(a=1, b=0.1)item3 = Falseitem4 = &#39;test&#39;</code></pre><p>上述功能是解决第三方库 yapf 实现。而 dump 功能就是将 cfg 内容保存，当想查看实验配置是否正确、查看实验记录以及复现以前实验结果时候非常有用。</p><h1 id="fileio"><a href="#fileio" class="headerlink" title="fileio"></a>fileio</h1><h2 id="fileio-1"><a href="#fileio-1" class="headerlink" title="fileio"></a><strong>fileio</strong></h2><h6 id="涉及文件读写的-FileHandler"><a href="#涉及文件读写的-FileHandler" class="headerlink" title="涉及文件读写的 FileHandler"></a>涉及文件读写的 FileHandler</h6><p>根据待读写的文件后缀名自动选择对应的 handler 进行具体操作</p><pre><code>mmcv/mmcv/fileio/handlers/base.py</code></pre><img src="../images/mmlab/image-20230719161713484.png" alt="image-20230719161713484" style="zoom:50%;" /><h2 id="file-client"><a href="#file-client" class="headerlink" title="file_client"></a><em>file_client</em></h2><p>其作用是<strong>对外提供统一的文件内容获取 API，主要用于训练过程中数据的后端读取，通过用户选择默认或者自定义不同的 FileClient 后端，可以轻松实现文件缓存、文件加速读取等等功能</strong>。</p><p>mmcv\fileio\file_client.py</p><p><img src="/../images/mmlab/image-20230719194105940.png" alt="image-20230719194105940"></p><p>图片的读取一般包括两个步骤：给定文件路径，读取文件内容（字节流），对文件字节内容进行解码</p><p>第2步文件解码非常简单，通过 <code>mmcv.imfrombytes</code> 函数即可实现，该函数会对不同图片格式进行相应解码。</p><h3 id="class-FileClient"><a href="#class-FileClient" class="headerlink" title="class FileClient"></a>class FileClient</h3><pre><code>class FileClient:        #实现的5种后端    _backends = &#123;            &#39;disk&#39;: HardDiskBackend,            &#39;ceph&#39;: CephBackend,            &#39;memcached&#39;: MemcachedBackend,            &#39;lmdb&#39;: LmdbBackend,            &#39;petrel&#39;: PetrelBackend,            &#39;http&#39;: HTTPBackend,        &#125;    _prefix_to_backends = &#123;            &#39;s3&#39;: PetrelBackend,            &#39;http&#39;: HTTPBackend,            &#39;https&#39;: HTTPBackend,        &#125;           #对外提供两个接口，所有后端必须实现   def get(self, filepath: Union[str, Path]) -&gt; Union[bytes, memoryview]:           return self.client.get(filepath)      def get_text(self, filepath: Union[str, Path], encoding=&#39;utf-8&#39;) -&gt; str:           return self.client.get_text(filepath, encoding)</code></pre><h3 id="mmcv-imfrombytes"><a href="#mmcv-imfrombytes" class="headerlink" title="mmcv.imfrombytes"></a>mmcv.imfrombytes</h3><p><code>mmcv.imfrombytes</code>函数的作用是将图像的二进制数据转换为一个多维数组（<code>numpy.ndarray</code>）表示的图像数据。</p><ul><li><code>content</code>：表示图像的二进制数据或者<code>numpy.ndarray</code>数组。</li><li><code>flag</code>：表示图像读取的方式。默认值为<code>-1</code>，表示根据图像数据自动检测读取方式。</li><li><code>backend</code>：表示图像读取的后端。默认值为<code>pillow</code>，表示使用Pillow库进行图像读取。</li></ul><h3 id="‘BaseStorageBackend’"><a href="#‘BaseStorageBackend’" class="headerlink" title="‘BaseStorageBackend’"></a>‘BaseStorageBackend’</h3><pre><code>class BaseStorageBackend(metaclass=ABCMeta):    _allow_symlink = False    @property    def name(self):        return self.__class__.__name__    @property    def allow_symlink(self):        return self._allow_symlink    @abstractmethod    def get(self, filepath):        pass    @abstractmethod    def get_text(self, filepath):        pass</code></pre><h3 id="‘FileClient’"><a href="#‘FileClient’" class="headerlink" title="‘FileClient’"></a>‘FileClient’</h3><h3 id="HardDiskBackend-BaseStorageBackend"><a href="#HardDiskBackend-BaseStorageBackend" class="headerlink" title="HardDiskBackend(BaseStorageBackend)"></a>HardDiskBackend(BaseStorageBackend)</h3><pre><code>    def get(self, filepath: Union[str, Path]) -&gt; bytes:        &quot;&quot;&quot;Read data from a given ``filepath`` with &#39;rb&#39; mode.        Args:            filepath (str or Path): Path to read data.        Returns:            bytes: Expected bytes object.        &quot;&quot;&quot;        with open(filepath, &#39;rb&#39;) as f:            value_buf = f.read()        return value_buf</code></pre><h3 id="LmdbBackend-BaseStorageBackend"><a href="#LmdbBackend-BaseStorageBackend" class="headerlink" title="LmdbBackend(BaseStorageBackend)"></a>LmdbBackend(BaseStorageBackend)</h3><pre><code>    &quot;&quot;&quot;Lmdb storage backend.    Args:        db_path (str): Lmdb database path.        readonly (bool, optional): Lmdb environment parameter. If True,            disallow any write operations. Default: True.        lock (bool, optional): Lmdb environment parameter. If False, when            concurrent access occurs, do not lock the database. Default: False.        readahead (bool, optional): Lmdb environment parameter. If False,            disable the OS filesystem readahead mechanism, which may improve            random read performance when a database is larger than RAM.            Default: False.    Attributes:        db_path (str): Lmdb database path.    &quot;&quot;&quot;</code></pre><pre><code>class LmdbBackend(BaseStorageBackend):    def __init__(self,                 db_path,                 readonly=True,                 lock=False,                 readahead=False,                 **kwargs):        try:            import lmdb  # NOQA        except ImportError:            raise ImportError(&#39;Please install lmdb to enable LmdbBackend.&#39;)        self.db_path = str(db_path)        self.readonly = readonly        self.lock = lock        self.readahead = readahead        self.kwargs = kwargs        self._client = None       def get(self, filepath):        &quot;&quot;&quot;Get values according to the filepath.        Args:            filepath (str | obj:`Path`): Here, filepath is the lmdb key.        &quot;&quot;&quot;        if self._client is None:            self._client = self._get_client()        with self._client.begin(write=False) as txn:            value_buf = txn.get(str(filepath).encode(&#39;utf-8&#39;))        return value_buf</code></pre><h3 id="fileclient用法"><a href="#fileclient用法" class="headerlink" title="fileclient用法"></a>fileclient用法</h3><pre><code>@PIPELINES.register_module()class LoadImageFromFile(object):  # 加载图片到内存中    def __init__(self,                 to_float32=False,                 color_type=&#39;color&#39;,                 file_client_args=dict(backend=&#39;disk&#39;)):        self.to_float32 = to_float32        self.color_type = color_type        # 默认是 disk 后端        self.file_client_args = file_client_args.copy()        self.file_client = None    def __call__(self, results):        if self.file_client is None:            self.file_client = mmcv.FileClient(**self.file_client_args)        # 读取图片字节内容        img_bytes = self.file_client.get(filename)        # 对字节内容进行解码        img = mmcv.imfrombytes(img_bytes, flag=self.color_type)        ...        return results</code></pre><h3 id="实列使用"><a href="#实列使用" class="headerlink" title="实列使用"></a>实列使用</h3><p><strong>annotations 文件和图片文件不在同一个地方</strong></p><p><a href="https://zhuanlan.zhihu.com/p/339190576">https://zhuanlan.zhihu.com/p/339190576</a></p><p>具体修改还是看知乎这里</p><pre><code>import mmcvfrom mmcv import BaseStorageBackend, FileClient# 通过 FileClient.register_backend可以注册到_backends 字典中# 自己注册的@FileClient.register_backend(&#39;remote&#39;)class RemoteUrlBackend(BaseStorageBackend):    def __init__(self, path_mapping):        assert isinstance(path_mapping, dict)        self.path_mapping = path_mapping    def get(self, filepath):        filepath = str(filepath)        # 本地相对路径替换为远程 url        for k, v in self.path_mapping.items():            filepath = filepath.replace(k, v)        # 拉取远程图片(可能比较复杂)        value_buf = self._get_remote_image()        return value_buf    def get_text(self, filepath):        raise NotImplementedError    def _get_remote_image(self):        pass</code></pre><h2 id="io"><a href="#io" class="headerlink" title="io"></a><em>io</em></h2><pre><code># Copyright (c) OpenMMLab. All rights reserved.from io import BytesIO, StringIOfrom pathlib import Pathfrom typing import Any, Callable, Dict, List, Optional, TextIO, Union#它用于声明函数和变量的参数类型和返回值类型。from ..utils import is_list_offrom .file_client import FileClientfrom .handlers import BaseFileHandler, JsonHandler, PickleHandler, YamlHandlerFileLikeObject = Union[TextIO, StringIO, BytesIO]file_handlers = &#123;    &#39;json&#39;: JsonHandler(),    &#39;yaml&#39;: YamlHandler(),    &#39;yml&#39;: YamlHandler(),    &#39;pickle&#39;: PickleHandler(),    &#39;pkl&#39;: PickleHandler()&#125;def load(file: Union[str, Path, FileLikeObject],         file_format: Optional[str] = None,         file_client_args: Optional[Dict] = None,         **kwargs):    &quot;&quot;&quot;Load data from json/yaml/pickle files.    This method provides a unified api for loading data from serialized files.    Note:        In v1.3.16 and later, ``load`` supports loading data from serialized        files those can be storaged in different backends.    Args:        file (str or :obj:`Path` or file-like object): Filename or a file-like            object.        file_format (str, optional): If not specified, the file format will be            inferred from the file extension, otherwise use the specified one.            Currently supported formats include &quot;json&quot;, &quot;yaml/yml&quot; and            &quot;pickle/pkl&quot;.        file_client_args (dict, optional): Arguments to instantiate a            FileClient. See :class:`mmcv.fileio.FileClient` for details.            Default: None.    Examples:        &gt;&gt;&gt; load(&#39;/path/of/your/file&#39;)  # file is storaged in disk        &gt;&gt;&gt; load(&#39;https://path/of/your/file&#39;)  # file is storaged in Internet        &gt;&gt;&gt; load(&#39;s3://path/of/your/file&#39;)  # file is storaged in petrel    Returns:        The content from the file.    &quot;&quot;&quot;    if isinstance(file, Path):        file = str(file)    if file_format is None and isinstance(file, str):        file_format = file.split(&#39;.&#39;)[-1]    if file_format not in file_handlers:        raise TypeError(f&#39;Unsupported format: &#123;file_format&#125;&#39;)    handler = file_handlers[file_format]    f: FileLikeObject    if isinstance(file, str):        file_client = FileClient.infer_client(file_client_args, file)        if handler.str_like:            with StringIO(file_client.get_text(file)) as f:                obj = handler.load_from_fileobj(f, **kwargs)        else:            with BytesIO(file_client.get(file)) as f:                obj = handler.load_from_fileobj(f, **kwargs)    elif hasattr(file, &#39;read&#39;):        obj = handler.load_from_fileobj(file, **kwargs)    else:        raise TypeError(&#39;&quot;file&quot; must be a filepath str or a file-object&#39;)    return objdef dump(obj: Any,         file: Optional[Union[str, Path, FileLikeObject]] = None,         file_format: Optional[str] = None,         file_client_args: Optional[Dict] = None,         **kwargs):    &quot;&quot;&quot;Dump data to json/yaml/pickle strings or files.    This method provides a unified api for dumping data as strings or to files,    and also supports custom arguments for each file format.    Note:        In v1.3.16 and later, ``dump`` supports dumping data as strings or to        files which is saved to different backends.    Args:        obj (any): The python object to be dumped.        file (str or :obj:`Path` or file-like object, optional): If not            specified, then the object is dumped to a str, otherwise to a file            specified by the filename or file-like object.        file_format (str, optional): Same as :func:`load`.        file_client_args (dict, optional): Arguments to instantiate a            FileClient. See :class:`mmcv.fileio.FileClient` for details.            Default: None.    Examples:        &gt;&gt;&gt; dump(&#39;hello world&#39;, &#39;/path/of/your/file&#39;)  # disk        &gt;&gt;&gt; dump(&#39;hello world&#39;, &#39;s3://path/of/your/file&#39;)  # ceph or petrel    Returns:        bool: True for success, False otherwise.    &quot;&quot;&quot;    if isinstance(file, Path):        file = str(file)    if file_format is None:        if isinstance(file, str):            file_format = file.split(&#39;.&#39;)[-1]        elif file is None:            raise ValueError(                &#39;file_format must be specified since file is None&#39;)    if file_format not in file_handlers:        raise TypeError(f&#39;Unsupported format: &#123;file_format&#125;&#39;)    f: FileLikeObject    handler = file_handlers[file_format]    if file is None:        return handler.dump_to_str(obj, **kwargs)    elif isinstance(file, str):        file_client = FileClient.infer_client(file_client_args, file)        if handler.str_like:            with StringIO() as f:                handler.dump_to_fileobj(obj, f, **kwargs)                file_client.put_text(f.getvalue(), file)        else:            with BytesIO() as f:                handler.dump_to_fileobj(obj, f, **kwargs)                file_client.put(f.getvalue(), file)    elif hasattr(file, &#39;write&#39;):        handler.dump_to_fileobj(obj, file, **kwargs)    else:        raise TypeError(&#39;&quot;file&quot; must be a filename str or a file-object&#39;)def _register_handler(handler: BaseFileHandler,                      file_formats: Union[str, List[str]]) -&gt; None:    &quot;&quot;&quot;Register a handler for some file extensions.    Args:        handler (:obj:`BaseFileHandler`): Handler to be registered.        file_formats (str or list[str]): File formats to be handled by this            handler.    &quot;&quot;&quot;    if not isinstance(handler, BaseFileHandler):        raise TypeError(            f&#39;handler must be a child of BaseFileHandler, not &#123;type(handler)&#125;&#39;)    if isinstance(file_formats, str):        file_formats = [file_formats]    if not is_list_of(file_formats, str):        raise TypeError(&#39;file_formats must be a str or a list of str&#39;)    for ext in file_formats:        file_handlers[ext] = handlerdef register_handler(file_formats: Union[str, list], **kwargs) -&gt; Callable:    def wrap(cls):        _register_handler(cls(**kwargs), file_formats)        return cls    return wrap</code></pre><h3 id="‘load’"><a href="#‘load’" class="headerlink" title="‘load’"></a>‘load’</h3><pre><code class="python">    handler = file_handlers[file_format]    file_client = FileClient.infer_client(file_client_args, file)    if isinstance(file, str):        file_client = FileClient.infer_client(file_client_args, file)         # file_client_args 一般是None        # file字符串路径名        if handler.str_like:            with StringIO(file_client.get_text(file)) as f:                obj = handler.load_from_fileobj(f, **kwargs)        else:            with BytesIO(file_client.get(file)) as f:                obj = handler.load_from_fileobj(f, **kwargs)    elif hasattr(file, &#39;read&#39;):        obj = handler.load_from_fileobj(file, **kwargs)    else:        raise TypeError(&#39;&quot;file&quot; must be a filepath str or a file-object&#39;)    return obj</code></pre><h3 id="‘dump’"><a href="#‘dump’" class="headerlink" title="‘dump’"></a>‘dump’</h3><h3 id="‘register-handler’"><a href="#‘register-handler’" class="headerlink" title="‘register_handler’"></a>‘register_handler’</h3><h2 id="handlers"><a href="#handlers" class="headerlink" title="handlers"></a><em>handlers</em></h2><h3 id="‘BaseFileHandler’"><a href="#‘BaseFileHandler’" class="headerlink" title="‘BaseFileHandler’"></a>‘BaseFileHandler’</h3><pre><code class="python">from abc import ABCMeta, abstractmethod# 继承ABCMeta元类，使其无法直接实例化class BaseFileHandler(metaclass=ABCMeta):    #@abstractmethod表示子类必须要实现该方法，否则报错    # 文件读取    @abstractmethod    def load_from_fileobj(self, file, **kwargs):        pass    # 文件存储，需要传入对象obj和file    @abstractmethod    def dump_to_fileobj(self, obj, file, **kwargs):        pass    #dump成字符串返回，当你不想保存时候使用    @abstractmethod    def dump_to_str(self, obj, **kwargs):        pass    # 对外实际上是采用下面两个api    def load_from_path(self, filepath, mode=&#39;r&#39;, **kwargs):        with open(filepath, mode) as f:            return self.load_from_fileobj(f, **kwargs)    def dump_to_path(self, obj, filepath, mode=&#39;w&#39;, **kwargs):        with open(filepath, mode) as f:            self.dump_to_fileobj(obj, f, **kwargs)</code></pre><h4 id="基方法load-from-fileobj"><a href="#基方法load-from-fileobj" class="headerlink" title="基方法load_from_fileobj"></a>基方法load_from_fileobj</h4><h4 id="基方法dump-to-fileobj"><a href="#基方法dump-to-fileobj" class="headerlink" title="基方法dump_to_fileobj"></a>基方法dump_to_fileobj</h4><h4 id="基方法dump-to-str"><a href="#基方法dump-to-str" class="headerlink" title="基方法dump_to_str"></a>基方法dump_to_str</h4><h4 id="load-from-path"><a href="#load-from-path" class="headerlink" title="load_from_path"></a>load_from_path</h4><h4 id="dump-to-path"><a href="#dump-to-path" class="headerlink" title="dump_to_path"></a>dump_to_path</h4><h3 id="‘JsonHandler’"><a href="#‘JsonHandler’" class="headerlink" title="‘JsonHandler’"></a>‘JsonHandler’</h3><pre><code># Copyright (c) OpenMMLab. All rights reserved.import jsonimport numpy as npfrom .base import BaseFileHandlerdef set_default(obj):    # 这些数据类型没办法序列化，比如numpy数组，就要变成列表    # 创建一个set my_set = &#123;1, 2, 3, 4, 5&#125;    # &lt;class &#39;range&#39;&gt; range()函数返回一个表示范围的对象，而不是一个列表。    # range(1, 6)    if isinstance(obj, (set, range)):        return list(obj)    elif isinstance(obj, np.ndarray):        return obj.tolist()    elif isinstance(obj, np.generic):        return obj.item()    raise TypeError(f&#39;&#123;type(obj)&#125; is unsupported for json dump&#39;)class JsonHandler(BaseFileHandler):    def load_from_fileobj(self, file):        return json.load(file)    def dump_to_fileobj(self, obj, file, **kwargs):        kwargs.setdefault(&#39;default&#39;, set_default)        json.dump(obj, file, **kwargs)    def dump_to_str(self, obj, **kwargs):        kwargs.setdefault(&#39;default&#39;, set_default)        return json.dumps(obj, **kwargs)</code></pre><h3 id="‘PickleHandler’"><a href="#‘PickleHandler’" class="headerlink" title="‘PickleHandler’"></a>‘PickleHandler’</h3><pre><code># Copyright (c) OpenMMLab. All rights reserved.import picklefrom .base import BaseFileHandlerclass PickleHandler(BaseFileHandler):    str_like = False    def load_from_fileobj(self, file, **kwargs):        return pickle.load(file, **kwargs)    def load_from_path(self, filepath, **kwargs):        return super().load_from_path(filepath, mode=&#39;rb&#39;, **kwargs)    def dump_to_str(self, obj, **kwargs):        kwargs.setdefault(&#39;protocol&#39;, 2)        return pickle.dumps(obj, **kwargs)    def dump_to_fileobj(self, obj, file, **kwargs):        kwargs.setdefault(&#39;protocol&#39;, 2)        pickle.dump(obj, file, **kwargs)    def dump_to_path(self, obj, filepath, **kwargs):        super().dump_to_path(obj, filepath, mode=&#39;wb&#39;, **kwargs)</code></pre><h3 id="‘YamlHandler’"><a href="#‘YamlHandler’" class="headerlink" title="‘YamlHandler’"></a>‘YamlHandler’</h3><pre><code># Copyright (c) OpenMMLab. All rights reserved.import yamltry:    from yaml import CDumper as Dumper    from yaml import CLoader as Loaderexcept ImportError:    from yaml import Loader, Dumper  # type: ignorefrom .base import BaseFileHandler  # isort:skipclass YamlHandler(BaseFileHandler):    def load_from_fileobj(self, file, **kwargs):        kwargs.setdefault(&#39;Loader&#39;, Loader)        return yaml.load(file, **kwargs)    def dump_to_fileobj(self, obj, file, **kwargs):        kwargs.setdefault(&#39;Dumper&#39;, Dumper)        yaml.dump(obj, file, **kwargs)    def dump_to_str(self, obj, **kwargs):        kwargs.setdefault(&#39;Dumper&#39;, Dumper)        return yaml.dump(obj, **kwargs)</code></pre><h2 id="parse"><a href="#parse" class="headerlink" title="parse"></a>parse</h2><h6 id="‘list-from-file"><a href="#‘list-from-file" class="headerlink" title="‘list_from_file"></a>‘list_from_file</h6><h6 id="dict-from-file"><a href="#dict-from-file" class="headerlink" title="dict_from_file"></a>dict_from_file</h6><h2 id="自定义扩展"><a href="#自定义扩展" class="headerlink" title="自定义扩展"></a>自定义扩展</h2><pre><code class="python">def register_handler(file_formats, **kwargs):    def wrap(cls):        # 这句话其实核心是：file_handlers[ext] = handler        # 把我们写的handler类设置到file_handlers的字典中        _register_handler(cls(**kwargs), file_formats)        return cls    return wrap</code></pre><pre><code>@register_handler(&#39;npy&#39;)class NpyHandler(BaseFileHandler):    def load_from_fileobj(self, file, **kwargs):        return np.load(file)    def dump_to_fileobj(self, obj, file, **kwargs):        np.save(file, obj)    def dump_to_str(self, obj, **kwargs):        # 实际上这么写没有意义，这里只是举例        return obj.tobytes()</code></pre><p><img src="/../images/mmlab/image-20230719192925462.png" alt="image-20230719192925462"></p><p>在调用的时候，我们需要额外传入 mode 参数，原因是默认的 mode 参数是 ‘r’ 或者 ‘w’，但是在 numpy 中需要是 byte 格式。</p><h2 id="杂-1"><a href="#杂-1" class="headerlink" title="杂"></a>杂</h2><p>在Python中，如果要定义一个抽象类，需要使用abc模块。下面是一个使用@abstractmethod装饰器定义抽象方法的例子：</p><pre><code>from abc import ABC, abstractmethodclass MyAbstractClass(ABC):    @abstractmethod    def my_abstract_method(self):        pass</code></pre><p>自己写装饰器</p><p>先定义一个装饰器</p><pre><code>def my_decorator(func):    def wrapper(*args, **kwargs):        print(&#39;Before the function is called.&#39;)        result = func(*args, **kwargs)        print(&#39;After the function is called.&#39;)        return result    return wrapper</code></pre><p>上面的代码定义了一个名为my_decorator的装饰器，它接受一个函数作为参数，并返回一个新的函数wrapper。wrapper函数在调用原函数之前和之后会打印一些信息，以增强原函数的功能。使用装饰器时，只需要在原函数前面加上@my_decorator即可将装饰器应用到原函数中，例如：</p><pre><code>@my_decoratordef my_function():    print(&#39;This is my function.&#39;)</code></pre><p>在上面的例子中，my_function函数被@my_decorator装饰器装饰，当调用my_function函数时，会先打印’Before the function is called.’，然后执行原函数的代码，最后打印’After the function is called.’。</p><h6 id="文件获取后端-FileClient"><a href="#文件获取后端-FileClient" class="headerlink" title="文件获取后端 FileClient"></a>文件获取后端 FileClient</h6><p>主要用于训练过程中数据的读取，通过用户选择或者自定义不同的 FileClient 后端，可以轻松实现文件缓存、文件加速读取等功能</p><h6 id="np-generic举例"><a href="#np-generic举例" class="headerlink" title="np.generic举例"></a>np.generic举例</h6><pre><code>import numpy as np# 创建一个numpy数组my_array = np.array([1, 2, 3], dtype=np.int32)# 将numpy数组转换为Python列表my_list = my_array.tolist()# 打印Python列表print(my_list)# 将numpy的generic类型转换为Python内置类型my_int32 = np.int32(3)my_int = my_int32.item()# 打印转换后的Python内置类型print(type(my_int))  # &lt;class &#39;int&#39;&gt;</code></pre><h6 id="类型提示-Type-Hints-语法"><a href="#类型提示-Type-Hints-语法" class="headerlink" title="类型提示(Type Hints)语法"></a>类型提示(Type Hints)语法</h6><pre><code>from typing import Any, Callable, Dict, List, Optional, TextIO, Union</code></pre><p><code>from typing import Any, Callable, Dict, List, Optional, TextIO, Union</code>这行代码是Python中的类型提示(Type Hints)语法，它用于声明函数和变量的参数类型和返回值类型。这样做可以提高代码的可读性、可维护性和可靠性。</p><p>具体来说，这行代码中声明了以下类型：</p><ul><li><code>Any</code>: 表示任意类型，相当于不做类型限制。</li><li><code>Callable</code>: 表示一个可调用对象，例如函数或方法。</li><li><code>Dict</code>: 表示一个字典类型，其中键和值的类型可以是任意类型。</li><li><code>List</code>: 表示一个列表类型，其中元素的类型可以是任意类型。</li><li><code>Optional</code>: 表示一个可选类型，即参数可以是指定类型或<code>None</code>。</li><li><code>TextIO</code>: 表示一个文本流对象，例如文件、标准输入输出等。</li><li><code>Union</code>: 表示多个类型中的任意一种类型。</li></ul><pre><code>def my_function(my_list: List[int], my_dict: Optional[Dict[str, Any]]) -&gt; Union[int, float]:    # 函数体    pass</code></pre><p>FileLikeObject &#x3D; Union[TextIO, StringIO, BytesIO]这行代码是Python中的类型提示(Type Hints)语法，用于定义一个新的类型FileLikeObject。在这个代码中，FileLikeObject是一个由Union类型组成的联合类型，它表示可以是TextIO、StringIO或BytesIO类型中的任何一种。</p><p>TextIO、StringIO和BytesIO是Python内置的文件流对象，用于处理文本和二进制数据。TextIO可以用于读写文本文件，StringIO可以在内存中读写字符串，BytesIO可以在内存中读写二进制数据。这些对象都实现了文件流操作接口，并且可以像文件一样读写数据。</p><pre><code>FileLikeObject = Union[TextIO, StringIO, BytesIO]</code></pre><p>f是一个变量名，FileLikeObject是该变量的类型。</p><pre><code>f: FileLikeObject</code></pre><h6 id="python-property"><a href="#python-property" class="headerlink" title="python @property"></a>python @property</h6><p>用于将一个方法转换为属性调用。在Python中，属性通常被视为类的一部分，它们提供了一种简单的方式来访问和修改对象的状态。</p><p>通过将一个方法标记为@property，我们可以将它转换为一个只读属性。这意味着，当我们访问该属性时，实际上是调用了该方法，并返回了它的返回值。</p><pre><code>class MyClass:    @property    def name(self):        return self.__class__.__name__obj = MyClass()print(obj.name)  # 输出 &quot;MyClass&quot;</code></pre><h6 id="python-abstractmethod"><a href="#python-abstractmethod" class="headerlink" title="python @abstractmethod"></a>python @abstractmethod</h6><p>用于将一个方法定义为抽象方法。抽象方法是一种特殊的方法，它没有具体的实现，只是定义了一个接口，需要在子类中进行实现。</p><h6 id="python-classmethod"><a href="#python-classmethod" class="headerlink" title="python @classmethod"></a>python @classmethod</h6><p>通过将一个方法标记为@classmethod，我们可以将它转换为类方法。在类方法中，第一个参数通常被命名为cls，它指代当前类对象本身。使用cls参数，我们可以在类方法中访问类的属性和方法，从而实现对类的操作。</p><pre><code>class MyClass:    @classmethod    def add(cls, x, y):        return x + yresult = MyClass.add(10, 20)print(result)  # 输出 30</code></pre><h6 id="python-staticmethod"><a href="#python-staticmethod" class="headerlink" title="python @staticmethod"></a>python @staticmethod</h6><p>静态方法是一种特殊的方法，它不需要访问实例的状态或类的状态，而是仅依赖于传入的参数。通过将一个方法标记为@staticmethod，我们可以将它转换为静态方法。在静态方法中，不需要使用self或cls等参数来引用实例或类对象，而是可以直接使用传入的参数进行计算。</p><pre><code>class MyClass:    @staticmethod    def add(x, y):        return x + yresult = MyClass.add(10, 20)print(result)  # 输出 30</code></pre><h6 id="python-call"><a href="#python-call" class="headerlink" title="python call"></a>python <strong>call</strong></h6><pre><code>class MyClass:    def __call__(self, x):        return x + 1obj = MyClass()result = obj(10)print(result)  # 输出 11</code></pre><h6 id="python-运算符对字典解包"><a href="#python-运算符对字典解包" class="headerlink" title="python **运算符对字典解包"></a>python **运算符对字典解包</h6><pre><code>def my_func(a, b):    print(a, b)env = &#123;&#39;a&#39;: 1, &#39;b&#39;: 2&#125;my_func(**env)  # 输出 1 2</code></pre><h6 id="python-字典形参"><a href="#python-字典形参" class="headerlink" title="python 字典形参"></a>python 字典形参</h6><pre><code>def my_func(**kwargs):    for key, value in kwargs.items():        print(key, value)my_func(a=1, b=2, c=3)  # 输出 a 1 b 2 c 3</code></pre><h6 id="python-占位符"><a href="#python-占位符" class="headerlink" title="python 占位符"></a>python 占位符</h6><pre><code>item1 = &#39;&#123;&#125;&#39;item2 = &#39;&#123;&#125;/path/to/dir&#39;item3 = &#39;abc_&#123;&#125;.txt&#39;item1 = &#39;&#123;&#125;&#39;.format(&#39;filename&#39;)item2 = &#39;&#123;&#125;/path/to/dir&#39;.format(&#39;C:/&#39;)item3 = &#39;abc_&#123;&#125;.txt&#39;.format(&#39;file&#39;)</code></pre><h6 id="python-文件"><a href="#python-文件" class="headerlink" title="python 文件"></a>python 文件</h6><p>..&#x2F;a2与..a2一样吗</p><p>不完全相同。..&#x2F;a2 和 ..a2 都表示上一级目录下的 a2 目录，但是它们所表示的路径格式不同。</p><p>..&#x2F;a2 使用了标准的相对路径格式，其中 .. 表示上一级目录，&#x2F; 表示目录的分隔符，因此 ..&#x2F;a2 表示上一级目录下的 a2 目录。这种表示方法是在文件系统中广泛使用的相对路径格式。</p><p>..a2 则是一种非标准的相对路径格式，使用了点号 . 和 .. 表示路径的相对位置。在 Python 等编程语言中，通常使用点号 . 表示当前目录，使用 .. 表示上一级目录，将它们与目录名拼接起来表示相对路径。因此，..a2 可以理解为上一级目录下的 a2 目录，但是这种表示方法在文件系统中并不通用。</p><p>总之，..&#x2F;a2 是标准的相对路径格式，而 ..a2 则是一种非标准的相对路径格式，使用时需要注意。</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>POSE</title>
-      <link href="/2023/07/13/POSE/"/>
-      <url>/2023/07/13/POSE/</url>
-      
-        <content type="html"><![CDATA[<h1 id="RLE"><a href="#RLE" class="headerlink" title="RLE"></a>RLE</h1><p><a href="https://zhuanlan.zhihu.com/p/625023463">https://zhuanlan.zhihu.com/p/625023463</a></p><p><a href="https://zhuanlan.zhihu.com/p/440567782">https://zhuanlan.zhihu.com/p/440567782</a></p><p><a href="https://github.com/Jeff-sjtu/res-loglikelihood-regression">https://github.com/Jeff-sjtu/res-loglikelihood-regression</a></p><p><a href="https://www.bilibili.com/video/BV18E411w7Jh/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV18E411w7Jh/?spm_id_from=333.999.0.0</a> 讲flow的视频</p><p>GAN训练：模式崩溃和后置崩溃挑战</p><p><a href="https://zhuanlan.zhihu.com/p/165577850">https://zhuanlan.zhihu.com/p/165577850</a> flow的文章</p><p><a href="https://zhuanlan.zhihu.com/p/59615785">https://zhuanlan.zhihu.com/p/59615785</a> 讲flow的文章</p><pre><code>20个采样点 10个实列all number of params: 43108693number of backbone params: 33841352</code></pre><pre><code>20个采样点 5个实列all number of params: 43105908number of backbone params: 33841352</code></pre><pre><code>10个采样点 5个实列all number of params: 42365748number of backbone params: 33841352</code></pre><p>19416917</p><p>尺寸不变</p><pre><code>kernel_size=3, padding=1, stride=1 kernel_size=5, padding=2, stride=1kernel_size=7, padding=3, stride=1</code></pre><h1 id="与姿态相关的论文主要看数据组织结构"><a href="#与姿态相关的论文主要看数据组织结构" class="headerlink" title="与姿态相关的论文主要看数据组织结构"></a>与姿态相关的论文主要看数据组织结构</h1><h2 id="DAS"><a href="#DAS" class="headerlink" title="DAS"></a>DAS</h2><pre><code>$&#123;ROOT&#125;|-- data|   |-- panoptic|   |   |-- 160226_haggling1|   |   |   |-- hdImgs|   |   |   |   |-- 00_16|   |   |   |   |-- 00_30|   |   |-- 160422_haggling1|   |   |-- 160226_mafia1|   |   |-- 160422_mafia2|   |   |-- 160226_ultimatum1|   |   |-- 160422_ultimatum1|   |   |-- 160906_pizza1|   |   |-- annotations|   |   |   |-- train.json|   |   |   |-- haggling.json|   |   |   |-- mafia.json|   |   |   |-- ultimatum.json|   |   |   |-- pizza.json|   |-- coco|   |   |-- train2017|   |   |-- annotations|   |   |   |-- person_keypoints_train2017.json|   |-- muco|   |   |-- unaugmented_set|   |   |-- augmented_set|   |   |-- annotations|   |   |   |-- train_all_interv1.json|   |-- mupots|   |   |-- TS1|   |   |   |-- img_000000.jpg|   |   |   |-- ...|   |   |-- ...|   |   |-- TS20|   |   |-- annotations|   |   |   |-- MuPoTS-3D.json</code></pre><h2 id="voxel-pose"><a href="#voxel-pose" class="headerlink" title="voxel_pose"></a>voxel_pose</h2><pre><code>$&#123;POSE_ROOT&#125;|-- models|   |-- pose_resnet50_panoptic.pth.tar|-- data    |-- panoptic-toolbox        |-- data            |-- 16060224_haggling1            |   |-- hdImgs            |   |-- hdvideos            |   |-- hdPose3d_stage1_coco19            |   |-- calibration_160224_haggling1.json            |-- 160226_haggling1              |-- ...</code></pre><h2 id="PCT"><a href="#PCT" class="headerlink" title="PCT"></a>PCT</h2><pre><code>$&#123;POSE_ROOT&#125;|-- data`-- |-- coco    `-- |-- annotations        |   |-- person_keypoints_train2017.json        |   `-- person_keypoints_val2017.json        |-- person_detection_results        |   |-- COCO_val2017_detections_AP_H_56_person.json        |   |-- COCO_test-dev2017_detections_AP_H_609_person.json        `-- images            |-- train2017            |   |-- 000000000009.jpg            |   |-- 000000000025.jpg            |   |-- 000000000030.jpg            |   |-- ...             `-- val2017                |-- 000000000139.jpg                |-- 000000000285.jpg                |-- 000000000632.jpg                |-- ... </code></pre><h2 id="GFPose"><a href="#GFPose" class="headerlink" title="GFPose"></a>GFPose</h2><pre><code>$&#123;POSE_ROOT&#125;|-- configs|-- lib|-- run|-- checkpoint    |-- u3d        |-- best_model.pth|-- data    |-- h36m        |-- h36m_train.pkl        |-- h36m_test.pkl        |-- h36m_sh_dt_ft.pkl</code></pre><h1 id="姿态相关的数据"><a href="#姿态相关的数据" class="headerlink" title="姿态相关的数据"></a>姿态相关的数据</h1><h2 id="CrowdPose"><a href="#CrowdPose" class="headerlink" title="CrowdPose"></a>CrowdPose</h2><h2 id="OCHuman"><a href="#OCHuman" class="headerlink" title="OCHuman"></a>OCHuman</h2><h2 id="SyncOCC"><a href="#SyncOCC" class="headerlink" title="SyncOCC"></a>SyncOCC</h2><p>合成的数据</p><h2 id="MPII"><a href="#MPII" class="headerlink" title="MPII"></a>MPII</h2><p>The dataset includes around <strong>25K images</strong> containing over <strong>40K people</strong> with annotated body joints；</p><p><strong>410 human activities</strong> and each image is provided with an activity label；</p><p>POSENET也有下载链接，组织为</p><pre><code>|   |-- MPII|   |   |-- images|   |   |-- annotations</code></pre><p>官网也有</p><p><a href="http://human-pose.mpi-inf.mpg.de/#download">http://human-pose.mpi-inf.mpg.de/#download</a></p><h2 id="CMU-Panoptic"><a href="#CMU-Panoptic" class="headerlink" title="CMU Panoptic"></a>CMU Panoptic</h2><p><a href="http://domedb.perception.cs.cmu.edu/">http://domedb.perception.cs.cmu.edu/</a> 数据主页</p><p><a href="https://github.com/CMU-Perceptual-Computing-Lab/panoptic-toolbox">https://github.com/CMU-Perceptual-Computing-Lab/panoptic-toolbox</a></p><p>31个 多视角HD video（高清视频）通常指 1080p（1920x1080 像素）或更高分辨率的视频。</p><h6 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h6><p>下载这个PanopticStudio Toolbox，然后</p><pre><code>./scripts/getData.sh 171204_pose1_sample 举列子./scripts/getData.sh 171204_pose1./scripts/getData.sh (sequenceName) (VGA_Video_Number) (HD_Video_Number)列如./scripts/getData.sh 171204_pose1_sample 240 10 240 vga videos and 10 videos.可选的序列名称https://docs.google.com/spreadsheets/d/1eoe74dHRtoMVVFLKCTJkAtF8zqxAnoo2Nt15CYYvHEE/edit#gid=1333444170./scripts/getDB_panopticHD_ver1_2.sh下载1.2数据版本所有数据上述命令默认是不下载视频数据的，就要像上面一样指定视频个数假如说现在下载好了视频，需要将视频变成每一帧每一帧的，然后将一视频的标签也变成一帧一帧图片对应的pose;注需要ffmpeg运行这个命令有./scripts/extractAll.sh 171204_pose1_sample171204_pose1_sample/hdImgs/00_00/00_00_00000000.jpg171204_pose1_sample/hdPose3d_stage1_coco19/body3DScene_00000000.json在这个工具里面有一些可视化的代码，以及从3D重投影到2D的方法还有一些kinect数据点云的注：https://github.com/wangzt-halo/das在DAS这个项目有一个代码可以将原始标签转化</code></pre><p>480 views VGA video（标准视频）是指分辨率为 640x480 像素的视频。</p><ul><li>171204_pose1_sample&#x2F;hdVideos&#x2F;hd_00_XX.mp4  #synchronized HD video files (31 views)</li><li>171204_pose1_sample&#x2F;vgaVideos&#x2F;KINECTNODE%d&#x2F;vga_XX_XX.mp4 #synchrponized VGA video files (480 views)</li><li>171204_pose1_sample&#x2F;calibration_171204_pose1_sample.json #calibration files</li><li>171204_pose1_sample&#x2F;hdPose3d_stage1_coco19.tar #3D Body Keypoint Data (coco19 keypoint definition)</li><li>171204_pose1_sample&#x2F;hdFace3d.tar #3D Face Keypoint Data</li><li>171204_pose1_sample&#x2F;hdHand3d.tar #3D Hand Keypoint Data</li></ul><h2 id="COCO-keypoint数据"><a href="#COCO-keypoint数据" class="headerlink" title="COCO keypoint数据"></a>COCO keypoint数据</h2><p>150K训练5K验证30K测试</p><img src="../images/POSE/image-20230721142637523.png" alt="image-20230721142637523" style="zoom:80%;" /><img src="../images/POSE/image-20230721142828338.png" alt="image-20230721142828338" style="zoom:50%;" /><img src="../images/POSE/image-20230721142920961.png" alt="image-20230721142920961" style="zoom:80%;" /><h2 id="MuPoTS"><a href="#MuPoTS" class="headerlink" title="MuPoTS"></a>MuPoTS</h2><p>POSENET组织格式</p><p>POSENET也有下载链接</p><pre><code>|   |-- MuPoTS|   |   |-- bbox_root|   |   |   |-- bbox_mupots_output.json|   |   |-- data|   |   |   |-- MultiPersonTestSet|   |   |   |-- MuPoTS-3D.json</code></pre><h2 id="MuCo"><a href="#MuCo" class="headerlink" title="MuCo"></a>MuCo</h2><p>POSENET组织格式</p><p>POSENET也有下载链接</p><pre><code>|   |-- MuCo|   |   |-- data|   |   |   |-- augmented_set|   |   |   |-- unaugmented_set|   |   |   |-- MuCo-3DHP.json</code></pre><h2 id="Human-3-6使用"><a href="#Human-3-6使用" class="headerlink" title="Human 3.6使用"></a>Human 3.6使用</h2><p>原始数据下载</p><p><a href="https://blog.csdn.net/qq_42951560/article/details/126380971">https://blog.csdn.net/qq_42951560/article/details/126380971</a></p><h3 id="POSENET组织格式"><a href="#POSENET组织格式" class="headerlink" title="POSENET组织格式"></a>POSENET组织格式</h3><p>POSENET也有下载链接</p><p><a href="https://github.com/mks0601/3DMPPE_POSENET_RELEASE">https://github.com/mks0601/3DMPPE_POSENET_RELEASE</a></p><pre><code>|   |-- Human36M|   |   |-- bbox_root|   |   |   |-- bbox_root_human36m_output.json|   |   |-- images|   |   |-- annotations</code></pre><h3 id="RLE组织格式"><a href="#RLE组织格式" class="headerlink" title="RLE组织格式"></a>RLE组织格式</h3><pre><code>    |-- h36m    `-- |-- annotations        |   |-- Sample_trainmin_train_Human36M_protocol_2.json        |   `-- Sample_64_test_Human36M_protocol_2.json        `-- images            |-- s_01_act_02_subact_01_ca_01            |   |-- ...            |-- s_01_act_02_subact_01_ca_02            |   |-- ...            `-- ... </code></pre><p>Human3.6是没有遮挡的数据的</p><p>Pixel-level 24 body part labels for each configuration</p><p>Time-of-flight range data 测距的数据</p><p>3D laser scans of the actors mesh数据</p><p><a href="http://vision.imar.ro/human3.6m/description.php">http://vision.imar.ro/human3.6m/description.php</a></p><p>对于测距以及mesh的数据的描述</p><p>pose数据还包括relative 3D joint positions (R3DJP)和kinematic representation (KR)，KR用于描述物体的运动状态，例如位置、速度和加速度等。</p><img src="../images/POSE/image-20230721143257782.png" alt="image-20230721143257782" style="zoom:50%;" /><p><a href="http://visiondata.cis.upenn.edu/volumetric/h36m/h36m_annot.tar">http://visiondata.cis.upenn.edu/volumetric/h36m/h36m_annot.tar</a></p><p><a href="http://visiondata.cis.upenn.edu/volumetric/h36m/S1.tar">http://visiondata.cis.upenn.edu/volumetric/h36m/S1.tar</a></p><p><a href="http://visiondata.cis.upenn.edu/volumetric/h36m/S5.tar">http://visiondata.cis.upenn.edu/volumetric/h36m/S5.tar</a></p><p><a href="http://visiondata.cis.upenn.edu/volumetric/h36m/S6.tar">http://visiondata.cis.upenn.edu/volumetric/h36m/S6.tar</a></p><p><a href="http://visiondata.cis.upenn.edu/volumetric/h36m/S7.tar">http://visiondata.cis.upenn.edu/volumetric/h36m/S7.tar</a></p><p><a href="http://visiondata.cis.upenn.edu/volumetric/h36m/S8.tar">http://visiondata.cis.upenn.edu/volumetric/h36m/S8.tar</a></p><p><a href="http://visiondata.cis.upenn.edu/volumetric/h36m/S9.tar">http://visiondata.cis.upenn.edu/volumetric/h36m/S9.tar</a></p><p><a href="http://visiondata.cis.upenn.edu/volumetric/h36m/S11.tar">http://visiondata.cis.upenn.edu/volumetric/h36m/S11.tar</a></p><h1 id="如何使用RLE-loss"><a href="#如何使用RLE-loss" class="headerlink" title="如何使用RLE loss"></a>如何使用RLE loss</h1>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> pose论文 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>多GPU训练</title>
-      <link href="/2023/07/08/%E5%A4%9AGPU%E8%AE%AD%E7%BB%83/"/>
-      <url>/2023/07/08/%E5%A4%9AGPU%E8%AE%AD%E7%BB%83/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://zhuanlan.zhihu.com/p/157976140">https://zhuanlan.zhihu.com/p/157976140</a></p><h5 id="一机多卡训练"><a href="#一机多卡训练" class="headerlink" title="一机多卡训练"></a>一机多卡训练</h5><pre><code class="python">import torch.distributed</code></pre><h6 id="初始化后端"><a href="#初始化后端" class="headerlink" title="初始化后端"></a>初始化后端</h6><pre><code class="python">local_rank = args.local_ranktorch.cuda.set_device(local_rank)torch.distributed.init_process_group(backend=&#39;nccl&#39;, init_method=&#39;env://&#39;)</code></pre><h6 id="模型并行化"><a href="#模型并行化" class="headerlink" title="模型并行化"></a>模型并行化</h6><pre><code class="python">model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[local_rank], output_device=local_rank)</code></pre><h6 id="数据并行"><a href="#数据并行" class="headerlink" title="数据并行"></a>数据并行</h6><pre><code class="python">sampler = torch.utils.data.distributed.DistributedSampler(dataset)rand_loader = DataLoader(dataset=dataset,batch_size=batch_size, shuffle=False, sampler=sampler)</code></pre><h6 id="启动脚本"><a href="#启动脚本" class="headerlink" title="启动脚本"></a>启动脚本</h6><pre><code>python -m torch.distributed.launch --nproc_per_node=6 run_mvp_train_DDP_threepeople.py --overlap_slide</code></pre><pre><code class="python">python -m torch.distributed.launch --nproc_per_node=8 train_face_troch.py</code></pre><pre><code class="python">def parse_args():    parser = argparse.ArgumentParser()    parser.add_argument(&#39;--local_rank&#39;, default=0, type=int)    args = parser.parse_args()    return args</code></pre><pre><code class="python">model, optimizer = amp.initialize(model, optimizer, opt_level=&#39;O1&#39;)  # 这里是字母O</code></pre><pre><code class="python">if torch.cuda.is_available():    model.cuda()</code></pre>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>杂</title>
-      <link href="/2023/07/06/%E6%9D%82/"/>
-      <url>/2023/07/06/%E6%9D%82/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/weixin_43863869/article/details/125002909">https://blog.csdn.net/weixin_43863869/article/details/125002909</a></p><ul><li><code>/etc/environment</code>：系统级环境变量文件，适用于所有用户和进程。</li><li><code>~/.bashrc</code>：登录shell级别的环境变量文件，适用于当前用户和其子进程。</li><li><code>~/.bash_profile</code>：登录shell级别的环境变量文件，仅适用于当前用户。</li><li><code>~/.profile</code>：登录shell级别的环境变量文件，仅适用于当前用户。</li></ul><p><a href="https://blog.csdn.net/weixin_45837114/article/details/128255248">https://blog.csdn.net/weixin_45837114/article/details/128255248</a></p><h6 id="合成视频"><a href="#合成视频" class="headerlink" title="合成视频"></a>合成视频</h6><pre><code>import cv2import numpy as npvideoLeft = cv2.VideoCapture(&#39;C:\\Users\\USTC\\Desktop\\debug_pose\\PRED\\0000\\all_frame.mp4&#39;)videoRight = cv2.VideoCapture(&#39;C:\\Users\\USTC\\Desktop\\debug_pose\\GT\\0000\\all_frame.mp4&#39;)fps = videoLeft.get(cv2.CAP_PROP_FPS)width = (int(videoLeft.get(cv2.CAP_PROP_FRAME_WIDTH)))height = (int(videoLeft.get(cv2.CAP_PROP_FRAME_HEIGHT)))videoWriter = cv2.VideoWriter(&#39;C:\\Users\\USTC\\Desktop\\debug_pose\\GT\\output.mp4&#39;, cv2.VideoWriter_fourcc(*&#39;mp4v&#39;), fps, (width*2, height))successLeft, frameLeft = videoLeft.read()successRight, frameRight = videoRight.read()while successLeft and successRight:    frameLeft = cv2.resize(frameLeft, (width, height), interpolation=cv2.INTER_CUBIC)    frameRight = cv2.resize(frameRight, (width, height), interpolation=cv2.INTER_CUBIC)    frame = np.hstack((frameLeft, frameRight))    videoWriter.write(frame)    successLeft, frameLeft = videoLeft.read()    successRight, frameRight = videoRight.read()videoWriter.release()videoLeft.release()videoRight.release()</code></pre>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 杂 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>三维重建</title>
-      <link href="/2023/07/05/%E4%B8%89%E7%BB%B4%E9%87%8D%E5%BB%BA/"/>
-      <url>/2023/07/05/%E4%B8%89%E7%BB%B4%E9%87%8D%E5%BB%BA/</url>
-      
-        <content type="html"><![CDATA[<h5 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h5><h6 id="多视图三维重建的传统流程"><a href="#多视图三维重建的传统流程" class="headerlink" title="多视图三维重建的传统流程"></a>多视图三维重建的传统流程</h6><ul><li><p>多视图三维重建的传统流程：</p></li><li><p>图像特征匹配，SfM求解相机位姿，MVS稠密重建</p><p>相机位姿（Camera Pose）是指相机在三维空间中的位置和朝向,旋转矩阵和一个平移向量来描述相机位姿为了实现MVS稠密重建，</p><p>MVS 稠密重建通常包括以下步骤：</p><ol><li>xxxxxxxxxx if torch.cuda.is_available():    model.cuda()python</li><li>基础矩阵和本质矩阵估计。使用特征点匹配，可以估计相邻图像之间的基础矩阵或本质矩阵，这些矩阵描述了相机之间的几何关系，包括旋转和平移。</li><li>稠密点云重建。根据相邻图像之间的几何关系，可以将每个像素点从图像坐标系转换到世界坐标系。将这些点云数据结合起来，可以得到一个稠密的点云模型。</li><li>点云表面重建。稠密点云中包含大量的噪声和无用点，需要进行过滤和表面重建，得到一个光滑的表面模型。</li></ol><p>需要进行以下步骤：</p></li></ul><ol><li>相机位姿估计：利用SfM技术估计每个视角的相机位姿。</li><li>立体匹配：对于每个像素点，利用多个视角的图像进行立体匹配，估计该像素点在三维空间中的位置。</li><li>三维重建：将所有像素点的三维位置整合起来，重建出整个物体的三维几何形状。</li></ol><ul><li>缺点：重建流程<a href="https://www.zhihu.com/search?q=%E9%B2%81%E6%A3%92%E6%80%A7&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:2648027035%7D">鲁棒性</a>差，不可导：无反馈机制</li></ul><h6 id="基于表示学习的图像特征匹配："><a href="#基于表示学习的图像特征匹配：" class="headerlink" title="基于表示学习的图像特征匹配："></a>基于表示学习的图像特征匹配：</h6><ul><li>​SuperPoint，SuperGlue、ORB</li></ul><p>SuperPoint具有更快的速度和更好的鲁棒性。SuperPoint使用卷积神经网络来学习特征表示，其中包括特征点的位置、尺度和方向，以及对应的描述子。</p><p>SuperGlue是一种基于深度学习的图像特征匹配算法，它可以通过对两个图像中提取的特征进行匹配，找到它们之间的对应关系和相对位姿。</p><p>LoFTR：Detector-free Local Feature Matching with Transformers是一种detector-free的特征匹配算法，它不需要使用传统的特征检测器来提取局部特征点</p><h6 id="基于神经表示学习的三维场景重建"><a href="#基于神经表示学习的三维场景重建" class="headerlink" title="基于神经表示学习的三维场景重建"></a>基于神经表示学习的三维场景重建</h6><ul><li>重建流程：1. 比较渲染图像雨输入图像，计算误差。 2.通过梯度回传修改网络参数，优化隐式神经表示待解决问题：</li><li>隐式神经表示重建<strong>（采样）</strong>效率低下，难以扩展到大规模场景室内弱纹理区域缺乏足够约束，隐式神经表示重建成为病态话问题</li></ul><h6 id="杂"><a href="#杂" class="headerlink" title="杂"></a>杂</h6><p>Neural Reconsturction in the Wild</p><ul><li>核心思想：表面引导的层次化采样，基于互联网图像进行场景重建核心思想：平面先验</li></ul><p>基于神经表示学习的动态人体重建<br>    动态人体重建传统方案通过稠密相机阵列逐帧重建Neural Body<br>挑战：如何减少输入视点的数量<br>从稀疏的输入视图重建神经表示是病态问题</p><h6 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h6><p>核心思想：整合时序观测，假设不同时刻的观测来自于同一组隐编码</p><p>挑战：如何建模多人场景核心</p><p>思想：同步重建与分割</p><p>二维图像特征表示学习   -〉更鲁邦的图像匹配和位姿估计</p><p>三维几何&#x2F;外观表示学习 -〉更鲁棒更高质量的三维重建</p><p>NGP</p><h5 id="Nerf"><a href="#Nerf" class="headerlink" title="Nerf"></a>Nerf</h5><p><a href="https://yconquesty.github.io/blog/ml/nerf/">https://yconquesty.github.io/blog/ml/nerf/</a></p><p><a href="https://zhuanlan.zhihu.com/p/631284285">https://zhuanlan.zhihu.com/p/631284285</a></p><p>NeRF,neural radiance field，翻译为神经辐射场</p><p><img src="https://pic2.zhimg.com/v2-6bf894d1fd88981551751cf4337b931d_b.jpg"></p><p>Instant-NGP的pipeline</p><p><img src="https://pic1.zhimg.com/v2-4e7016eb074496cf0235a7ff685d8c24_r.jpg"></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> cv </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/2023/06/29/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/"/>
-      <url>/2023/06/29/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/</url>
-      
-        <content type="html"><![CDATA[<h1 id="梯度投影法原理"><a href="#梯度投影法原理" class="headerlink" title="梯度投影法原理"></a><strong>梯度投影法原理</strong></h1><h2 id="一、解决问题"><a href="#一、解决问题" class="headerlink" title="一、解决问题"></a>一、解决问题</h2><p>​在无约束优化问题中，我们一般使用梯度下降法便可以找到凸优化问题的最优解，但是如果有约束呢，这时候梯度投影法给出自己的做法，便是通过约束条件来重新计算可行方向，以及在这个可行方向下降多少步可以。</p><p>​考虑问题：<br>$$<br>\begin{array}{ll}<br>\min &amp; f(\boldsymbol{x}) \<br>\text { s.t. } &amp; \boldsymbol{A} \boldsymbol{x} \geqslant \boldsymbol{b}, \<br>&amp; \boldsymbol{E} \boldsymbol{x}&#x3D;\boldsymbol{e},<br>\end{array}<br>$$<br>其中$$f(\boldsymbol{x})$$是可微函数 ,A 为 m × n 矩阵 ，E 为 l × n 矩阵。梯度投影法的基本思想仍然是从可行点出发 ，沿可行方向进行搜索 ．当迭代出发点在可行域内部时 ，沿负梯度方向搜索 ．当迭代出发点在某些约束的边界上时 ，将该点处的负梯度投影到 M 的零空间 ，M 是以起作用约束或部分起作用约束的梯度为行构造成的矩阵 。</p><p>​现在抛开梯度投影法是如何投影这件事，了解一下什么叫做有约束条件下的可行方向，给出定理即， <strong>d</strong> 为$$\hat{\boldsymbol{x}}$$</p><p>处的可行方向是如下定义的，首先假设$$\hat{\boldsymbol{x}}$$是上述优化问题的可行解，那么对于不等式约束有$$<br>\boldsymbol{A}_1 \hat{\boldsymbol{x}}&#x3D;\boldsymbol{b}_1, \boldsymbol{A}_2 \hat{\boldsymbol{x}}&gt;\boldsymbol{b}_2<br>$$，其中A &#x3D; [$$A_1$$;$$A_2$$],b&#x3D;[$$b_1$$;$$b_2$$],非零向量d为$$\hat{\boldsymbol{x}}$$处的可行方向的充要条件是$$<br>A_1 d \geqslant \mathbf{0}, \boldsymbol{E d}&#x3D;\mathbf{0}<br>$$。</p><p>​现在假设我们有一个可行方向，那应该按这个方向移动多少步呢？假设$$\boldsymbol{x}^{(k)}$$位置，$$\boldsymbol{x}^{(k+1)}$$是接下来通过可行方向移动$$\lambda$$长距离得到的点，其中$$\lambda$$是解下面优化便可以得到：<br>$$<br>\begin{array}{ll}<br>\min &amp; f\left(\boldsymbol{x}^{(k)}+\lambda \boldsymbol{d}^{(k)}\right) \<br>\text { s.t. } &amp; 0 \leqslant \lambda \leqslant \lambda_{\max },<br>\end{array}<br>$$<br>​其中，$$\lambda _ {max}$$是由下式得到的:<br>$$<br>\lambda _{\max}&#x3D;\begin{cases}<br>    \min \left{ \frac{\hat{b}_i}{\hat{d}_i}\mid \hat{d}_i&lt;0 \right} ,&amp;\boldsymbol{\hat{d}}\ngeq 0,\<br>    \infty ,&amp;\boldsymbol{\hat{d}}\ge 0\<br>\end{cases}<br>$$<br>​重新回到梯度投影法，首先是梯度投影法是如何修改负梯度方向为带约束对应下的可行方向，设x是上面优化问题的可行解，在点x处，有$$\boldsymbol{A}_1 \hat{\boldsymbol{x}}&#x3D;\boldsymbol{b}_1, \boldsymbol{A}_2 \hat{\boldsymbol{x}}&gt;\boldsymbol{b}_2$$,其中$$A &#x3D; [$$A_1$$;$$A_2$$],b&#x3D;[$$b_1$$;$$b_2],这时候把令不等式约束为等号的条件即$$A_1$$拿出来，构造新的矩阵M&#x3D;[$$A_1$$;E],构造投影矩阵$$\boldsymbol{P}&#x3D;\boldsymbol{I}-\boldsymbol{M}^{\text{T}}\left( \boldsymbol{MM}^{\text{T}} \right) ^{-1}\boldsymbol{M,P}\Delta f\left( \boldsymbol{x} \right) \ne 0$$</p><p>令$$\boldsymbol{d}&#x3D;-\boldsymbol{P} \Delta f(\boldsymbol{x})$$,则d是下降可行方向！那么知道梯度投影法是如何得到下降可行方向，那么是如何用的呢？梯度下降法计算步骤如下:</p><p>1.给定初始可行点$$x^{(1)}$$,置k&#x3D;1。</p><p>2.在点$$x^{(k)}$$处，将A和b分解成：<br>$$<br>\begin{equation}<br>\left[\begin{array}{l}<br>\boldsymbol{A}_1 \<br>\boldsymbol{A}_2<br>\end{array}\right],\left[\begin{array}{l}<br>\boldsymbol{b}_1 \<br>\boldsymbol{b}_2<br>\end{array}\right],<br>\end{equation}<br>$$<br>使得$$\boldsymbol{A}_1 \boldsymbol{x}^{(k)}&#x3D;\boldsymbol{b}_1, \boldsymbol{A}_2 \boldsymbol{x}^{(k)}&gt;\boldsymbol{b}_2$$</p><p>3.令:<br>$$<br>\begin{equation}<br>\boldsymbol{M}&#x3D;\left[\begin{array}{c}<br>\boldsymbol{A}_1 \<br>\boldsymbol{E}<br>\end{array}\right]<br>\end{equation}<br>$$<br>如果M是空的，则令 P&#x3D;I（单位矩阵），当P是单位矩阵的时候就是相当于梯度下降，否则令$$\boldsymbol{P}&#x3D;\boldsymbol{I}-\boldsymbol{M}^{\text{T}}\left( \boldsymbol{MM}^{\text{T}} \right) ^{-1}\boldsymbol{M,}$$</p><p>4.令$$\boldsymbol{d}^{(k)}&#x3D;-\boldsymbol{P} \Delta f\left(\boldsymbol{x}^{(k)}\right)$$, 若$$\boldsymbol{d}^{(k)} \neq \mathbf{0}$$,则转步骤6；若$$\boldsymbol{d}^{(k)}&#x3D;\mathbf{0}$$，则进行步骤5</p><p>5.若M是空的，则停止计算，得到$$\boldsymbol{x}^{(k)}$$;否则，令<br>$$<br>\begin{equation}<br>\boldsymbol{W}&#x3D;\left(\boldsymbol{M} \boldsymbol{M}^{\mathrm{T}}\right)^{-1} \boldsymbol{M} \Delta f\left(\boldsymbol{x}^{(k)}\right)&#x3D;\left[\begin{array}{l}<br>\boldsymbol{u} \<br>\boldsymbol{v}<br>\end{array}\right]<br>\end{equation}<br>$$<br>如果$$u \geqslant 0$$,则停止计算，$$x^{(k)}$$为K-T点，如果 u 包含负分量 ，则选择一个负分量 ，比如$$u_j$$,修正$$A_1$$,去掉$$A_1$$中对应$$u_j$$的行,返回步骤3</p><p>6.解下列问题，求步长$$\lambda_k$$:<br>$$<br>\begin{array}{ll}<br>\min &amp; f\left(\boldsymbol{x}^{(k)}+\lambda \boldsymbol{d}^{(k)}\right) \<br>\text { s.t. } &amp; 0 \leqslant \lambda \leqslant \lambda_{\max },<br>\end{array}<br>$$<br>$$\lambda_{\max }$$算完，得到解$$\lambda_k$$,令<br>$$<br>\begin{equation}<br>\boldsymbol{x}^{(k+1)}&#x3D;\boldsymbol{x}^{(k)}+\lambda_z \boldsymbol{d}^{(k)}<br>\end{equation}<br>$$<br>接着k&#x3D;k+1,返回步骤2。</p><h2 id="二、代码简单实现"><a href="#二、代码简单实现" class="headerlink" title="二、代码简单实现"></a>二、代码简单实现</h2><p>使用matlab实现精度参数ε对优化结果的影响初始点位置对优化结果的影响陷入局部最优解；</p><p>约束条件为：<br>$$<br>\begin{equation}<br>A&#x3D;\left(\begin{array}{cc}<br>-1 &amp; -1 \<br>-1 &amp; -5 \<br>1 &amp; 0 \<br>0 &amp; 1<br>\end{array}\right), B&#x3D;\left(\begin{array}{c}<br>-2 \<br>-5 \<br>0 \<br>0<br>\end{array}\right)<br>\end{equation}<br>$$<br><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629165937006.png" alt="image-20230629165937006"></p><p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629165949456.png" alt="image-20230629165949456"></p><h2 id="三、代码结果"><a href="#三、代码结果" class="headerlink" title="三、代码结果"></a>三、代码结果</h2><h3 id="1-初始点的影响"><a href="#1-初始点的影响" class="headerlink" title="1.初始点的影响"></a>1.初始点的影响</h3><p>目标函数 $$f(x)&#x3D;\left(x_1^2+x_2-11\right)^2+\left(x_1+x_2^2-7\right)^2$$,初始点(0.5, 0.8),讨论参数$$\mathcal{E}$$越大，搜索的速度越快，迭代次数越少；越小，搜索的粒度越细，越可能找到最优解。参数$$\mathcal{E}$$&#x3D;1e−6。</p><p>初始点的位置选取是获得最优解的关键影响最优解的值和收敛速度。</p><p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629170654684.png" alt="image-20230629170654684"></p><p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629170820125.png" alt="image-20230629170820125"></p><h3 id="2-陷入局部优化"><a href="#2-陷入局部优化" class="headerlink" title="2.陷入局部优化"></a>2.陷入局部优化</h3><p>目标函数$$f(x)&#x3D;2 x_1^2-1.05 x_1^4+\frac{1}{6} x_1^6+x_1 x_2+x_2^4$$,$$\varepsilon&#x3D;1 e-6$$,初始点的位置选取是获得最优解的关键,陷入局部最优解;</p><p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629171152819.png" alt="image-20230629171152819"></p><p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629171228001.png" alt="image-20230629171228001"></p><h3 id="3-初始点的位置影响优化结果"><a href="#3-初始点的位置影响优化结果" class="headerlink" title="3.初始点的位置影响优化结果"></a>3.初始点的位置影响优化结果</h3><p>目标函数$$f(x)&#x3D;-20 e^{-0.2 \sqrt{0.5\left(x_1^2+x_2^2\right)}}-e^{0.5\left(\cos \left(2 \pi x_2\right)\right)}+20+e$$,,$$\varepsilon&#x3D;1 e-6$$,</p><p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629171417845.png" alt="image-20230629171417845"></p><p><img src="D:/person_blog/blog/source/images/%E6%A2%AF%E5%BA%A6%E6%8A%95%E5%BD%B1%E6%B3%95/image-20230629171453237.png" alt="image-20230629171453237"></p><h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><p>优点：直接沿负梯度下降的方式可能导致非可行点，保持迭代点的可行性获得最优解，可用于凸优化、非凸优化问题，对约束条件没有太多限制</p><p>缺点：基于梯度，无法解决非光滑问题，算法结果与运行速度受初始点位置影响较大，仍然可能陷入局部最优解，无法避免发生振荡，无法解决高度非凸优化问题</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>生成模型</title>
-      <link href="/2023/06/29/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/"/>
-      <url>/2023/06/29/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/</url>
-      
-        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="Oh, these decrypted content cannot be verified, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="5057b9112820d7395cbe1c7f38c24e6181012e2ac82551ee34fb6fe04422641f">7feab2e74e7ac8c26f5b44aac0c3756726ff17e5f378d5a54c6adfbf5c70da15b58222ea465b9890607a6c959423b0818f265f6d30eaddc92f49fdfbd01806eaabdefe1ba5ddaf53fa278beee8539cd0293d8ceb205c25c87dbd235933282f6c3f60e83cb5fe12b369eb82e2120434b623961fcebc543ed62a044dcc6b0c8210f99ae6df792d1dadae4d8c5389bb7c204a128326c89b175a862741406815d766ca060ea076e55e37f4e2e926939cf90e0bb86c59874af34ea7f433cae0a8bac83b5fc5571e7af7b70c5ede7364d6ccefc5b864503f0a6743a7c29d3b3e2c64f1f8221a703ba9c2095978a85d0cc5833faf380dfb9b3e553d64436353248ed7292d006862148e6663565aff60c5fc1a962461a2efad9a5d1bc8910a61fb925314324f38714f393189c05f33243fd34b22a3a469c28b825f51411c58a16bf7cf8ff24275bcab64e1aa23e61a3c34ef2d5a3c8f3b327d65ba2b49aa30ff4b285851a60d40fc78c62720d2d908139d0c87760d145d904b31146cddfdde1824e3b8a8efec3c53bf5084e892f564e8c23d5e7ff62efe015c0cf230b80df29accef9ab73cdfb095417fd981b122c03be0168b55e0b30ca0e67607cdc80d0091d72da593123053ab2bdc9e0584eb6656d974358d1fd03fcaa6777eb0169dbba49ac0983629f4462709af82467a5c5afc9b1c51060c74f55c53c9d1d84a5b1437f017ca195a6791efb8694d48c62b37d439d5499f71cd0f2ba59025a00a51bd8d1295a4e98ab72b84676987897fdd90feb013f12eb09f5d94c3c5f4abb505adf88aa2765e5d74610800653e06724216d17255278f9f7771f44153d75fc5487137de18060acfe0439980b163be21c2e0033be83b22dfdadb7e89fd82956844bcaba1423bda2e3dfad77ff80acee8cc2c36b952d2ab2fe7e5cdd9fd0d443917b83340a8b96157860123badca666ff09e225ca42f5325104dbfc7b8a29a03c3a46f6ff937fe4972bcf1ae9a2e507ff2447e4de5bae70057ee2f8674788c856f43d3df968d2013937f76d683f7f7542f58b6b5449bcd6c52a1244d47c407dc2a964ac701de30213ad080a4aada420fec518a9b25cb83fdef46f796390cde922b5f2c7fe9f8686a4ba9b8b34bf0a8f22c686328a16fd3f64274dde5fb473d4e430b689e6044af6dfb86d6b5e1b0b0d34a0f79e68a7e95811c989c5c096bc0dd5e22b063190e430cbd83503d524b0745fb178687a5b9ad47a3202b9a4722c2f042e0cefd29bec26309e4a44f8d28531d88efa91db16efde641aa467dd465737a71a5b98a7214585868b138fdf5ac8bf0862efd72e67b585d6bb80d3a86322046e0c29493508b22291c85f353ba352779dc8bd5de3ab79b09669b8875dcc4df0dd6ba28134f0fa3daee57043415990668ad0724d046e677b41a5d25e882753bfcfb9e8d9130d7bfe38eb5d88411f479a4762c57edd4d07d0b3329d34dbe576dea46d0b7f796a44a26cebce43e99a1fd975faba6e8dc9a3c4504384b14cbc2b74205911e12eae8fc39c71500e6431cb5dc1ea9869c65e18d8f8876f710ce384a0355d6dd9465ecfb7e25dba386f63ab7e2ae39cc1ac709345969f0c73d51d1680d94bb24ddc6130a93fc8053d589757c1ad491e03d2af7d5b1ce083b82f39c522d0d231558fd11bb29a7ac22e67398613011faa11988605acd6aecd0b6ad20d20c31a9db6ad597a25a67530f9349bb060064ffeab4d6851eeea70be1c932cb5b0bcb54a1888a942cee462dced23072c096125bb0133a99b8327440e8977b3e886a3ae9581bce18aeb1f5ca8a1441ac16749fb303951a904bdada863f5810aa764a89cce607d35348ee7f99e509aff5017ddc8ee9e4055e92b171c7a70cb13cae5d1bd426fea44f3f403c1495dfec7139f0082359bedb44c44050199117383501ecc2e3556856665ec11f0628ef402aa4e4cede4edd28d1b679328fdd4d347e2f9c1ed07a3b0d8b7d7b597a26537cd0792999639179e63fcf20c162982a5d4501fd2ce87ef77c4ddfaab79bcda213c71ef277e0bcdc519db33aabdf67f36603a58e287f055a170f15121878925c252e60da5523f80650f542cb25e5585e7f4dee7095e905605d7beb0fa4f8e990f06dca44e043fa20cc7c3f7ceab55b326dce0b91615f1e0b6d616e9f9018bd4736dd178edf992ff4ba78e6b8acefbde86a6c199726bde7f987ec6d3bc0874d14f69f66912a30bedd2b9e32bc34fb1d80a901ed15c80f62981e061164ac7db2f510fbfe592881ccb4f06a20991f68df3ca4f2e445e791d3aa346d9f9ab1f20515e1a3a121cbb852866425a5d86587420cf6ca4a3022b8eb55a999b78c62ce7352aec9e8bb3898819644e00c77b2abfeeb264c81e65b8c5e8911c5aa31039cc665f280169fd87e973b1eba56f15c2968e3393824d5392032f9ea11f0ee7f3794a73d4b2380ae2b98d78c75acdd33e344e57310be7dc221a2a30caec9c83332ac8afb71abda834e7a19074e8f674fa6cfeb811fca04a59649ad5e0232427d8dc61c2571a01907341dc2f4c0c09fbdce33e414214760dbdb1a5dff463c33509ef7b140b2ce354a0c887f32799d68031eefa101179476075c23793b916f7d7ff57b1afd6270d49626dac23422540d953de7eb061ed09ec8361526378323a05e0b3fe764875a5daddb5fdb6d1125f9c6b48d2e4e903d6a999408ce0f23bbae10e0b42f1b88431aa6b4f44a7da1a14d11b7a2196c01c4b8841f6ea6e9290254677e5bd196a1c62d9037c8fd7ef4d4f2314c84fb04af06e0c23ef85246572ce8823cfc23220cb289d578005ea76fffb7f35a4a3f1f6de98fef91dd4ce9321a7818d2efd63e9bdc8b97566275a542cc03e26779b8ae714bb58bfb1f43d664a275281ce959c1baac0126295dfbf873fe244b874d85b1d0de6ab73426f82f4c9522ef583c530894052f57da2cf56956e3c0689267fdbc3637a1009128c20fe0b869871b5c3fd032fdb9bb9ecb9cf02e62563885eca760b86ce9db8f1ab8979d7219d3ee650175d707f05a8a5aabc6e62dc5fdd7156fa9e0ab6737dcddb7528ad708d4cdacf04fbe0bf4934189445780ab53e758f21a9235f4fe3f58f126eaa9634659783be40c16be5999d8d1932f70f38979026b6c5cf95558ed6f70739e750a118dd5ac9e193126531a43491999c50b08cf224a436e2ea5b6082d82836b8203a6fad36bad0724f5ee56d3799963341c4d19ef905c643fe80ddc44bb4ee9ae955</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 生成模型 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>hw</title>
-      <link href="/2023/06/27/hw/"/>
-      <url>/2023/06/27/hw/</url>
-      
-        <content type="html"><![CDATA[<h6 id="杂"><a href="#杂" class="headerlink" title="杂"></a>杂</h6><pre><code>tree = struct(&#39;value&#39;, &#39;null&#39;, &#39;left&#39;, &#39;null&#39;, &#39;right&#39;, &#39;null&#39;);相当于字典值的索引是tree.value,用点的方式#length(attrib) attrib shape为150，5 返回150索引是 attrib(:,1) 圆括号，从1开始# bool数组对应的logical数组，可以用sum函数#</code></pre><h6 id="sortrows函数的使用："><a href="#sortrows函数的使用：" class="headerlink" title="sortrows函数的使用："></a>sortrows函数的使用：</h6><p>函数返回一个按照指定列排序后的矩阵或表格。如果两行在排序列中具有相同的值，则按照后续列进行排序。如果两行在所有列中都具有相同的值，则它们的顺序在结果中未定义。</p><p>例如，以下代码将一个3x3的矩阵按第二列进行排序：</p><p>A &#x3D; [4 3 9; 2 1 8; 7 6 5];<br>B &#x3D; sortrows(A, 2);</p><p>B &#x3D;<br>2 1 8<br>7 6 5<br>4 3 9</p><h6 id="cell-array"><a href="#cell-array" class="headerlink" title="cell array"></a>cell array</h6><pre><code>attri&#123;1,1&#125;=sortrows(attrib,1);attri&#123;1,2&#125;=sortrows(attrib,2);attri&#123;1,3&#125;=sortrows(attrib,3);attri&#123;1,4&#125;=sortrows(attrib,4);</code></pre><p>在Matlab中，<code>attri</code>的数据类型取决于 <code>sortrows</code> 函数的输出。根据代码中的赋值语句，我们可以猜测 <code>attri</code> 是一个单元格数组（cell array）。</p><p>单元格数组是Matlab中的一种数据类型，可以存储不同类型的数据，包括矩阵、向量、字符数组等等。它们可以通过花括号 <code>&#123;&#125;</code> 引用其中的元素，例如 <code>attri&#123;1,1&#125;</code> 就是单元格数组 <code>attri</code> 中第1行第1列元素的值。</p><p>在这个赋值语句中，<code>sortrows</code> 函数的输出是一个按第1列排序后的矩阵，然后将其赋值给 <code>attri&#123;1,1&#125;</code> 这个单元格数组的第1行第1列元素。因此，<code>attri</code> 的类型是单元格数组，而 <code>attri&#123;1,1&#125;</code> 的类型是矩阵。</p><h5 id="复杂语句"><a href="#复杂语句" class="headerlink" title="复杂语句"></a>复杂语句</h5><p>1:3 &#x3D; 1 2 3 开始与结束都包括</p><h6 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h6><pre><code class="matlab">for i = start:end    ~end</code></pre><h6 id="逻辑判断符"><a href="#逻辑判断符" class="headerlink" title="逻辑判断符"></a>逻辑判断符</h6><p>不等于~&#x3D; </p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 杂 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>ovd</title>
-      <link href="/2023/06/27/ovd/"/>
-      <url>/2023/06/27/ovd/</url>
-      
-        <content type="html"><![CDATA[<h6 id="COCO数据集"><a href="#COCO数据集" class="headerlink" title="COCO数据集"></a>COCO数据集</h6><p>Base类48个，Novel17个，一共65个。</p><h6 id="多模态相关工作"><a href="#多模态相关工作" class="headerlink" title="多模态相关工作"></a>多模态相关工作</h6><p>CLIP、ALIGN、R2D2</p><h6 id="OVR-CNN"><a href="#OVR-CNN" class="headerlink" title="OVR-CNN"></a>OVR-CNN</h6><p>无类别区域检测器与无标注数据的跨模态模型</p><p><img src="/../images/ovd/image-20230627105546152.png" alt="image-20230627105546152"></p><p><img src="/../images/ovd/image-20230627110708030.png" alt="image-20230627110708030"></p><p>待看后两篇 <a href="https://mp.weixin.qq.com/s/f7hlh32TGPwktRhc64yejw">https://mp.weixin.qq.com/s/f7hlh32TGPwktRhc64yejw</a> </p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> detect </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>搭建博客记录</title>
-      <link href="/2023/06/26/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/"/>
-      <url>/2023/06/26/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/</url>
-      
-        <content type="html"><![CDATA[<ol><li><a href="https://blog.csdn.net/yaorongke/article/details/119089190">https://blog.csdn.net/yaorongke/article/details/119089190</a> 龙哥的链接</li><li>hexo主题相关的<a href="https://hexo.io/themes/">https://hexo.io/themes/</a></li><li>我博客使用的主题<a href="https://github.com/HiNinoJay/hexo-theme-A4">https://github.com/HiNinoJay/hexo-theme-A4</a></li><li>typora添加图片<a href="https://blog.51cto.com/u_15854687/5811585">https://blog.51cto.com/u_15854687/5811585</a><br><a href="https://blog.csdn.net/Qxiaofei_/article/details/124629908">https://blog.csdn.net/Qxiaofei_/article/details/124629908</a></li><li>typora安装url</li></ol>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 杂 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-  
-  
+   def get(self, filepath):
+        &quot;&quot;&quot;Get values according to the filepath.
+
+        Args:
+            filepath (str | obj:`Path`): Here, filepath is the lmdb key.
+        &quot;&quot;&quot;
+        if self._client is None:
+            self._client = self._get_client()
+
+        with self._client.begin(write=False) as txn:
+            value_buf = txn.get(str(filepath).encode(&#39;utf-8&#39;))
+        return value_buf
+</code></pre>
+<h3 id="fileclient用法"><a href="#fileclient用法" class="headerlink" title="fileclient用法"></a>fileclient用法</h3><pre><code>@PIPELINES.register_module()
+class LoadImageFromFile(object):  # 加载图片到内存中
+
+    def __init__(self,
+                 to_float32=False,
+                 color_type=&#39;color&#39;,
+                 file_client_args=dict(backend=&#39;disk&#39;)):
+        self.to_float32 = to_float32
+        self.color_type = color_type
+        # 默认是 disk 后端
+        self.file_client_args = file_client_args.copy()
+        self.file_client = None
+
+    def __call__(self, results):
+        if self.file_client is None:
+            self.file_client = mmcv.FileClient(**self.file_client_args)
+        # 读取图片字节内容
+        img_bytes = self.file_client.get(filename)
+        # 对字节内容进行解码
+        img = mmcv.imfrombytes(img_bytes, flag=self.color_type)
+        ...
+        return results
+</code></pre>
+<h3 id="实列使用"><a href="#实列使用" class="headerlink" title="实列使用"></a>实列使用</h3><p><strong>annotations 文件和图片文件不在同一个地方</strong></p>
+<p><a href="https://zhuanlan.zhihu.com/p/339190576">https://zhuanlan.zhihu.com/p/339190576</a></p>
+<p>具体修改还是看知乎这里</p>
+<pre><code>import mmcv
+from mmcv import BaseStorageBackend, FileClient
+# 通过 FileClient.register_backend可以注册到_backends 字典中
+# 自己注册的
+@FileClient.register_backend(&#39;remote&#39;)			
+class RemoteUrlBackend(BaseStorageBackend):
+
+    def __init__(self, path_mapping):
+        assert isinstance(path_mapping, dict)
+        self.path_mapping = path_mapping
+
+    def get(self, filepath):
+        filepath = str(filepath)
+
+        # 本地相对路径替换为远程 url
+        for k, v in self.path_mapping.items():
+            filepath = filepath.replace(k, v)
+
+        # 拉取远程图片(可能比较复杂)
+        value_buf = self._get_remote_image()
+
+        return value_buf
+
+    def get_text(self, filepath):
+        raise NotImplementedError
+
+    def _get_remote_image(self):
+        pass
+</code></pre>
+<h2 id="io"><a href="#io" class="headerlink" title="io"></a><em>io</em></h2><pre><code># Copyright (c) OpenMMLab. All rights reserved.
+from io import BytesIO, StringIO
+from pathlib import Path
+from typing import Any, Callable, Dict, List, Optional, TextIO, Union	#它用于声明函数和变量的参数类型和返回值类型。
+
+from ..utils import is_list_of
+from .file_client import FileClient
+from .handlers import BaseFileHandler, JsonHandler, PickleHandler, YamlHandler
+
+FileLikeObject = Union[TextIO, StringIO, BytesIO]
+
+file_handlers = &#123;
+    &#39;json&#39;: JsonHandler(),
+    &#39;yaml&#39;: YamlHandler(),
+    &#39;yml&#39;: YamlHandler(),
+    &#39;pickle&#39;: PickleHandler(),
+    &#39;pkl&#39;: PickleHandler()
+&#125;
+
+
+def load(file: Union[str, Path, FileLikeObject],
+         file_format: Optional[str] = None,
+         file_client_args: Optional[Dict] = None,
+         **kwargs):
+    &quot;&quot;&quot;Load data from json/yaml/pickle files.
+
+    This method provides a unified api for loading data from serialized files.
+
+    Note:
+        In v1.3.16 and later, ``load`` supports loading data from serialized
+        files those can be storaged in different backends.
+
+    Args:
+        file (str or :obj:`Path` or file-like object): Filename or a file-like
+            object.
+        file_format (str, optional): If not specified, the file format will be
+            inferred from the file extension, otherwise use the specified one.
+            Currently supported formats include &quot;json&quot;, &quot;yaml/yml&quot; and
+            &quot;pickle/pkl&quot;.
+        file_client_args (dict, optional): Arguments to instantiate a
+            FileClient. See :class:`mmcv.fileio.FileClient` for details.
+            Default: None.
+
+    Examples:
+        &gt;&gt;&gt; load(&#39;/path/of/your/file&#39;)  # file is storaged in disk
+        &gt;&gt;&gt; load(&#39;https://path/of/your/file&#39;)  # file is storaged in Internet
+        &gt;&gt;&gt; load(&#39;s3://path/of/your/file&#39;)  # file is storaged in petrel
+
+    Returns:
+        The content from the file.
+    &quot;&quot;&quot;
+    if isinstance(file, Path):
+        file = str(file)
+    if file_format is None and isinstance(file, str):
+        file_format = file.split(&#39;.&#39;)[-1]
+    if file_format not in file_handlers:
+        raise TypeError(f&#39;Unsupported format: &#123;file_format&#125;&#39;)
+
+    handler = file_handlers[file_format]
+    f: FileLikeObject
+    if isinstance(file, str):
+        file_client = FileClient.infer_client(file_client_args, file)
+        if handler.str_like:
+            with StringIO(file_client.get_text(file)) as f:
+                obj = handler.load_from_fileobj(f, **kwargs)
+        else:
+            with BytesIO(file_client.get(file)) as f:
+                obj = handler.load_from_fileobj(f, **kwargs)
+    elif hasattr(file, &#39;read&#39;):
+        obj = handler.load_from_fileobj(file, **kwargs)
+    else:
+        raise TypeError(&#39;&quot;file&quot; must be a filepath str or a file-object&#39;)
+    return obj
+
+
+def dump(obj: Any,
+         file: Optional[Union[str, Path, FileLikeObject]] = None,
+         file_format: Optional[str] = None,
+         file_client_args: Optional[Dict] = None,
+         **kwargs):
+    &quot;&quot;&quot;Dump data to json/yaml/pickle strings or files.
+
+    This method provides a unified api for dumping data as strings or to files,
+    and also supports custom arguments for each file format.
+
+    Note:
+        In v1.3.16 and later, ``dump`` supports dumping data as strings or to
+        files which is saved to different backends.
+
+    Args:
+        obj (any): The python object to be dumped.
+        file (str or :obj:`Path` or file-like object, optional): If not
+            specified, then the object is dumped to a str, otherwise to a file
+            specified by the filename or file-like object.
+        file_format (str, optional): Same as :func:`load`.
+        file_client_args (dict, optional): Arguments to instantiate a
+            FileClient. See :class:`mmcv.fileio.FileClient` for details.
+            Default: None.
+
+    Examples:
+        &gt;&gt;&gt; dump(&#39;hello world&#39;, &#39;/path/of/your/file&#39;)  # disk
+        &gt;&gt;&gt; dump(&#39;hello world&#39;, &#39;s3://path/of/your/file&#39;)  # ceph or petrel
+
+    Returns:
+        bool: True for success, False otherwise.
+    &quot;&quot;&quot;
+    if isinstance(file, Path):
+        file = str(file)
+    if file_format is None:
+        if isinstance(file, str):
+            file_format = file.split(&#39;.&#39;)[-1]
+        elif file is None:
+            raise ValueError(
+                &#39;file_format must be specified since file is None&#39;)
+    if file_format not in file_handlers:
+        raise TypeError(f&#39;Unsupported format: &#123;file_format&#125;&#39;)
+    f: FileLikeObject
+    handler = file_handlers[file_format]
+    if file is None:
+        return handler.dump_to_str(obj, **kwargs)
+    elif isinstance(file, str):
+        file_client = FileClient.infer_client(file_client_args, file)
+        if handler.str_like:
+            with StringIO() as f:
+                handler.dump_to_fileobj(obj, f, **kwargs)
+                file_client.put_text(f.getvalue(), file)
+        else:
+            with BytesIO() as f:
+                handler.dump_to_fileobj(obj, f, **kwargs)
+                file_client.put(f.getvalue(), file)
+    elif hasattr(file, &#39;write&#39;):
+        handler.dump_to_fileobj(obj, file, **kwargs)
+    else:
+        raise TypeError(&#39;&quot;file&quot; must be a filename str or a file-object&#39;)
+
+
+def _register_handler(handler: BaseFileHandler,
+                      file_formats: Union[str, List[str]]) -&gt; None:
+    &quot;&quot;&quot;Register a handler for some file extensions.
+
+    Args:
+        handler (:obj:`BaseFileHandler`): Handler to be registered.
+        file_formats (str or list[str]): File formats to be handled by this
+            handler.
+    &quot;&quot;&quot;
+    if not isinstance(handler, BaseFileHandler):
+        raise TypeError(
+            f&#39;handler must be a child of BaseFileHandler, not &#123;type(handler)&#125;&#39;)
+    if isinstance(file_formats, str):
+        file_formats = [file_formats]
+    if not is_list_of(file_formats, str):
+        raise TypeError(&#39;file_formats must be a str or a list of str&#39;)
+    for ext in file_formats:
+        file_handlers[ext] = handler
+
+
+def register_handler(file_formats: Union[str, list], **kwargs) -&gt; Callable:
+
+    def wrap(cls):
+        _register_handler(cls(**kwargs), file_formats)
+        return cls
+
+    return wrap
+</code></pre>
+<h3 id="‘load’"><a href="#‘load’" class="headerlink" title="‘load’"></a>‘load’</h3><pre><code class="python">
+    handler = file_handlers[file_format]
+    file_client = FileClient.infer_client(file_client_args, file)
+    if isinstance(file, str):
+        file_client = FileClient.infer_client(file_client_args, file) 
+        # file_client_args 一般是None
+        # file字符串路径名
+        if handler.str_like:
+            with StringIO(file_client.get_text(file)) as f:
+                obj = handler.load_from_fileobj(f, **kwargs)
+        else:
+            with BytesIO(file_client.get(file)) as f:
+                obj = handler.load_from_fileobj(f, **kwargs)
+    elif hasattr(file, &#39;read&#39;):
+        obj = handler.load_from_fileobj(file, **kwargs)
+    else:
+        raise TypeError(&#39;&quot;file&quot; must be a filepath str or a file-object&#39;)
+    return obj
+</code></pre>
+<h3 id="‘dump’"><a href="#‘dump’" class="headerlink" title="‘dump’"></a>‘dump’</h3><h3 id="‘register-handler’"><a href="#‘register-handler’" class="headerlink" title="‘register_handler’"></a>‘register_handler’</h3><h2 id="handlers"><a href="#handlers" class="headerlink" title="handlers"></a><em>handlers</em></h2><h3 id="‘BaseFileHandler’"><a href="#‘BaseFileHandler’" class="headerlink" title="‘BaseFileHandler’"></a>‘BaseFileHandler’</h3><pre><code class="python">from abc import ABCMeta, abstractmethod
+# 继承ABCMeta元类，使其无法直接实例化
+class BaseFileHandler(metaclass=ABCMeta):
+
+    #@abstractmethod表示子类必须要实现该方法，否则报错
+    # 文件读取
+    @abstractmethod
+    def load_from_fileobj(self, file, **kwargs):
+        pass
+    # 文件存储，需要传入对象obj和file
+    @abstractmethod
+    def dump_to_fileobj(self, obj, file, **kwargs):
+        pass
+
+    #dump成字符串返回，当你不想保存时候使用
+    @abstractmethod
+    def dump_to_str(self, obj, **kwargs):
+        pass
+    # 对外实际上是采用下面两个api
+    def load_from_path(self, filepath, mode=&#39;r&#39;, **kwargs):
+        with open(filepath, mode) as f:
+            return self.load_from_fileobj(f, **kwargs)
+
+    def dump_to_path(self, obj, filepath, mode=&#39;w&#39;, **kwargs):
+        with open(filepath, mode) as f:
+            self.dump_to_fileobj(obj, f, **kwargs)
+</code></pre>
+<h4 id="基方法load-from-fileobj"><a href="#基方法load-from-fileobj" class="headerlink" title="基方法load_from_fileobj"></a>基方法load_from_fileobj</h4><h4 id="基方法dump-to-fileobj"><a href="#基方法dump-to-fileobj" class="headerlink" title="基方法dump_to_fileobj"></a>基方法dump_to_fileobj</h4><h4 id="基方法dump-to-str"><a href="#基方法dump-to-str" class="headerlink" title="基方法dump_to_str"></a>基方法dump_to_str</h4><h4 id="load-from-path"><a href="#load-from-path" class="headerlink" title="load_from_path"></a>load_from_path</h4><h4 id="dump-to-path"><a href="#dump-to-path" class="headerlink" title="dump_to_path"></a>dump_to_path</h4><h3 id="‘JsonHandler’"><a href="#‘JsonHandler’" class="headerlink" title="‘JsonHandler’"></a>‘JsonHandler’</h3><pre><code># Copyright (c) OpenMMLab. All rights reserved.
+import json
+
+import numpy as np
+
+from .base import BaseFileHandler
+
+
+def set_default(obj):
+    # 这些数据类型没办法序列化，比如numpy数组，就要变成列表
+    # 创建一个set my_set = &#123;1, 2, 3, 4, 5&#125;
+    # &lt;class &#39;range&#39;&gt; range()函数返回一个表示范围的对象，而不是一个列表。
+    # range(1, 6)
+    if isinstance(obj, (set, range)):
+        return list(obj)
+    elif isinstance(obj, np.ndarray):
+        return obj.tolist()
+    elif isinstance(obj, np.generic):
+        return obj.item()
+    raise TypeError(f&#39;&#123;type(obj)&#125; is unsupported for json dump&#39;)
+
+
+class JsonHandler(BaseFileHandler):
+
+    def load_from_fileobj(self, file):
+        return json.load(file)
+
+    def dump_to_fileobj(self, obj, file, **kwargs):
+        kwargs.setdefault(&#39;default&#39;, set_default)
+        json.dump(obj, file, **kwargs)
+
+    def dump_to_str(self, obj, **kwargs):
+        kwargs.setdefault(&#39;default&#39;, set_default)
+        return json.dumps(obj, **kwargs)
+</code></pre>
+<h3 id="‘PickleHandler’"><a href="#‘PickleHandler’" class="headerlink" title="‘PickleHandler’"></a>‘PickleHandler’</h3><pre><code># Copyright (c) OpenMMLab. All rights reserved.
+import pickle
+
+from .base import BaseFileHandler
+
+
+class PickleHandler(BaseFileHandler):
+
+    str_like = False
+
+    def load_from_fileobj(self, file, **kwargs):
+        return pickle.load(file, **kwargs)
+
+    def load_from_path(self, filepath, **kwargs):
+        return super().load_from_path(filepath, mode=&#39;rb&#39;, **kwargs)
+
+    def dump_to_str(self, obj, **kwargs):
+        kwargs.setdefault(&#39;protocol&#39;, 2)
+        return pickle.dumps(obj, **kwargs)
+
+    def dump_to_fileobj(self, obj, file, **kwargs):
+        kwargs.setdefault(&#39;protocol&#39;, 2)
+        pickle.dump(obj, file, **kwargs)
+
+    def dump_to_path(self, obj, filepath, **kwargs):
+        super().dump_to_path(obj, filepath, mode=&#39;wb&#39;, **kwargs)
+</code></pre>
+<h3 id="‘YamlHandler’"><a href="#‘YamlHandler’" class="headerlink" title="‘YamlHandler’"></a>‘YamlHandler’</h3><pre><code># Copyright (c) OpenMMLab. All rights reserved.
+import yaml
+
+try:
+    from yaml import CDumper as Dumper
+    from yaml import CLoader as Loader
+except ImportError:
+    from yaml import Loader, Dumper  # type: ignore
+
+from .base import BaseFileHandler  # isort:skip
+
+
+class YamlHandler(BaseFileHandler):
+
+    def load_from_fileobj(self, file, **kwargs):
+        kwargs.setdefault(&#39;Loader&#39;, Loader)
+        return yaml.load(file, **kwargs)
+
+    def dump_to_fileobj(self, obj, file, **kwargs):
+        kwargs.setdefault(&#39;Dumper&#39;, Dumper)
+        yaml.dump(obj, file, **kwargs)
+
+    def dump_to_str(self, obj, **kwargs):
+        kwargs.setdefault(&#39;Dumper&#39;, Dumper)
+        return yaml.dump(obj, **kwargs)
+</code></pre>
+<h2 id="parse"><a href="#parse" class="headerlink" title="parse"></a>parse</h2><h6 id="‘list-from-file"><a href="#‘list-from-file" class="headerlink" title="‘list_from_file"></a>‘list_from_file</h6><h6 id="dict-from-file"><a href="#dict-from-file" class="headerlink" title="dict_from_file"></a>dict_from_file</h6><h2 id="自定义扩展"><a href="#自定义扩展" class="headerlink" title="自定义扩展"></a>自定义扩展</h2><pre><code class="python">def register_handler(file_formats, **kwargs):
+
+    def wrap(cls):
+        # 这句话其实核心是：file_handlers[ext] = handler
+        # 把我们写的handler类设置到file_handlers的字典中
+        _register_handler(cls(**kwargs), file_formats)
+        return cls
+
+    return wrap
+</code></pre>
+<pre><code>@register_handler(&#39;npy&#39;)
+class NpyHandler(BaseFileHandler):
+    def load_from_fileobj(self, file, **kwargs):
+        return np.load(file)
+
+    def dump_to_fileobj(self, obj, file, **kwargs):
+        np.save(file, obj)
+
+    def dump_to_str(self, obj, **kwargs):
+        # 实际上这么写没有意义，这里只是举例
+        return obj.tobytes()
+</code></pre>
+<p><img src="/../images/mmlab/image-20230719192925462.png" alt="image-20230719192925462"></p>
+<p>在调用的时候，我们需要额外传入 mode 参数，原因是默认的 mode 参数是 ‘r’ 或者 ‘w’，但是在 numpy 中需要是 byte 格式。</p>
+<h2 id="杂-1"><a href="#杂-1" class="headerlink" title="杂"></a>杂</h2><p>在Python中，如果要定义一个抽象类，需要使用abc模块。下面是一个使用@abstractmethod装饰器定义抽象方法的例子：</p>
+<pre><code>from abc import ABC, abstractmethod
+
+class MyAbstractClass(ABC):
+    @abstractmethod
+    def my_abstract_method(self):
+        pass
+</code></pre>
+<p>自己写装饰器</p>
+<p>先定义一个装饰器</p>
+<pre><code>def my_decorator(func):
+    def wrapper(*args, **kwargs):
+        print(&#39;Before the function is called.&#39;)
+        result = func(*args, **kwargs)
+        print(&#39;After the function is called.&#39;)
+        return result
+    return wrapper
+</code></pre>
+<p>上面的代码定义了一个名为my_decorator的装饰器，它接受一个函数作为参数，并返回一个新的函数wrapper。wrapper函数在调用原函数之前和之后会打印一些信息，以增强原函数的功能。使用装饰器时，只需要在原函数前面加上@my_decorator即可将装饰器应用到原函数中，例如：</p>
+<pre><code>@my_decorator
+def my_function():
+    print(&#39;This is my function.&#39;)
+</code></pre>
+<p>在上面的例子中，my_function函数被@my_decorator装饰器装饰，当调用my_function函数时，会先打印’Before the function is called.’，然后执行原函数的代码，最后打印’After the function is called.’。</p>
+<h6 id="文件获取后端-FileClient"><a href="#文件获取后端-FileClient" class="headerlink" title="文件获取后端 FileClient"></a>文件获取后端 FileClient</h6><p>主要用于训练过程中数据的读取，通过用户选择或者自定义不同的 FileClient 后端，可以轻松实现文件缓存、文件加速读取等功能</p>
+<h6 id="np-generic举例"><a href="#np-generic举例" class="headerlink" title="np.generic举例"></a>np.generic举例</h6><pre><code>import numpy as np
+
+# 创建一个numpy数组
+my_array = np.array([1, 2, 3], dtype=np.int32)
+
+# 将numpy数组转换为Python列表
+my_list = my_array.tolist()
+
+# 打印Python列表
+print(my_list)
+
+# 将numpy的generic类型转换为Python内置类型
+my_int32 = np.int32(3)
+my_int = my_int32.item()
+
+# 打印转换后的Python内置类型
+print(type(my_int))  # &lt;class &#39;int&#39;&gt;
+</code></pre>
+<h6 id="类型提示-Type-Hints-语法"><a href="#类型提示-Type-Hints-语法" class="headerlink" title="类型提示(Type Hints)语法"></a>类型提示(Type Hints)语法</h6><pre><code>from typing import Any, Callable, Dict, List, Optional, TextIO, Union
+</code></pre>
+<p><code>from typing import Any, Callable, Dict, List, Optional, TextIO, Union</code>这行代码是Python中的类型提示(Type Hints)语法，它用于声明函数和变量的参数类型和返回值类型。这样做可以提高代码的可读性、可维护性和可靠性。</p>
+<p>具体来说，这行代码中声明了以下类型：</p>
+<ul>
+<li><code>Any</code>: 表示任意类型，相当于不做类型限制。</li>
+<li><code>Callable</code>: 表示一个可调用对象，例如函数或方法。</li>
+<li><code>Dict</code>: 表示一个字典类型，其中键和值的类型可以是任意类型。</li>
+<li><code>List</code>: 表示一个列表类型，其中元素的类型可以是任意类型。</li>
+<li><code>Optional</code>: 表示一个可选类型，即参数可以是指定类型或<code>None</code>。</li>
+<li><code>TextIO</code>: 表示一个文本流对象，例如文件、标准输入输出等。</li>
+<li><code>Union</code>: 表示多个类型中的任意一种类型。</li>
+</ul>
+<pre><code>def my_function(my_list: List[int], my_dict: Optional[Dict[str, Any]]) -&gt; Union[int, float]:
+    # 函数体
+    pass
+</code></pre>
+<p>FileLikeObject &#x3D; Union[TextIO, StringIO, BytesIO]这行代码是Python中的类型提示(Type Hints)语法，用于定义一个新的类型FileLikeObject。在这个代码中，FileLikeObject是一个由Union类型组成的联合类型，它表示可以是TextIO、StringIO或BytesIO类型中的任何一种。</p>
+<p>TextIO、StringIO和BytesIO是Python内置的文件流对象，用于处理文本和二进制数据。TextIO可以用于读写文本文件，StringIO可以在内存中读写字符串，BytesIO可以在内存中读写二进制数据。这些对象都实现了文件流操作接口，并且可以像文件一样读写数据。</p>
+<pre><code>FileLikeObject = Union[TextIO, StringIO, BytesIO]
+</code></pre>
+<p>f是一个变量名，FileLikeObject是该变量的类型。</p>
+<pre><code>f: FileLikeObject
+</code></pre>
+<h6 id="python-property"><a href="#python-property" class="headerlink" title="python @property"></a>python @property</h6><p>用于将一个方法转换为属性调用。在Python中，属性通常被视为类的一部分，它们提供了一种简单的方式来访问和修改对象的状态。</p>
+<p>通过将一个方法标记为@property，我们可以将它转换为一个只读属性。这意味着，当我们访问该属性时，实际上是调用了该方法，并返回了它的返回值。</p>
+<pre><code>class MyClass:
+    @property
+    def name(self):
+        return self.__class__.__name__
+
+obj = MyClass()
+print(obj.name)  # 输出 &quot;MyClass&quot;
+</code></pre>
+<h6 id="python-abstractmethod"><a href="#python-abstractmethod" class="headerlink" title="python @abstractmethod"></a>python @abstractmethod</h6><p>用于将一个方法定义为抽象方法。抽象方法是一种特殊的方法，它没有具体的实现，只是定义了一个接口，需要在子类中进行实现。</p>
+<h6 id="python-classmethod"><a href="#python-classmethod" class="headerlink" title="python @classmethod"></a>python @classmethod</h6><p>通过将一个方法标记为@classmethod，我们可以将它转换为类方法。在类方法中，第一个参数通常被命名为cls，它指代当前类对象本身。使用cls参数，我们可以在类方法中访问类的属性和方法，从而实现对类的操作。</p>
+<pre><code>class MyClass:
+    @classmethod
+    def add(cls, x, y):
+        return x + y
+
+result = MyClass.add(10, 20)
+print(result)  # 输出 30
+</code></pre>
+<h6 id="python-staticmethod"><a href="#python-staticmethod" class="headerlink" title="python @staticmethod"></a>python @staticmethod</h6><p>静态方法是一种特殊的方法，它不需要访问实例的状态或类的状态，而是仅依赖于传入的参数。通过将一个方法标记为@staticmethod，我们可以将它转换为静态方法。在静态方法中，不需要使用self或cls等参数来引用实例或类对象，而是可以直接使用传入的参数进行计算。</p>
+<pre><code>class MyClass:
+    @staticmethod
+    def add(x, y):
+        return x + y
+
+result = MyClass.add(10, 20)
+print(result)  # 输出 30
+</code></pre>
+<h6 id="python-call"><a href="#python-call" class="headerlink" title="python call"></a>python <strong>call</strong></h6><pre><code>class MyClass:
+    def __call__(self, x):
+        return x + 1
+
+obj = MyClass()
+result = obj(10)
+print(result)  # 输出 11
+</code></pre>
+<h6 id="python-运算符对字典解包"><a href="#python-运算符对字典解包" class="headerlink" title="python **运算符对字典解包"></a>python **运算符对字典解包</h6><pre><code>def my_func(a, b):
+    print(a, b)
+
+env = &#123;&#39;a&#39;: 1, &#39;b&#39;: 2&#125;
+my_func(**env)  # 输出 1 2
+</code></pre>
+<h6 id="python-字典形参"><a href="#python-字典形参" class="headerlink" title="python 字典形参"></a>python 字典形参</h6><pre><code>def my_func(**kwargs):
+    for key, value in kwargs.items():
+        print(key, value)
+
+my_func(a=1, b=2, c=3)  # 输出 a 1 b 2 c 3
+</code></pre>
+<h6 id="python-占位符"><a href="#python-占位符" class="headerlink" title="python 占位符"></a>python 占位符</h6><pre><code>item1 = &#39;&#123;&#125;&#39;
+item2 = &#39;&#123;&#125;/path/to/dir&#39;
+item3 = &#39;abc_&#123;&#125;.txt&#39;
+
+item1 = &#39;&#123;&#125;&#39;.format(&#39;filename&#39;)
+item2 = &#39;&#123;&#125;/path/to/dir&#39;.format(&#39;C:/&#39;)
+item3 = &#39;abc_&#123;&#125;.txt&#39;.format(&#39;file&#39;)
+</code></pre>
+<h6 id="python-文件"><a href="#python-文件" class="headerlink" title="python 文件"></a>python 文件</h6><p>..&#x2F;a2与..a2一样吗</p>
+<p>不完全相同。..&#x2F;a2 和 ..a2 都表示上一级目录下的 a2 目录，但是它们所表示的路径格式不同。</p>
+<p>..&#x2F;a2 使用了标准的相对路径格式，其中 .. 表示上一级目录，&#x2F; 表示目录的分隔符，因此 ..&#x2F;a2 表示上一级目录下的 a2 目录。这种表示方法是在文件系统中广泛使用的相对路径格式。</p>
+<p>..a2 则是一种非标准的相对路径格式，使用了点号 . 和 .. 表示路径的相对位置。在 Python 等编程语言中，通常使用点号 . 表示当前目录，使用 .. 表示上一级目录，将它们与目录名拼接起来表示相对路径。因此，..a2 可以理解为上一级目录下的 a2 目录，但是这种表示方法在文件系统中并不通用。</p>
+<p>总之，..&#x2F;a2 是标准的相对路径格式，而 ..a2 则是一种非标准的相对路径格式，使用时需要注意。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>虚拟环境配置</title>
+    <url>/2023/07/15/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h5 id="likemmcv环境名"><a href="#likemmcv环境名" class="headerlink" title="likemmcv环境名"></a>likemmcv环境名</h5><p><a href="https://download.pytorch.org/whl/cu113/torch-1.12.0%2Bcu113-cp39-cp39-linux_x86_64.whl">torch-1.12.0+cu113-cp39-cp39-linux_x86_64.whl</a></p>
+<p>python 3.9</p>
+<pre><code>mmcv==2.0.0
+</code></pre>
+<pre><code>pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu113
+</code></pre>
+<p>conda install cudnn&#x3D;8.9.0  -c <a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/linux-64/">https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/linux-64/</a></p>
+<pre><code class="shell">conda install cudnn=8.9.0 -c http://mirrors.aliyun.com/anaconda/pkgs/main
+</code></pre>
+<p>为了运行DAS,做如下改变：</p>
+<p>Successfully installed mmdet-2.14.0 pycocotools-2.0.6 terminaltables-3.1.10</p>
+<p>Successfully installed mmsegmentation-1.0.0 prettytable-3.7.0 scipy-1.10.1 wcwidth-0.2.6</p>
+<h6 id="PCT复制的mvp"><a href="#PCT复制的mvp" class="headerlink" title="PCT复制的mvp"></a>PCT复制的mvp</h6><p><a href="https://blog.csdn.net/qq_37764129/article/details/102496746">https://blog.csdn.net/qq_37764129/article/details/102496746</a></p>
+<p>复制虚拟环境</p>
+]]></content>
+      <tags>
+        <tag>杂</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>UniHCP</title>
+    <url>/2023/07/21/UniHCP/</url>
+    <content><![CDATA[<h1 id="卖点"><a href="#卖点" class="headerlink" title="卖点"></a>卖点</h1><p>使用99.97%共享的参数，</p>
+<p>最核心的是最后四个单元统一五个任务！</p>
+<h1 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h1><p><a href="https://arxiv.org/abs/2303.02936">https://arxiv.org/abs/2303.02936</a></p>
+<p><a href="https://github.com/OpenGVLab/HumanBench">https://github.com/OpenGVLab/HumanBench</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/624776660">https://zhuanlan.zhihu.com/p/624776660</a></p>
+<h1 id="问题【待学】："><a href="#问题【待学】：" class="headerlink" title="问题【待学】："></a>问题【待学】：</h1><p>思考: 内功看成的是共享位置嵌入，具体是怎么实现的，能不能用生成模型来做？</p>
+<p>UNIFIED-IO: A UNIFIED MODEL FOR VISION, LANGUAGE, AND MULTI-MODAL TASKS 这篇论文用到啦VQ-VAE，看看是怎么用的</p>
+<p>对于pose的query设计是直接14个关键点变成14，256，还是说怎么样？</p>
+<ul>
+<li>Masked-attention Mask Transformer for Universal Image Segmentation，这篇论文里面有query关于注意力mask的机制，mask有什么好处？</li>
+<li>A Unified Sequence Interface for Vision Tasks，这篇论文使用了VQ-VAE</li>
+</ul>
+<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><h2 id="任务解释机制"><a href="#任务解释机制" class="headerlink" title="任务解释机制"></a>任务解释机制</h2><h3 id="任务引导的解释器"><a href="#任务引导的解释器" class="headerlink" title="任务引导的解释器"></a>任务引导的解释器</h3><p>UniHCP首先将不同任务的图片输入转化为公用的输出空间，而为了适应不同任务的最终输出，在decoder的末尾设计了任务引导的解释器（task-guided interpreter），用极少的参数量构建了四种输出单元，让UniHCP能根据不同任务选择相应的输出单元。同样的，task-guided  interpreter中的参数也是task间共享的。</p>
+<p>query独立的设计让其成为了天生的prompt，让UniHCP在promtp tuning方面具有出色的表现和潜力。</p>
+<img src="../images/UniHCP/image-20230721105540492.png" alt="image-20230721105540492" style="zoom:150%;" />
+
+<p>特征表示，局部概率图  ,全局概率图  ,边界框坐标 。</p>
+<p>共享99.7%的参数量</p>
+<p><img src="/../images/UniHCP/image-20230721112749245.png" alt="image-20230721112749245"></p>
+<p><img src="/../images/UniHCP/image-20230721113410803.png" alt="image-20230721113410803"></p>
+<h3 id="任务无关的Encoder"><a href="#任务无关的Encoder" class="headerlink" title="任务无关的Encoder"></a>任务无关的Encoder</h3><p>UniHCP选用Vision  Transformer(ViT)作为其编码器模型，在此基础上，UniHCP采用了一个共享的可学习位置嵌入(Learnable  Positional  Embedding)，使其可以关注不同人体任务数据中的人体知识本身,而非任务特有的时空结构,这有利于其学习人体知识的共性与内在联结。值得一提的是，共享位置嵌入还可以减少编码器的参数量与计算负载，避免对于不同任务、数据集学习额外的位置嵌入，带来下游部署上的麻烦。</p>
+<p>具体来说，我们选择了各个任务中最大图片高、宽的输入（检测中的长边1333像素），下采样16倍后，学习一个所有任务间共享的 84×84 的 Positional Embedding，<em><strong>并根据具体任务的需要，对Positional  Embedding进行interpolation后作为输入。</strong></em></p>
+<h3 id="Decoder和任务相关的Queries"><a href="#Decoder和任务相关的Queries" class="headerlink" title="Decoder和任务相关的Queries"></a><strong>Decoder和任务相关的Queries</strong></h3><p>UniHCP的Decoder的所有参数在所有任务之间完全相同，针对不同数据集、不同人体任务有所区别的只有用于查询人体知识的Queries。不同Queries仅激活编码器中相关的人体知识,而不改变其对这些知识的理解。这使Queries的变化不会影响UniHCP对人体知识的表达,所以其可以在不同Queries(任务)间最大限度地复用与迁移所学知识。</p>
+<p><img src="/../images/UniHCP/image-20230721113807935.png" alt="image-20230721113807935"></p>
+<h3 id="关于query的初始化"><a href="#关于query的初始化" class="headerlink" title="关于query的初始化:"></a>关于query的初始化:</h3><h4 id="pedestrian-detection"><a href="#pedestrian-detection" class="headerlink" title="pedestrian detection"></a>pedestrian detection</h4><p>query初始化采用Anchor DETR的设计，并且tgt不断的refine,query_pos不refine</p>
+<h4 id="别的任务"><a href="#别的任务" class="headerlink" title="别的任务"></a>别的任务</h4><p>query的初始化都是随机初始化的</p>
+]]></content>
+      <tags>
+        <tag>pose论文</tag>
+      </tags>
+  </entry>
 </search>
