@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
+    <meta name="description" content="python语法小记" />
+    <meta name="hexo-theme-A4" content="v1.6.9" />
+    <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
+    <title>hwan | </title>
+
+    
+        
+            
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/reset.css">
+
+            
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/markdown.css">
+
+            
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/fonts.css">
+ 
+            <!--注意：首页既不是post也不是page-->
+            
+        
+    
+    
+<link rel="stylesheet" href="/css/ui.css">
+ 
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+    
+    <body>
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">hwan</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/about/">关于</a></li>
+            
+        
+            
+                <li><a href="/tags/">标签</a></li>
+            
+        
+            
+                <li><a href="/categories/">分类</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+
+    
+        <div class="post-main-title">
+            python语法小记
+        </div>
+      
+    
+
+    <div class="post-md">
+        
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="post-toc-text">文件操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E4%BB%8E%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E5%90%8Dos-path-basename"><span class="post-toc-text">从一个文件路径获取文件名os.path.basename</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%A4%8D%E5%88%B6%E7%9B%B8%E5%85%B3"><span class="post-toc-text">复制相关</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%99%AE%E9%80%9A%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%A4%8D%E5%88%B6"><span class="post-toc-text">普通对象的复制</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%8A%A5%E9%94%99%E7%9B%B8%E5%85%B3"><span class="post-toc-text">报错相关</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BA%A7%E7%94%9F%E9%94%99%E8%AF%AF"><span class="post-toc-text">产生错误</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#TypeError"><span class="post-toc-text">TypeError</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%9D%82"><span class="post-toc-text">杂</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#MethodType"><span class="post-toc-text">MethodType()</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#dict%E7%9B%B8%E5%85%B3"><span class="post-toc-text">dict相关</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#get%E6%96%B9%E6%B3%95"><span class="post-toc-text">get方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#pop%E6%96%B9%E6%B3%95"><span class="post-toc-text">pop方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#class%E7%9B%B8%E5%85%B3"><span class="post-toc-text">class相关</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%B1%BB%E5%8F%98%E9%87%8F"><span class="post-toc-text">类变量</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E7%B1%BB"><span class="post-toc-text">判断一个对象是否类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E5%88%A4%E6%96%AD%E5%88%AB%E7%9A%84%E6%98%AF%E5%90%A6%E5%AF%B9%E5%BA%94%E5%B1%9E%E6%80%A7"><span class="post-toc-text">判断别的是否对应属性</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#property"><span class="post-toc-text">@property</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-text"></span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E2%80%9C-repr-%E2%80%9C"><span class="post-toc-text">“_repr_“</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%9D%82-1"><span class="post-toc-text">杂</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E6%96%87%E4%BB%B6%E8%8E%B7%E5%8F%96%E5%90%8E%E7%AB%AF-FileClient"><span class="post-toc-text">文件获取后端 FileClient</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#np-generic%E4%B8%BE%E4%BE%8B"><span class="post-toc-text">np.generic举例</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E7%B1%BB%E5%9E%8B%E6%8F%90%E7%A4%BA-Type-Hints-%E8%AF%AD%E6%B3%95"><span class="post-toc-text">类型提示(Type Hints)语法</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#python-property"><span class="post-toc-text">python @property</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#python-abstractmethod"><span class="post-toc-text">python @abstractmethod</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#python-classmethod"><span class="post-toc-text">python @classmethod</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#python-staticmethod"><span class="post-toc-text">python @staticmethod</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#python-call"><span class="post-toc-text">python call</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#python-%E8%BF%90%E7%AE%97%E7%AC%A6%E5%AF%B9%E5%AD%97%E5%85%B8%E8%A7%A3%E5%8C%85"><span class="post-toc-text">python **运算符对字典解包</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#python-%E5%AD%97%E5%85%B8%E5%BD%A2%E5%8F%82"><span class="post-toc-text">python 字典形参</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#python-%E5%8D%A0%E4%BD%8D%E7%AC%A6"><span class="post-toc-text">python 占位符</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#python-%E6%96%87%E4%BB%B6"><span class="post-toc-text">python 文件</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E4%BF%AE%E9%A5%B0%E5%99%A8"><span class="post-toc-text">修饰器</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#pytorch%E7%9B%B8%E5%85%B3"><span class="post-toc-text">pytorch相关</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%A8%A1%E5%9E%8B%E7%8A%B6%E6%80%81"><span class="post-toc-text">模型状态</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%8A%A0%E8%BD%BD%E9%A2%84%E8%AE%AD%E7%BB%83%E7%9A%84%E6%A8%A1%E5%9E%8B"><span class="post-toc-text">加载预训练的模型</span></a></li></ol></li></ol></li></ol>
+        
+        <h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><h6 id="从一个文件路径获取文件名os-path-basename"><a href="#从一个文件路径获取文件名os-path-basename" class="headerlink" title="从一个文件路径获取文件名os.path.basename"></a>从一个文件路径获取文件名os.path.basename</h6><pre><code>import os
+
+path = &#39;/path/to/config.cfg&#39;
+filename = os.path.basename(path)
+print(filename)  # 输出：config.cfg
+</code></pre>
+<h1 id="复制相关"><a href="#复制相关" class="headerlink" title="复制相关"></a>复制相关</h1><h2 id="普通对象的复制"><a href="#普通对象的复制" class="headerlink" title="普通对象的复制"></a>普通对象的复制</h2><pre><code>a=list()
+b=a.copy()
+</code></pre>
+<h1 id="报错相关"><a href="#报错相关" class="headerlink" title="报错相关"></a>报错相关</h1><h2 id="产生错误"><a href="#产生错误" class="headerlink" title="产生错误"></a>产生错误</h2><h3 id="TypeError"><a href="#TypeError" class="headerlink" title="TypeError"></a>TypeError</h3><pre><code> raise TypeError(&#39;module must be a class, but got &#123;&#125;&#39;.format(type(module_class)))
+</code></pre>
+<h1 id="杂"><a href="#杂" class="headerlink" title="杂"></a>杂</h1><h2 id="MethodType"><a href="#MethodType" class="headerlink" title="MethodType()"></a>MethodType()</h2><pre><code>from types import MethodType
+
+class MyClass:
+    def __init__(self, x):
+        self.x = x
+
+def my_method(self):
+    print(self.x)
+
+obj = MyClass(123)
+obj.my_method = MethodType(my_method, obj)
+obj.my_method()  # 输出：123
+</code></pre>
+<h1 id="dict相关"><a href="#dict相关" class="headerlink" title="dict相关"></a>dict相关</h1><h2 id="get方法"><a href="#get方法" class="headerlink" title="get方法"></a>get方法</h2><p> <code>get</code> 方法用于获取字典中指定键的值。</p>
+<pre><code>my_dict = &#123;&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3&#125;
+
+# 获取键为 &#39;a&#39; 的值
+value1 = my_dict.get(&#39;a&#39;)
+print(value1)  # 输出：1
+
+# 获取键为 &#39;d&#39; 的值，返回默认值 None
+value2 = my_dict.get(&#39;d&#39;)
+print(value2)  # 输出：None
+
+# 获取键为 &#39;d&#39; 的值，返回默认值 0
+value3 = my_dict.get(&#39;d&#39;, 0)
+print(value3)  # 输出：0
+</code></pre>
+<h2 id="pop方法"><a href="#pop方法" class="headerlink" title="pop方法"></a>pop方法</h2><p>用于删除并返回指定键的值。</p>
+<pre><code>my_dict = &#123;&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3&#125;
+
+# 删除键为 &#39;a&#39; 的项，并返回其值
+value1 = my_dict.pop(&#39;a&#39;)
+print(value1)  # 输出：1
+print(my_dict)  # 输出：&#123;&#39;b&#39;: 2, &#39;c&#39;: 3&#125;
+</code></pre>
+<h1 id="class相关"><a href="#class相关" class="headerlink" title="class相关"></a>class相关</h1><h2 id="类变量"><a href="#类变量" class="headerlink" title="类变量"></a>类变量</h2><p>一个类中在 <code>__init__</code> 方法之外定义的变量是类变量（class variable）。类变量是指在类定义中定义的变量，可以被该类的所有实例共享，也可以被该类的任何方法调用和修改。</p>
+<pre><code>
+class MyClass:
+    x = 10
+
+    def __init__(self, y):
+        self.y = y
+
+    def add(self):
+        return MyClass.x + self.y
+</code></pre>
+<p><code>MyClass.x</code> 来访问类变量。</p>
+<h2 id="判断一个对象是否类"><a href="#判断一个对象是否类" class="headerlink" title="判断一个对象是否类"></a>判断一个对象是否类</h2><p>import inspect</p>
+<p>inspect.isclass(输入)</p>
+<h6 id="判断别的是否对应属性"><a href="#判断别的是否对应属性" class="headerlink" title="判断别的是否对应属性"></a>判断别的是否对应属性</h6><pre><code>isinstance(cfg, dict)
+</code></pre>
+<h2 id="property"><a href="#property" class="headerlink" title="@property"></a>@property</h2><pre><code>class MyClass:
+    def __init__(self, x):
+        self._x = x
+
+    @property
+    def x(self):
+        return self._x
+</code></pre>
+<p><code>@property</code> 装饰器将方法 <code>x</code> 转换为只读属性。该属性的值可以通过访问 <code>my_object.x</code> 来获取，而不需要使用 <code>my_object.x()</code> 的方法调用语法。</p>
+<p>使用 <code>@property</code> 装饰器装饰的方法必须满足以下条件：</p>
+<ol>
+<li><p>方法名与属性名相同。例如，在上面的示例中，方法名为 <code>x</code>，属性名也为 <code>x</code>。</p>
+</li>
+<li><p>方法没有参数。例如，在上面的示例中，方法 <code>x</code> 没有参数。</p>
+</li>
+<li><p>方法必须有返回值。例如，在上面的示例中，方法 <code>x</code> 返回属性 <code>_x</code> 的值。</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2></li>
+</ol>
+<h2 id="“-repr-“"><a href="#“-repr-“" class="headerlink" title="“_repr_“"></a>“_<em>repr</em>_“</h2><pre><code>class MyClass:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __repr__(self):
+        return f&quot;MyClass(x=&#123;self.x&#125;, y=&#123;self.y&#125;)&quot;
+
+obj = MyClass(1, 2)
+print(obj)  # 输出：MyClass(x=1, y=2)
+</code></pre>
+<h1 id="杂-1"><a href="#杂-1" class="headerlink" title="杂"></a>杂</h1><p>在Python中，如果要定义一个抽象类，需要使用abc模块。下面是一个使用@abstractmethod装饰器定义抽象方法的例子：</p>
+<pre><code>from abc import ABC, abstractmethod
+
+class MyAbstractClass(ABC):
+    @abstractmethod
+    def my_abstract_method(self):
+        pass
+</code></pre>
+<p>自己写装饰器</p>
+<p>先定义一个装饰器</p>
+<pre><code>def my_decorator(func):
+    def wrapper(*args, **kwargs):
+        print(&#39;Before the function is called.&#39;)
+        result = func(*args, **kwargs)
+        print(&#39;After the function is called.&#39;)
+        return result
+    return wrapper
+</code></pre>
+<p>上面的代码定义了一个名为my_decorator的装饰器，它接受一个函数作为参数，并返回一个新的函数wrapper。wrapper函数在调用原函数之前和之后会打印一些信息，以增强原函数的功能。使用装饰器时，只需要在原函数前面加上@my_decorator即可将装饰器应用到原函数中，例如：</p>
+<pre><code>@my_decorator
+def my_function():
+    print(&#39;This is my function.&#39;)
+</code></pre>
+<p>在上面的例子中，my_function函数被@my_decorator装饰器装饰，当调用my_function函数时，会先打印’Before the function is called.’，然后执行原函数的代码，最后打印’After the function is called.’。</p>
+<h6 id="文件获取后端-FileClient"><a href="#文件获取后端-FileClient" class="headerlink" title="文件获取后端 FileClient"></a>文件获取后端 FileClient</h6><p>主要用于训练过程中数据的读取，通过用户选择或者自定义不同的 FileClient 后端，可以轻松实现文件缓存、文件加速读取等功能</p>
+<h6 id="np-generic举例"><a href="#np-generic举例" class="headerlink" title="np.generic举例"></a>np.generic举例</h6><pre><code>import numpy as np
+
+# 创建一个numpy数组
+my_array = np.array([1, 2, 3], dtype=np.int32)
+
+# 将numpy数组转换为Python列表
+my_list = my_array.tolist()
+
+# 打印Python列表
+print(my_list)
+
+# 将numpy的generic类型转换为Python内置类型
+my_int32 = np.int32(3)
+my_int = my_int32.item()
+
+# 打印转换后的Python内置类型
+print(type(my_int))  # &lt;class &#39;int&#39;&gt;
+</code></pre>
+<h6 id="类型提示-Type-Hints-语法"><a href="#类型提示-Type-Hints-语法" class="headerlink" title="类型提示(Type Hints)语法"></a>类型提示(Type Hints)语法</h6><pre><code>from typing import Any, Callable, Dict, List, Optional, TextIO, Union
+</code></pre>
+<p><code>from typing import Any, Callable, Dict, List, Optional, TextIO, Union</code>这行代码是Python中的类型提示(Type Hints)语法，它用于声明函数和变量的参数类型和返回值类型。这样做可以提高代码的可读性、可维护性和可靠性。</p>
+<p>具体来说，这行代码中声明了以下类型：</p>
+<ul>
+<li><code>Any</code>: 表示任意类型，相当于不做类型限制。</li>
+<li><code>Callable</code>: 表示一个可调用对象，例如函数或方法。</li>
+<li><code>Dict</code>: 表示一个字典类型，其中键和值的类型可以是任意类型。</li>
+<li><code>List</code>: 表示一个列表类型，其中元素的类型可以是任意类型。</li>
+<li><code>Optional</code>: 表示一个可选类型，即参数可以是指定类型或<code>None</code>。</li>
+<li><code>TextIO</code>: 表示一个文本流对象，例如文件、标准输入输出等。</li>
+<li><code>Union</code>: 表示多个类型中的任意一种类型。</li>
+</ul>
+<pre><code>def my_function(my_list: List[int], my_dict: Optional[Dict[str, Any]]) -&gt; Union[int, float]:
+    # 函数体
+    pass
+</code></pre>
+<p>FileLikeObject &#x3D; Union[TextIO, StringIO, BytesIO]这行代码是Python中的类型提示(Type Hints)语法，用于定义一个新的类型FileLikeObject。在这个代码中，FileLikeObject是一个由Union类型组成的联合类型，它表示可以是TextIO、StringIO或BytesIO类型中的任何一种。</p>
+<p>TextIO、StringIO和BytesIO是Python内置的文件流对象，用于处理文本和二进制数据。TextIO可以用于读写文本文件，StringIO可以在内存中读写字符串，BytesIO可以在内存中读写二进制数据。这些对象都实现了文件流操作接口，并且可以像文件一样读写数据。</p>
+<pre><code>FileLikeObject = Union[TextIO, StringIO, BytesIO]
+</code></pre>
+<p>f是一个变量名，FileLikeObject是该变量的类型。</p>
+<pre><code>f: FileLikeObject
+</code></pre>
+<h6 id="python-property"><a href="#python-property" class="headerlink" title="python @property"></a>python @property</h6><p>用于将一个方法转换为属性调用。在Python中，属性通常被视为类的一部分，它们提供了一种简单的方式来访问和修改对象的状态。</p>
+<p>通过将一个方法标记为@property，我们可以将它转换为一个只读属性。这意味着，当我们访问该属性时，实际上是调用了该方法，并返回了它的返回值。</p>
+<pre><code>class MyClass:
+    @property
+    def name(self):
+        return self.__class__.__name__
+
+obj = MyClass()
+print(obj.name)  # 输出 &quot;MyClass&quot;
+</code></pre>
+<h6 id="python-abstractmethod"><a href="#python-abstractmethod" class="headerlink" title="python @abstractmethod"></a>python @abstractmethod</h6><p>用于将一个方法定义为抽象方法。抽象方法是一种特殊的方法，它没有具体的实现，只是定义了一个接口，需要在子类中进行实现。</p>
+<h6 id="python-classmethod"><a href="#python-classmethod" class="headerlink" title="python @classmethod"></a>python @classmethod</h6><p>通过将一个方法标记为@classmethod，我们可以将它转换为类方法。在类方法中，第一个参数通常被命名为cls，它指代当前类对象本身。使用cls参数，我们可以在类方法中访问类的属性和方法，从而实现对类的操作。</p>
+<pre><code>class MyClass:
+    @classmethod
+    def add(cls, x, y):
+        return x + y
+
+result = MyClass.add(10, 20)
+print(result)  # 输出 30
+</code></pre>
+<h6 id="python-staticmethod"><a href="#python-staticmethod" class="headerlink" title="python @staticmethod"></a>python @staticmethod</h6><p>静态方法是一种特殊的方法，它不需要访问实例的状态或类的状态，而是仅依赖于传入的参数。通过将一个方法标记为@staticmethod，我们可以将它转换为静态方法。在静态方法中，不需要使用self或cls等参数来引用实例或类对象，而是可以直接使用传入的参数进行计算。</p>
+<pre><code>class MyClass:
+    @staticmethod
+    def add(x, y):
+        return x + y
+
+result = MyClass.add(10, 20)
+print(result)  # 输出 30
+</code></pre>
+<h6 id="python-call"><a href="#python-call" class="headerlink" title="python call"></a>python <strong>call</strong></h6><pre><code>class MyClass:
+    def __call__(self, x):
+        return x + 1
+
+obj = MyClass()
+result = obj(10)
+print(result)  # 输出 11
+</code></pre>
+<h6 id="python-运算符对字典解包"><a href="#python-运算符对字典解包" class="headerlink" title="python **运算符对字典解包"></a>python **运算符对字典解包</h6><pre><code>def my_func(a, b):
+    print(a, b)
+
+env = &#123;&#39;a&#39;: 1, &#39;b&#39;: 2&#125;
+my_func(**env)  # 输出 1 2
+</code></pre>
+<h6 id="python-字典形参"><a href="#python-字典形参" class="headerlink" title="python 字典形参"></a>python 字典形参</h6><pre><code>def my_func(**kwargs):
+    for key, value in kwargs.items():
+        print(key, value)
+
+my_func(a=1, b=2, c=3)  # 输出 a 1 b 2 c 3
+</code></pre>
+<h6 id="python-占位符"><a href="#python-占位符" class="headerlink" title="python 占位符"></a>python 占位符</h6><pre><code>item1 = &#39;&#123;&#125;&#39;
+item2 = &#39;&#123;&#125;/path/to/dir&#39;
+item3 = &#39;abc_&#123;&#125;.txt&#39;
+
+item1 = &#39;&#123;&#125;&#39;.format(&#39;filename&#39;)
+item2 = &#39;&#123;&#125;/path/to/dir&#39;.format(&#39;C:/&#39;)
+item3 = &#39;abc_&#123;&#125;.txt&#39;.format(&#39;file&#39;)
+</code></pre>
+<h6 id="python-文件"><a href="#python-文件" class="headerlink" title="python 文件"></a>python 文件</h6><p>..&#x2F;a2与..a2一样吗</p>
+<p>不完全相同。..&#x2F;a2 和 ..a2 都表示上一级目录下的 a2 目录，但是它们所表示的路径格式不同。</p>
+<p>..&#x2F;a2 使用了标准的相对路径格式，其中 .. 表示上一级目录，&#x2F; 表示目录的分隔符，因此 ..&#x2F;a2 表示上一级目录下的 a2 目录。这种表示方法是在文件系统中广泛使用的相对路径格式。</p>
+<p>..a2 则是一种非标准的相对路径格式，使用了点号 . 和 .. 表示路径的相对位置。在 Python 等编程语言中，通常使用点号 . 表示当前目录，使用 .. 表示上一级目录，将它们与目录名拼接起来表示相对路径。因此，..a2 可以理解为上一级目录下的 a2 目录，但是这种表示方法在文件系统中并不通用。</p>
+<p>总之，..&#x2F;a2 是标准的相对路径格式，而 ..a2 则是一种非标准的相对路径格式，使用时需要注意。</p>
+<h6 id="修饰器"><a href="#修饰器" class="headerlink" title="修饰器"></a>修饰器</h6><p><a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/python-func-decorators.html">https://www.runoob.com/w3cnote/python-func-decorators.html</a></p>
+<pre><code>def a_new_decorator(a_func):
+ 
+    def wrapTheFunction():
+        print(&quot;I am doing some boring work before executing a_func()&quot;)
+ 
+        a_func()
+ 
+        print(&quot;I am doing some boring work after executing a_func()&quot;)
+ 
+    return wrapTheFunction
+
+@a_new_decorator
+def a_function_requiring_decoration():
+    &quot;&quot;&quot;Hey you! Decorate me!&quot;&quot;&quot;
+    print(&quot;I am the function which needs some decoration to &quot;
+          &quot;remove my foul smell&quot;)
+          
+a_function_requiring_decoration()
+#outputs: I am doing some boring work before executing a_func()
+#         I am the function which needs some decoration to remove my foul smell
+#         I am doing some boring work after executing a_func()
+</code></pre>
+<h1 id="pytorch相关"><a href="#pytorch相关" class="headerlink" title="pytorch相关"></a>pytorch相关</h1><h2 id="模型状态"><a href="#模型状态" class="headerlink" title="模型状态"></a>模型状态</h2><pre><code>model_state=model.state_dict()
+</code></pre>
+<h3 id="加载预训练的模型"><a href="#加载预训练的模型" class="headerlink" title="加载预训练的模型"></a>加载预训练的模型</h3><pre><code># Imagenet pretrain model
+import torchvision.models as tm  # noqa: F401,F403
+assert cfg[&#39;NUM_LAYERS&#39;] in [18, 34, 50, 101, 152]
+x = eval(f&quot;tm.resnet&#123;cfg[&#39;NUM_LAYERS&#39;]&#125;(pretrained=True)&quot;)
+
+# self.preact是自己的resnet
+self.preact = ResNet(f&quot;resnet&#123;cfg[&#39;NUM_LAYERS&#39;]&#125;&quot;)
+
+model_state = self.preact.state_dict()
+state = &#123;k: v for k, v in x.state_dict().items() if k in self.preact.state_dict() and v.size() == self.preact.state_dict()[k].size()&#125;
+model_state.update(state)
+self.preact.load_state_dict(model_state)
+</code></pre>
+
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2023-07-22</span>
+            
+            
+             
+        
+        </i>
+    </div>
+    
+        
+
+     
+</div>
+
+
+
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+             
+
+            
+                
+
+            
+        </span>
+    
+</div>
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>花有重开日，人无再少年！</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+        
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/a11y-dark.min.css">
+
+        
+<script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/highlight.min.js"></script>
+
+        
+<script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/highlightjs-line-numbers.js"></script>
+
+    
+
+
+<script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+</script>
+                </div>
+            
+    </body>
+</html>
