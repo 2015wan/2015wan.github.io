@@ -3,7 +3,7 @@
     <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
-    <meta name="description" content="杂" />
+    <meta name="description" content="" />
     <meta name="hexo-theme-A4" content="v1.6.9" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>hwan | </title>
@@ -67,7 +67,11 @@
             
         
             
-                <li><a href="/tags/">标签</a></li>
+                <li><i>
+                    
+                        <a style="color: #4e7dde;" href="/tags/">标签</a>
+                    
+                </i></li>
             
         
             
@@ -81,94 +85,35 @@
                     
 
                     
+                            <div class="archive-list">
+  <ul class="archive">
+
+    
+    <span>📌<i>model</i></span>
+      
+      
+      
+    
+    
+    
+  
+    
+        <li>
+        <span class="archive-date">2023-07-29</span>
+        <div class="archive-main">
+            <a class="archive-title" href="/2023/07/29/resnet-code/">resnet_code</a>
+        </div>
+        </li>
+    
+  
+  </ul>
+</div>
+
+ 
+                    
                     
                     
                     <!--说明是文章post页面-->
-                    
-                        <div class="post-main">
-
-    
-        <div class="post-main-title">
-            杂
-        </div>
-      
-    
-
-    <div class="post-md">
-        
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E5%90%88%E6%88%90%E8%A7%86%E9%A2%91"><span class="post-toc-text">合成视频</span></a></li></ol>
-        
-        <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43863869/article/details/125002909">https://blog.csdn.net/weixin_43863869/article/details/125002909</a></p>
-<ul>
-<li><code>/etc/environment</code>：系统级环境变量文件，适用于所有用户和进程。</li>
-<li><code>~/.bashrc</code>：登录shell级别的环境变量文件，适用于当前用户和其子进程。</li>
-<li><code>~/.bash_profile</code>：登录shell级别的环境变量文件，仅适用于当前用户。</li>
-<li><code>~/.profile</code>：登录shell级别的环境变量文件，仅适用于当前用户。</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45837114/article/details/128255248">https://blog.csdn.net/weixin_45837114/article/details/128255248</a></p>
-<h6 id="合成视频"><a href="#合成视频" class="headerlink" title="合成视频"></a>合成视频</h6><pre><code> import cv2
-import numpy as np
-
-videoLeft = cv2.VideoCapture(&#39;C:\\Users\\USTC\\Desktop\\debug_pose\\PRED\\0000\\all_frame.mp4&#39;)
-videoRight = cv2.VideoCapture(&#39;C:\\Users\\USTC\\Desktop\\debug_pose\\GT\\0000\\all_frame.mp4&#39;)
-
-fps = videoLeft.get(cv2.CAP_PROP_FPS)
-
-width = (int(videoLeft.get(cv2.CAP_PROP_FRAME_WIDTH)))
-height = (int(videoLeft.get(cv2.CAP_PROP_FRAME_HEIGHT)))
-
-videoWriter = cv2.VideoWriter(&#39;C:\\Users\\USTC\\Desktop\\debug_pose\\GT\\output.mp4&#39;, cv2.VideoWriter_fourcc(*&#39;mp4v&#39;), fps, (width*2, height))
-
-successLeft, frameLeft = videoLeft.read()
-successRight, frameRight = videoRight.read()
-
-while successLeft and successRight:
-    frameLeft = cv2.resize(frameLeft, (width, height), interpolation=cv2.INTER_CUBIC)
-    frameRight = cv2.resize(frameRight, (width, height), interpolation=cv2.INTER_CUBIC)
-
-    frame = np.hstack((frameLeft, frameRight))
-
-    videoWriter.write(frame)
-
-    successLeft, frameLeft = videoLeft.read()
-    successRight, frameRight = videoRight.read()
-
-videoWriter.release()
-videoLeft.release()
-videoRight.release()
-</code></pre>
-
-    </div>
-
-    <div class="post-meta">
-        <i>
-        
-            <span>2023-07-06</span>
-            
-                <span>该篇文章被 hong</span>
-            
-            
-                <span>打上标签:
-                    
-                    
-                        <a href='/tags/%E6%9D%82/'>
-                            杂
-                        </a>
-                    
-                </span>
-             
-             
-        
-        </i>
-    </div>
-    
-        
-
-     
-</div>
-
-
-
                     
                     
                     <div class="footer">
