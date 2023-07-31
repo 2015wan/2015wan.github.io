@@ -96,7 +96,7 @@
 
     <div class="post-md">
         
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#code"><span class="post-toc-text">code</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#code"><span class="post-toc-text">code</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%8D%B7%E7%A7%AF%E6%A0%B8%E5%B0%BA%E5%AF%B8%E8%AE%BE%E7%BD%AE"><span class="post-toc-text">卷积核尺寸设置</span></a></li></ol>
         
         <h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><pre><code>import torch.nn as nn
 import torch.nn.functional as F
@@ -258,6 +258,18 @@ class ResNet(nn.Module):
                                 norm_layer=self._norm_layer))
 
         return nn.Sequential(*layers)
+</code></pre>
+<p><img src="/../images/resnet-code/image-20230729220102482.png" alt="image-20230729220102482"></p>
+<h1 id="卷积核尺寸设置"><a href="#卷积核尺寸设置" class="headerlink" title="卷积核尺寸设置"></a>卷积核尺寸设置</h1><p>二维卷积保持不变</p>
+<pre><code>kernel_size=3, padding=1, stride=1 
+kernel_size=5, padding=2, stride=1
+kernel_size=7, padding=3, stride=1
+</code></pre>
+<p>二维卷积减半</p>
+<pre><code>kernel_size=7,stride=2, padding=3
+</code></pre>
+<p>池化层减半</p>
+<pre><code>nn.MaxPool2d(kernel_size=3, stride=2, padding=1)
 </code></pre>
 
     </div>
